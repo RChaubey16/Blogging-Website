@@ -58,11 +58,79 @@ nav .nav-links ul li:hover {
   cursor: pointer;
 }
 
+/* Blogs List - index.php*/
+
+#create-blog-button {
+  height: 60px;
+  padding: 20px;
+  margin: 15px 0;
+}
+
+#create-blog-button a {
+  padding: 8px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  background-color: #0488d1;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+#create-blog-button a:hover {
+  color: lightgray;
+}
+
+.blog-list-box {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: auto;
+  padding: 30px;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 40px;
+  width: 300px;
+  background-color: rgb(233, 229, 229);
+  border-radius: 10px;
+}
+
+.heading {
+  padding: 5px;
+  color: #632b06;
+  text-align: center;
+  font-size: 1.5rem;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.read-more-btn {
+  padding: 30px;
+  margin-top: 40px;
+}
+
+.read-more-btn a {
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px;
+  margin-left: 40px;
+  color: white;
+  border-radius: 5px;
+  background-color: #0488d1;
+}
+
+.read-more-btn a:hover {
+  background-color: #034f77;
+}
+
 /* createPost */
 
 .create-post {
   background: white;
-  /* border: 1px solid #e0e0e0; */
   box-sizing: border-box;
   border-radius: 4px;
 }

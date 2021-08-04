@@ -25,4 +25,37 @@
         exit();
     }
 
+     // edit page query
+     if (isset($_REQUEST['id'])){
+        $id = $_REQUEST['id'];
+
+        $sql = "SELECT * FROM blogsdata WHERE id = $id";
+        $query = mysqli_query($conn, $sql);
+    }
+
+    // update the blog query
+    if (isset($_REQUEST['update'])){
+        $id = $_REQUEST['id'];
+        $title = $_REQUEST['title'];
+        $content = $_REQUEST['content'];
+
+        $sql = "UPDATE blogsdata SET title = '$title', content = '$content'
+         WHERE id = $id";
+        mysqli_query($conn, $sql);
+
+        header("Location: index.php?info=updated");
+        exit();
+    }
+
+    // Delete the blog query
+    if (isset($_REQUEST['delete'])){
+        $id = $_REQUEST['id'];
+
+        $sql = "DELETE FROM blogsdata WHERE id = $id";
+        $query = mysqli_query($conn, $sql);
+
+        header("Location: index.php?info=deleted");
+        exit();
+    }
+
 ?>

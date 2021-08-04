@@ -11,15 +11,15 @@
 
     <div>
 
-        <?php if (isset($_REQUEST['info'])){ ?>
+        <!-- <?php if (isset($_REQUEST['info'])){ ?>
 
-           <!-- <?php if($_REQUEST['info'] == 'added') { ?>
+            <?php if($_REQUEST['info'] == 'added') { ?>
                 <div role="alert">
                         Post has been published Successfully!
                     </div>
-           <?php } ?> -->
+           <?php } ?> 
 
-        <?php } ?>
+        <?php } ?>  -->
 
         <div id="create-blog-button">
             <a href="createPost.php">+ Create a new Blog</a>
@@ -35,7 +35,7 @@
                             <h3 class = 'heading'><?php echo $q['title'] ?></h3>
                             <!-- <p id = "content"><?php echo $q['content'] ?></p> -->
                             <div class = "read-more-btn">
-                                <a href="">Read More <span>&rarr;</span></a>
+                                <a href="blogPage.php?id=<?php echo $q['id']?>">Read More <span>&rarr;</span></a>
                             </div>
                             
                         </div>

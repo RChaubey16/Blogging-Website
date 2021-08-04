@@ -24,24 +24,11 @@
   text-decoration: none;
 }
 
-.logo {
-  color: #fff;
-  font-size: 35px;
-}
-.logo-icons {
-  font-size: 40px;
-  color: #ece60e;
-}
-nav #user-dp {
-  height: 40px;
-}
 nav .user {
   display: flex;
   align-items: center;
 }
-nav span {
-  margin-left: 10px;
-}
+
 nav .right-nav {
   display: flex;
   color: #fff;
@@ -69,4 +56,72 @@ nav .nav-links ul li a:hover {
 }
 nav .nav-links ul li:hover {
   cursor: pointer;
+}
+
+/* createPost */
+
+.create-post {
+  background: white;
+  /* border: 1px solid #e0e0e0; */
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.create-post > form {
+  padding: 10px;
+  border-top: 1px solid #d0d0d0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-post-title {
+  width: 50%;
+  height: 50px;
+  margin-top: 40px;
+  padding: 10px;
+  border: 0;
+  font-weight: 700;
+  background-color: lightgray;
+}
+
+.create-post textarea {
+  margin: 0 50px;
+  margin-top: 50px;
+  height: 300px;
+  padding: 10px;
+  width: 80%;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  resize: none;
+  background-color: lightgray;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+#add-post-btn {
+  width: 112px;
+  height: 42px;
+  left: 111.5px;
+  top: 0px;
+  margin-top: 40px;
+  background: #0488d1;
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 16px;
+  transition: all 150ms ease-in-out;
+}
+
+#add-post-btn:hover {
+  cursor: pointer;
+  background-color: #034f77;
+}
+
+#add-post-btn:focus,
+.create-post textarea:focus,
+.create-post-title:focus {
+  outline: none;
 }

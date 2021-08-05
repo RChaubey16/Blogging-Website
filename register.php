@@ -37,10 +37,8 @@
           />
         </div>
 
-        <div className="field">
-          <button id = 'add-post-btn'>
-            Sign Up
-          </button>
+        <div id="create-blog-button">
+            <a href="">Register</a>
         </div>
       </form>
 </body>

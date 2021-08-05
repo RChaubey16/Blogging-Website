@@ -24,10 +24,8 @@
           />
         </div>
 
-        <div className="field">
-          <button id = 'add-post-btn'>
-            Login
-          </button>
+        <div id="create-blog-button">
+            <a href="">Login</a>
         </div>
       </form>
 </body>

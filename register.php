@@ -1,9 +1,47 @@
 <?php require_once('partials/header.php') ?>
-    <title>BlogIt | Login</title>
+    <title>BlogIt | Register</title>
 </head>
 <body>
     <!-- Navbar -->
     <?php include('partials\navbar.php')?>
-    <h1>Hello Register!</h1>
+    
+    <form class="login-form">
+        <span class="login-signup-header">Register</span>
+        <div class="field">
+          <input
+            placeholder="Name"
+            type="text"
+            required
+          />
+        </div>
+        <div class="field">
+          <input
+            type="email"
+            placeholder="Email"
+            required
+          />
+        </div>
+        <div class="field">
+          <input
+            type="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <input
+            type="password"
+            placeholder="Confirm password"
+            required
+          />
+        </div>
+
+        <div className="field">
+          <button id = 'add-post-btn'>
+            Sign Up
+          </button>
+        </div>
+      </form>
 </body>
 </html>

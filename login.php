@@ -1,3 +1,4 @@
+<?php include "dbLogic.php"; ?> 
 <?php require_once('partials/header.php') ?>
     <title>BlogIt | Login</title>
 </head>
@@ -5,7 +6,7 @@
     <!-- Navbar -->
     <?php include('partials\navbar.php')?>
     
-    <form class="login-form">
+    <form class="login-form" method = "POST">
         <span class="login-signup-header">Login</span>
         
         <div class="field">

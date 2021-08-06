@@ -59,5 +59,4 @@
             <button name = "new_user_login" id='add-post-btn'>Login</button>
         </div>
       </form>
-</body>
-</html>
+<?php require_once('partials\header.php') ?>

@@ -45,5 +45,4 @@
         </div>
     </div>
     
-</body>
-</html>
+<?php require_once('partials\footer.php') ?>

@@ -7,6 +7,7 @@
         exit();
     }
 ?> 
+
 <?php require_once('partials\header.php') ?>
 
     <title>BlogIt</title>
@@ -57,5 +58,4 @@
         </div>
     </div>
     
-</body>
-</html>
+<?php require_once('partials\header.php') ?>

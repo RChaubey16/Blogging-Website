@@ -53,4 +53,4 @@
             <button name = "new_user" id='add-post-btn'>Register</button>
         </div>
       </form>
-<?php require_once('partials\header.php') ?>
+<?php require_once('partials\footer.php') ?>

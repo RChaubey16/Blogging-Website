@@ -61,9 +61,10 @@ nav .nav-links ul li:hover {
 /* Blogs List - index.php*/
 
 #create-blog-button {
+  position: absolute;
+  top: 75px;
   height: 60px;
   padding: 20px;
-  margin: 15px 0;
 }
 
 #create-blog-button a {
@@ -125,6 +126,13 @@ nav .nav-links ul li:hover {
 
 .read-more-btn a:hover {
   background-color: #034f77;
+}
+
+#user-heading {
+  text-align: end;
+  margin: 20px 30px 20px 0;
+  font-size: 1.4rem;
+  font-weight: 800;
 }
 
 /* createPost */

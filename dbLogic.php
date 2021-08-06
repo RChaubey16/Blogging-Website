@@ -60,15 +60,14 @@
 
 
     // Registration query
-    if (isset($_REQUEST['new_user'])){
+    if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_REQUEST['new_user'])){
         $name = $_REQUEST['name'];
         $email = $_REQUEST['email'];
         $pwd = $_REQUEST['password'];
         $con_pwd = $_REQUEST['confirmPassword'];
 
-        $sql_query = "INSERT INTO userDetails(name, email, password, confirmPassword) VALUES('$name', '$email', '$pwd', '$con_pwd')"; 
-
         if ($pwd === $con_pwd){
+            $sql_query = "INSERT INTO userdetails(name, email, password, date) VALUES('$name', '$email', '$pwd', current_timestamp())";
             mysqli_query($conn, $sql_query);
             header("Location: login.php");
             exit();
@@ -76,7 +75,10 @@
             header("Location: register.php");
             exit();
         }
-
     }
+
+    // Login query
+    
+
 
 ?>

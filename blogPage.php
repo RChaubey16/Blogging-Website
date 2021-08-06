@@ -1,5 +1,6 @@
 <?php 
     include "dbLogic.php";
+    session_start();
 ?> 
 <?php require_once('partials\header.php') ?>
 
@@ -18,14 +19,16 @@
             </div>
 
             <p class='blog-content'><?php echo $q['content']; ?></p>
-
-            <div class='action-btns'>
-                <a href="editBlog.php?id=<?php echo $q['id']?>" >Edit</a>
-                <form method = "POST">
-                    <input type='text' hidden name = "id" value = "<?php echo $q['id']; ?>">
-                    <button name = "delete" id='delete-post-btn'>Delete</button>
-                </form>
-            </div>
+            
+            <?php if (isset($_SESSION['loggedin'])) { ?>
+                <div class='action-btns'>
+                    <a href="editBlog.php?id=<?php echo $q['id']?>" >Edit</a>
+                    <form method = "POST">
+                        <input type='text' hidden name = "id" value = "<?php echo $q['id']; ?>">
+                        <button name = "delete" id='delete-post-btn'>Delete</button>
+                    </form>
+                </div>
+            <?php } ?>
 
         <?php } ?>
     </div>

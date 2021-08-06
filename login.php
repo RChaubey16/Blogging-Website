@@ -1,5 +1,11 @@
 <?php include "dbLogic.php"; 
 
+    session_start();
+    if (isset($_SESSION['loggedin']) &&  $_SESSION['loggedin']){
+      header("Location: index.php");
+      exit();
+    }
+
     $login = false;
     $showError = false;
     if ($_SERVER["REQUEST_METHOD"] == "POST"){

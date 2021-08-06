@@ -1,4 +1,10 @@
-<?php include "dbLogic.php"; ?> 
+<?php include "dbLogic.php"; 
+  session_start();
+  if (isset($_SESSION['loggedin']) &&  $_SESSION['loggedin']){
+    header("Location: index.php");
+    exit();
+  }
+?> 
 
 <?php require_once('partials/header.php') ?>
     <title>BlogIt | Register</title>

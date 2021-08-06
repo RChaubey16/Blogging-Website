@@ -69,7 +69,7 @@
         if ($pwd === $con_pwd){
             $sql_query = "INSERT INTO userdetails(name, email, password, date) VALUES('$name', '$email', '$pwd', current_timestamp())";
             mysqli_query($conn, $sql_query);
-            header("Location: login.php");
+            header("Location: login.php?info=registered");
             exit();
         } else {
             header("Location: register.php");

@@ -229,6 +229,7 @@ nav .nav-links ul li:hover {
 .action-btns a {
   padding: 7px 20px;
   margin-right: 50px;
+  margin-bottom: 90px;
   text-decoration: none;
   color: whitesmoke;
   font-size: 1.4rem;

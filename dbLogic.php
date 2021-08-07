@@ -16,8 +16,10 @@
     if (isset($_REQUEST['new_post'])){
         $title = $_REQUEST['title'];
         $content = $_REQUEST['content'];
+        $userId = $_REQUEST['userId'];
 
-        $sql_query = "INSERT INTO blogsdata(title, content) VALUES('$title', '$content')";
+
+        $sql_query = "INSERT INTO blogsdata(title, content, user_id) VALUES('$title', '$content', $userId)";
         mysqli_query($conn, $sql_query);
 
         // redirecting to the home page

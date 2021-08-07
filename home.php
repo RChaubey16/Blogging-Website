@@ -11,8 +11,6 @@
     <!-- Navbar -->
     <?php include('partials\navbar.php')?>
 
-    
-
     <div>
 
         <!-- <?php if (isset($_REQUEST['info'])){ ?>
@@ -35,7 +33,7 @@
                             <h3 class = 'heading'><?php echo $q['title'] ?></h3>
                             <!-- <p id = "content"><?php echo $q['content'] ?></p> -->
                             <div class = "read-more-btn">
-                                <a href="blogPage.php?id=<?php echo $q['id']?>">Read More !</a>
+                                <a href="blogPage.php?id=<?php echo $q['id']?>&user_id=<?php echo$q['user_id']?>">Read More !</a>
                             </div>
                             
                         </div>

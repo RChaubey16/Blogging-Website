@@ -15,12 +15,14 @@
       $sql = "SELECT * from userdetails where name = '$username' AND password = '$password'";
       $result = mysqli_query($conn, $sql);
       $num = mysqli_num_rows($result);
+      $row = mysqli_fetch_assoc($result);         // after executing the query, an object is returned. "mysqli_fetch_assoc()" converts          the object into an associative array
 
       if ($num == 1){
         $login = true;
         session_start();
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
+        $_SESSION['uid'] = $row['user_id'];     // as $row is now an associative array, we can access the values via its keys. 
         header('Location: index.php?info=login');
         exit();
       }

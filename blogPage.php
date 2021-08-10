@@ -18,7 +18,7 @@
                 <h1 id = "heading"><?php echo $q['title']; ?></h1>
             </div>
 
-            <p class='blog-content'><?php echo $q['content']; ?></p>
+            <p class='blog-content'><?php echo nl2br($q['content']); ?></p>
             
             
             <?php if (isset($_SESSION['loggedin']) && $_SESSION['uid'] == $q['user_id']) { ?>

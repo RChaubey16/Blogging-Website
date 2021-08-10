@@ -8,6 +8,13 @@
         </div>
         
         <div class="right-nav">
+
+
+            <div class="menu-icon" id = "menu-box">
+                <img src="static\images\icons8-menu-24.png" alt="" >
+            </div>
+
+
             <?php if (isset($_SESSION['username'])) { ?>
                 <div class="user">
                     <span><?php echo $_SESSION['username']?></span>

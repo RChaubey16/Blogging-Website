@@ -16,6 +16,35 @@
   justify-content: space-between;
 }
 
+.nav-box {
+  height: auto;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  /* display: flex; */
+}
+
+.nav-box .nav-links ul {
+  list-style: none;
+  text-align: center;
+}
+
+.nav-box .nav-links ul li {
+  padding: 10px;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.nav-box .nav-links a {
+  color: #0488d1;
+  text-decoration: none;
+}
+
+.nav-box .nav-links a:hover {
+  text-decoration: underline;
+}
+
 .icon {
   letter-spacing: 3px;
   font-size: 1.7rem;
@@ -37,6 +66,11 @@ nav .right-nav {
   font-size: 16px;
   line-height: 22px;
 }
+
+.menu-icon {
+  display: none;
+}
+
 nav .nav-links ul {
   display: flex;
   list-style-type: none;
@@ -337,4 +371,119 @@ input[type="checkbox"] {
   color: #155724;
   background-color: #d4edda;
   border-color: #c3e6cb;
+}
+
+/*Media Queries*/
+
+@media only screen and (max-width: 768px) {
+  /*Blog cards on Home Page*/
+  .card {
+    margin: 0 10px 30px 10px;
+  }
+
+  .read-more-btn a {
+    margin-left: 40px;
+  }
+
+  /*Login Page*/
+  .login-form {
+    width: 50%;
+  }
+
+  /* Blog Page */
+  #heading {
+    margin: 30px 80px;
+  }
+
+  .blog-content {
+    margin: 70px 90px;
+    font-size: 1.2rem;
+  }
+
+  .action-btns {
+    justify-content: center;
+  }
+
+  /*Create Post Page*/
+  .create-post-title {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 412px) {
+  /*navbar*/
+  .nav {
+    padding: 20px 25px;
+  }
+
+  .right-nav .nav-links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  /*Home Page*/
+  .read-more-btn a {
+    margin-left: 40px;
+  }
+
+  /*Login Page */
+  .login-form {
+    width: 90%;
+  }
+
+  /* index.php*/
+  #create-blog-button {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  /*Blog page*/
+  #heading {
+    padding: 20px;
+    margin: 30px 20px;
+  }
+
+  .blog-content {
+    padding: 15px;
+    margin: 40px 20px;
+  }
+
+  .action-btns a,
+  #delete-post-btn {
+    padding: 7px 35px;
+    margin: 0 50px 50px 50px;
+  }
+
+  /*Create Post Page*/
+  .create-post-title {
+    width: 95%;
+  }
+
+  .create-post textarea {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  /*Blog Page*/
+  #heading {
+    padding: 20px;
+    margin: 30px 20px;
+  }
+
+  .blog-content {
+    padding: 15px;
+    margin: 40px 20px;
+  }
+
+  .action-btns a,
+  #delete-post-btn {
+    padding: 7px 22px;
+    margin-right: 50px;
+  }
 }

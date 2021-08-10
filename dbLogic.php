@@ -9,7 +9,7 @@
     }
 
     // fetching all the blogs from database
-    $sql = "SELECT * FROM blogsdata";
+    $sql = "SELECT * FROM blogsdata ORDER BY id DESC";
     $query = mysqli_query($conn, $sql);
 
     // inserting the new blog into database
@@ -68,13 +68,23 @@
         $pwd = $_REQUEST['password'];
         $con_pwd = $_REQUEST['confirmPassword'];
 
+        /* Checking if user already exists */
+        $query = "SELECT email from userdetails where email = '$email'";
+        $result = mysqli_query($conn, $query);
+        $num = mysqli_num_rows($result);
+        if ($num >= 1){
+            header("Location: register.php?info=present");
+            exit();
+        }
+
+        /* If user does not exists then register the user */
         if ($pwd === $con_pwd){
             $sql_query = "INSERT INTO userdetails(name, email, password, date) VALUES('$name', '$email', '$pwd', current_timestamp())";
             mysqli_query($conn, $sql_query);
             header("Location: login.php?info=registered");
             exit();
         } else {
-            header("Location: register.php");
+            header("Location: register.php?info=error");
             exit();
         }
     }

@@ -20,9 +20,6 @@
 
     <div>
 
-        
-
-        <h3 id = 'user-heading'> <?php echo $_SESSION['username'] ?></h3>
 
         <?php if ($_SESSION['loggedin'] == true) { ?>
             <div id="create-blog-button">

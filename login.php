@@ -15,9 +15,27 @@
       $sql = "SELECT * from userdetails where name = '$username' AND password = '$password'";
       $result = mysqli_query($conn, $sql);
       $num = mysqli_num_rows($result);
-      $row = mysqli_fetch_assoc($result);         // after executing the query, an object is returned. "mysqli_fetch_assoc()" converts          the object into an associative array
+      $row = mysqli_fetch_assoc($result);         // after executing the query, an object is returned. "mysqli_fetch_assoc()" convertsthe object into an associative array
+
+
 
       if ($num == 1){
+
+        if (!empty($_POST['remember'])){
+          setcookie("user_login",$_POST['username'], time() + (10 * 365 * 24 * 60 * 60));
+          setcookie("user_password",$_POST['password'], time() + (10 * 365 * 24 * 60 * 60));
+        }
+        else {
+          if (isset($_COOKIE['user_login']))
+          {
+            setcookie("user_login", "", time() - 3600);
+          }
+          if (isset($_COOKIE['user_password']))
+          {
+            setcookie("user_password", "", time() - 3600);
+          }
+        }
+
         $login = true;
         session_start();
         $_SESSION['loggedin'] = true;
@@ -31,7 +49,9 @@
         header('Location: register.php');
         exit();
       }
+
     }
+    
 
 ?> 
 
@@ -66,6 +86,9 @@
           name = 'username'
             type="text"
             placeholder="Username"
+            value = "<?php if (isset($_COOKIE['user_login'])) {
+              echo $_COOKIE['user_login'];
+            } ?>"
             required
           />
         </div>
@@ -75,7 +98,19 @@
           name = 'password'
             type="password"
             placeholder="Password"
+            value = "<?php if (isset($_COOKIE['user_password'])) {
+              echo $_COOKIE['user_password'];
+            } ?>"
             required
+          />
+        </div>
+
+        <div class = "remember-me-box">
+          <label for="remember">Remember Me</label>
+          <input 
+          name = 'remember'
+            type="checkbox"
+            <?php if (isset($_COOKIE['user_login'])){ ?> checked <?php } ?>
           />
         </div>
 

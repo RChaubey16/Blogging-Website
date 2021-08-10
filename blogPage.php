@@ -20,6 +20,7 @@
 
             <p class='blog-content'><?php echo $q['content']; ?></p>
             
+            
             <?php if (isset($_SESSION['loggedin']) && $_SESSION['uid'] == $q['user_id']) { ?>
                 <div class='action-btns'>
                     <a href="editBlog.php?id=<?php echo $q['id']?>" >Edit</a>

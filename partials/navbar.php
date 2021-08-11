@@ -16,8 +16,8 @@
 
 
             <?php if (isset($_SESSION['username'])) { ?>
-                <div class="user">
-                    <span><?php echo $_SESSION['username']?></span>
+                <div class="user nav-links">
+                    <a><?php echo $_SESSION['username']?></a>
                 </div>
             <?php } ?>
           

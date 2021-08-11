@@ -23,11 +23,12 @@
   flex-direction: column;
   display: none;
   /* display: flex; */
+  transition: top 1s ease;
 }
 
 .nav-box .nav-links ul {
   list-style: none;
-  text-align: center;
+  text-align: start;
 }
 
 .nav-box .nav-links ul li {
@@ -43,6 +44,15 @@
 
 .nav-box .nav-links a:hover {
   text-decoration: underline;
+}
+
+#close-menu-btn-box {
+  text-align: end;
+}
+
+#close-menu-btn i {
+  cursor: pointer;
+  color: red;
 }
 
 .icon {
@@ -424,6 +434,23 @@ input[type="checkbox"] {
   .menu-icon {
     display: block;
     cursor: pointer;
+    transition: all 1s ease-in-out;
+  }
+
+  .nav-box {
+    transition: top 1s ease;
+  }
+
+  .user {
+    margin: 10px 0 0 50px;
+    text-align: start;
+    color: #0488d1;
+  }
+
+  .nav-box-user {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.3rem;
   }
 
   /*Home Page*/

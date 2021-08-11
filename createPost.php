@@ -14,6 +14,7 @@
 
     <!-- Navbar -->
     <?php include('partials\navbar.php')?>
+    <?php include('partials\menuLinks.php')?>
 
     <div class = 'create-post'>
         <form method="POST">

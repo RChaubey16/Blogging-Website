@@ -7,3 +7,10 @@ document.getElementById("menu-box").addEventListener("click", function () {
   document.getElementById("nav-box").style.display = "flex";
   console.log("Hey");
 });
+
+document
+  .getElementById("close-menu-btn")
+  .addEventListener("click", function () {
+    document.getElementById("nav-box").style.display = "none";
+    console.log("Hey");
+  });

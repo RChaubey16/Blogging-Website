@@ -64,6 +64,8 @@
 <body>
     <!-- Navbar -->
     <?php include('partials\navbar.php')?>
+    <?php include('partials\menuLinks.php')?>
+    
 
     <?php if (isset($_REQUEST['info'])){ ?>
 

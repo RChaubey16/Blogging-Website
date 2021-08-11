@@ -12,6 +12,8 @@
     <?php include('partials\navbar.php')?>
     <?php include('partials\menuLinks.php')?>
 
+    
+
     <div>
         <div class="blog-list-box">
             <?php foreach($query as $q) { ?>

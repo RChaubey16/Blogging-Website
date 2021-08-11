@@ -107,6 +107,7 @@
               echo $_COOKIE['user_login'];
             } ?>"
             required
+            autocomplete = 'off'
           />
         </div>
 
@@ -119,6 +120,7 @@
               echo $_COOKIE['user_password'];
             } ?>"
             required
+            autocomplete = 'off'
           />
         </div>
 

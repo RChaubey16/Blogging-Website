@@ -40,6 +40,7 @@
             placeholder="Name"
             type="text"
             required
+            autocomplete = 'off'
           />
         </div>
         <div class="field">
@@ -48,6 +49,7 @@
             type="email"
             placeholder="Email"
             required
+            autocomplete = 'off'
           />
         </div>
         <div class="field">
@@ -56,6 +58,7 @@
             type="password"
             placeholder="Password"
             required
+            autocomplete = 'off'
           />
         </div>
 
@@ -65,6 +68,7 @@
             type="password"
             placeholder="Confirm password"
             required
+            autocomplete = 'off'
           />
         </div>
 

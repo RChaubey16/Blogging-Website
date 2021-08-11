@@ -102,6 +102,26 @@ nav .nav-links ul li:hover {
   cursor: pointer;
 }
 
+/*Banner*/
+.home__banner {
+  height: 100vh;
+  width: 100%;
+}
+
+.home__banner img {
+  height: 100%;
+  width: 100%;
+}
+
+.fade {
+  position: absolute;
+  top: 83%;
+  /* border: 1px solid black; */
+  height: 200px;
+  width: 100%;
+  background-image: linear-gradient(transparent, white 80%);
+}
+
 /* Blogs List - index.php*/
 
 #create-blog-button {
@@ -386,6 +406,15 @@ input[type="checkbox"] {
 /*Media Queries*/
 
 @media only screen and (max-width: 768px) {
+  /*Banner*/
+  .home__banner {
+    height: 60%;
+  }
+
+  .fade {
+    top: 45vh;
+  }
+
   /*Blog cards on Home Page*/
   .card {
     margin: 0 10px 30px 10px;
@@ -451,6 +480,16 @@ input[type="checkbox"] {
     cursor: pointer;
     font-weight: 600;
     font-size: 1.3rem;
+  }
+
+  /*Banner*/
+  .home__banner {
+    height: 40vh;
+  }
+
+  .fade {
+    top: 25vh;
+    background-image: linear-gradient(transparent, white);
   }
 
   /*Home Page*/

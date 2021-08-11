@@ -467,6 +467,8 @@ input[type="checkbox"] {
   }
 
   .nav-box {
+    position: absolute;
+    width: 100%;
     transition: top 1s ease;
   }
 
@@ -488,7 +490,7 @@ input[type="checkbox"] {
   }
 
   .fade {
-    top: 25vh;
+    top: 23vh;
     background-image: linear-gradient(transparent, white);
   }
 

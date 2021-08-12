@@ -32,7 +32,7 @@
 
     <?php } ?>
     
-    <form action="register.php" class="login-form" method = "POST">
+    <form action="register.php" class="login-form" method = "POST" autocomplete="off">
         <span class="login-signup-header">Register</span>
         <div class="field">
           <input

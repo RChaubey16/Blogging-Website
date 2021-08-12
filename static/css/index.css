@@ -115,9 +115,9 @@ nav .nav-links ul li:hover {
 
 .fade {
   position: absolute;
-  top: 83%;
+  top: 97%;
   /* border: 1px solid black; */
-  height: 200px;
+  height: 100px;
   width: 100%;
   background-image: linear-gradient(transparent, white 80%);
 }
@@ -412,7 +412,7 @@ input[type="checkbox"] {
   }
 
   .fade {
-    top: 45vh;
+    top: 55vh;
   }
 
   /*Blog cards on Home Page*/
@@ -490,7 +490,7 @@ input[type="checkbox"] {
   }
 
   .fade {
-    top: 23vh;
+    top: 37vh;
     background-image: linear-gradient(transparent, white);
   }
 

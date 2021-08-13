@@ -12,13 +12,31 @@
     <?php include('partials\navbar.php')?>
     <?php include('partials\menuLinks.php')?>
 
-    <div class="home__banner">
-        <img src="https://wallpaperaccess.com/full/521111.jpg" alt="">
-        <div class="fade">
-        
+    <div class="carousel-container">
+        <div class="carousel-slide">
+        <img src="static\images\carousel4.jpg" id = "lastClone" alt="" >
+            <img src="static\images\carousel1.jpg" alt="">
+            <img src="static\images\carousel3.jpg" alt="">
+            <img src="static\images\carousel4.jpg" alt="">
+            <img src="static\images\carousel1.jpg" id = "firstClone" alt="">
+         
         </div>
     </div>
-    
+
+    <button id = "prevBtn">prev</button>
+    <button id = "nextBtn">next</button>
+
+
+
+    <!-- <div class="home__banner">
+        <img src="https://wallpaperaccess.com/full/521111.jpg" alt="">
+        
+    </div> -->
+
+    <!-- <div class="fade">
+        
+    </div>
+     -->
 
     <div>
         <div class="blog-list-box">

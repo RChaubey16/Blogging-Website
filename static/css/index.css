@@ -103,6 +103,25 @@ nav .nav-links ul li:hover {
 }
 
 /*Banner*/
+
+.carousel-container {
+  width: 100%;
+  /* height: 100vh; */
+  overflow: hidden;
+}
+
+.carousel-slide {
+  /* border: 2px solid black; */
+  display: flex;
+  width: 100%;
+  height: 90vh;
+}
+
+.carousel-slide img {
+  width: 100%;
+  object-fit: cover;
+}
+
 .home__banner {
   height: 100vh;
   width: 100%;
@@ -115,7 +134,7 @@ nav .nav-links ul li:hover {
 
 .fade {
   position: absolute;
-  top: 97%;
+  top: 90%;
   /* border: 1px solid black; */
   height: 100px;
   width: 100%;

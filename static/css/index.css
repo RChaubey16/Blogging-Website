@@ -537,6 +537,7 @@ input[type="checkbox"] {
 
   .nav-box {
     position: absolute;
+    z-index: 1000;
     width: 100%;
     transition: top 1s ease;
   }

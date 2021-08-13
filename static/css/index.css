@@ -122,6 +122,25 @@ nav .nav-links ul li:hover {
   object-fit: cover;
 }
 
+.carousel-btns {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: -50vh;
+  /* border: 2px solid black; */
+}
+
+.carousel-btns button {
+  background-color: transparent;
+  border: 0;
+  transition: all 150ms ease-in-out;
+}
+
+.carousel-btns button:hover {
+  /* transform: scale(1.1); */
+  color: #0488d1;
+}
+/* 
 .home__banner {
   height: 100vh;
   width: 100%;
@@ -130,13 +149,12 @@ nav .nav-links ul li:hover {
 .home__banner img {
   height: 100%;
   width: 100%;
-}
+} */
 
 .fade {
   position: absolute;
   top: 90%;
-  /* border: 1px solid black; */
-  height: 100px;
+  height: 80px;
   width: 100%;
   background-image: linear-gradient(transparent, white 80%);
 }
@@ -380,6 +398,20 @@ nav .nav-links ul li:hover {
   cursor: not-allowed;
 }
 
+.login__pwdField {
+  display: flex;
+  align-items: center;
+}
+
+.login__pwdField i {
+  padding-top: 20px;
+  margin-left: -40px;
+}
+
+.login__pwdField i:hover {
+  color: gray;
+}
+
 .remember-me-box {
   display: flex;
   align-items: center;
@@ -426,6 +458,15 @@ input[type="checkbox"] {
 
 @media only screen and (max-width: 768px) {
   /*Banner*/
+
+  .carousel-slide {
+    height: 55vh;
+  }
+
+  .carousel-btns {
+    top: -30vh;
+  }
+
   .home__banner {
     height: 60%;
   }
@@ -470,6 +511,15 @@ input[type="checkbox"] {
 }
 
 @media only screen and (max-width: 412px) {
+  /*Banner*/
+  .carousel-slide {
+    height: 34vh;
+  }
+
+  .carousel-btns {
+    top: -20vh;
+  }
+
   /*navbar*/
   .nav {
     padding: 20px 25px;
@@ -556,7 +606,21 @@ input[type="checkbox"] {
   }
 }
 
-@media only screen and (max-width: 376px) {
+@media only screen and (max-width: 375px) {
+  /*Banner*/
+
+  .carousel-slide {
+    height: 33vh;
+  }
+
+  .carousel-btns {
+    top: -20vh;
+  }
+
+  .fade {
+    top: 33vh;
+  }
+
   /*Blog Page*/
   #heading {
     padding: 20px;

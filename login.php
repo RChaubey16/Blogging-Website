@@ -111,7 +111,7 @@
           />
         </div>
 
-        <div class="field">
+        <div class="field login__pwdField">
           <input 
           name = 'password'
             type="password"
@@ -121,7 +121,9 @@
             } ?>"
             required
             autocomplete = 'off'
+            id = "login__pwd"
           />
+          <i class="far fa-2x fa-eye" id = "login__eye"></i>
         </div>
 
         <div class = "remember-me-box">
@@ -133,6 +135,7 @@
           />
         </div>
 
+        
         <div>
             <button name = "new_user_login" id='add-post-btn'>Login</button>
         </div>

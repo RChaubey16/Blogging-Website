@@ -140,16 +140,12 @@ nav .nav-links ul li:hover {
   /* transform: scale(1.1); */
   color: #0488d1;
 }
-/* 
-.home__banner {
-  height: 100vh;
-  width: 100%;
-}
 
-.home__banner img {
-  height: 100%;
-  width: 100%;
-} */
+.home__imgUploadForm {
+  padding: 7vh 0;
+  text-align: center;
+  background-color: lightgray;
+}
 
 .fade {
   position: absolute;

@@ -33,7 +33,7 @@
     <?php } ?>
     
     <form action="register.php" class="login-form" method = "POST" autocomplete="off">
-        <span class="login-signup-header">Register</span>
+        <span class="login-signup-header"><i class="fas fa-user-plus"></i> Register</span>
         <div class="field">
           <input
           name = "name"

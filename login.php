@@ -96,7 +96,7 @@
     <?php } ?>
 
     <form action="login.php" class="login-form" method = "POST">
-        <span class="login-signup-header">Login</span>
+        <span class="login-signup-header"><i class="fas fa-sign-in-alt"></i> Login</span>
         
         <div class="field">
           <input

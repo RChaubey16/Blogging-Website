@@ -17,8 +17,6 @@
     <?php include('partials\navbar.php')?>
     <?php include('partials\menuLinks.php')?>
 
-    <!-- *************************************** -->
-
     <div class="carousel-container">
         <div class="carousel-slide">
 
@@ -29,6 +27,7 @@
 
                 if (mysqli_num_rows($res) > 0){
                     while ($images = mysqli_fetch_assoc($res)) { ?>
+
                         <img src="uploads/<?=$images['image']?>" alt="" id = "<?php echo $images['id']?>"> 
                         <?php 
                             $_SESSION['img_id'] = $images['id'];
@@ -54,10 +53,6 @@
         <button name="new_img" id = "add-post-btn">Send</button>     
         <a href="deleteBanner.php" id = 'delete-post-btn'><i class="fas fa-trash-alt"></i></a> 
     </form>
-
-
-    <!-- *************************************** -->
-    
 
     <div>
 
@@ -105,7 +100,7 @@
                             <h3 class = 'heading'><?php echo $q['title'] ?></h3>
                             <!-- <p id = "content"><?php echo $q['content'] ?></p> -->
                             <div class = "read-more-btn">
-                                <a href="blogPage.php?id=<?php echo $q['id']?>&user_id=<?php echo$q['user_id']?>">Read More !</a>
+                                <a href="blogPage.php?id=<?php echo $q['id']?>&user_id=<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
                             </div>
                             
                         </div>

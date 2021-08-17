@@ -18,7 +18,7 @@
                         <div class = "card-body">
                             <h3 class = 'heading'><?php echo $q['title'] ?></h3>
                             <div class = "read-more-btn">
-                                <a href="blogPage.php?id=<?php echo $q['id']?>&user_id=<?php echo$q['user_id']?>">Read More !</a>
+                                <a href="blogPage.php?id=<?php echo $q['id']?>&user_id=<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
                             </div>
                             
                         </div>

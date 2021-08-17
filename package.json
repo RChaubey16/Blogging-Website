@@ -1,0 +1,30 @@
+{
+  "name": "blogit",
+  "version": "1.0.0",
+  "description": "A blogging website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass -watch scss -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RChaubey16/Blogging-Website.git"
+  },
+  "keywords": [
+    "Blog",
+    "blogging",
+    "read",
+    "write",
+    "content"
+  ],
+  "author": "Ruturaj Chaubey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RChaubey16/Blogging-Website/issues"
+  },
+  "homepage": "https://github.com/RChaubey16/Blogging-Website#readme",
+  "dependencies": {
+    "node-sass": "^6.0.1"
+  }
+}

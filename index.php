@@ -16,11 +16,50 @@
     <!-- Navbar -->
     <?php include('partials\navbar.php')?>
     <?php include('partials\menuLinks.php')?>
-    
+
+    <!-- *************************************** -->
+
+    <div class="carousel-container">
+        <div class="carousel-slide">
+
+            <?php 
+                $sql = "SELECT * FROM images ORDER BY id DESC";
+                $res = mysqli_query($conn, $sql); 
+
+
+                if (mysqli_num_rows($res) > 0){
+                    while ($images = mysqli_fetch_assoc($res)) { ?>
+                        <img src="uploads/<?=$images['image']?>" alt="" id = "<?php echo $images['id']?>"> 
+                        <?php 
+                            $_SESSION['img_id'] = $images['id'];
+                        ?>    
+            <?php } } ?>
+                
+        </div>
+    </div>
+
+    <div class="carousel-btns">
+        <button id = "prevBtn"><i class="fas fa-3x fa-arrow-alt-circle-left"></i></button>
+        <button id = "nextBtn"><i class="fas fa-3x fa-arrow-alt-circle-right"></i></button>
+    </div>
+
+    <div class="fade">
+        
+    </div>
+
+    <form action="upload.php" method="POST" enctype='multipart/form-data' class = "home__imgUploadForm">
+        <h3>Create your own image Slider!</h3>
+        <br>
+        <input type="file" name ="img-input" id = "image" required>
+        <button name="new_img" id = "add-post-btn">Send</button>     
+        <a href="deleteBanner.php" id = 'delete-post-btn'><i class="fas fa-trash-alt"></i></a> 
+    </form>
+
+
+    <!-- *************************************** -->
     
 
     <div>
-
 
         <?php if ($_SESSION['loggedin'] == true) { ?>
             <div id="create-blog-button">
@@ -76,4 +115,5 @@
         </div>
     </div>
     
+<script src = "static\js\carousel.js"></script>
 <?php require_once('partials\footer.php') ?>

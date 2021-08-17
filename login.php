@@ -141,4 +141,5 @@
         </div>
       </form>
 <!-- footer -->
+
 <?php require_once('partials\footer.php') ?>

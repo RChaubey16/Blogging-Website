@@ -1,9 +1,13 @@
 <?php
     include "dbLogic.php";
 
-    $sql = "DELETE FROM images ORDER BY id DESC LIMIT 1";
-    $res = mysqli_query($conn, $sql);
-    header("Location: index.php");
-    exit;
+    if (isset($_POST['delete_btn'])){
+        $id = $_POST['img_id'];
+        $sql = "DELETE FROM images where id = $id";
+        $res = mysqli_query($conn, $sql);
+        header("Location: index.php?del");
+        exit;
+    }
+    
 
 ?>

@@ -25,7 +25,7 @@
                     // Insert into db
                     $sql = "INSERT INTO images(image) VALUES('$imgNameNew ')";
                     mysqli_query($conn, $sql);
-                    header('Location: home.php?uploaded'); 
+                    header('Location: index.php?uploaded'); 
                 } else {
                     
                     echo "Your file is too large";

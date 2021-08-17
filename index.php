@@ -28,10 +28,21 @@
                 if (mysqli_num_rows($res) > 0){
                     while ($images = mysqli_fetch_assoc($res)) { ?>
 
+                        <!-- Delete banner image button -->
+                        <form action = "deleteBanner.php" class="home__deleteForm" method = "POST">
+
+                            <input type="text" hidden name = "img_id" value = "<?php echo $images['id']; ?>">
+
+                            <button name = "delete_btn">
+                                <i class="fas fa-2x fa-times-circle"
+                                name = "icon"></i>
+                            </button>
+                            
+                        </form>
+
+                        <!-- Banner Image -->
                         <img src="uploads/<?=$images['image']?>" alt="" id = "<?php echo $images['id']?>"> 
-                        <?php 
-                            $_SESSION['img_id'] = $images['id'];
-                        ?>    
+                           
             <?php } } ?>
                 
         </div>
@@ -51,7 +62,7 @@
         <br>
         <input type="file" name ="img-input" id = "image" required>
         <button name="new_img" id = "add-post-btn">Send</button>     
-        <a href="deleteBanner.php" id = 'delete-post-btn'><i class="fas fa-trash-alt"></i></a> 
+        <!-- <a href="deleteBanner.php" id = 'delete-post-btn'><i class="fas fa-trash-alt"></i></a>  -->
     </form>
 
     <div>

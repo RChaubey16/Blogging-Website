@@ -6,6 +6,8 @@ function closeFunction() {
 
 // hamburger menu
 document.getElementById("menu-box").addEventListener("click", function () {
+  document.getElementById("nav-box").style.transition =
+    "transform 0.4s ease-in-out";
   document.getElementById("nav-box").style.display = "flex";
   console.log("Hey");
 });

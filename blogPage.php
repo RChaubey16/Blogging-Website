@@ -2,7 +2,7 @@
     include "dbLogic.php";
     session_start();
 ?> 
-<?php require_once('partials\header.php') ?>
+<?php require_once('partials/header.php') ?>
 
 
     <title>BlogIt | Blog</title>
@@ -10,8 +10,8 @@
 <body>
 
     <!-- Navbar -->
-    <?php include('partials\navbar.php')?>
-    <?php include('partials\menuLinks.php')?>
+    <?php include('partials/navbar.php')?>
+    <?php include('partials/menuLinks.php')?>
 
     <div class = "blog-container">
         <?php foreach($query as $q) { ?>
@@ -35,4 +35,4 @@
         <?php } ?>
     </div>
 
-    <?php require_once('partials\footer.php') ?>
+    <?php require_once('partials/footer.php') ?>

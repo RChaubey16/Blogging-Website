@@ -3,6 +3,7 @@
 
     if (isset($_REQUEST['new_img'])){
         $image = $_FILES['img-input'];
+        $imgOrder = $_REQUEST['img_order'];
 
         $imgName = $_FILES['img-input']['name'];
         $imgTmpName  = $_FILES['img-input']['tmp_name'];
@@ -23,7 +24,7 @@
                     move_uploaded_file($imgTmpName, $imgDestination);
 
                     // Insert into db
-                    $sql = "INSERT INTO images(image) VALUES('$imgNameNew ')";
+                    $sql = "INSERT INTO images(image_order, image) VALUES('$imgOrder','$imgNameNew ')";
                     mysqli_query($conn, $sql);
                     header('Location: index.php?uploaded'); 
                 } else {

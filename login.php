@@ -63,8 +63,8 @@
 </head>
 <body>
     <!-- Navbar -->
-    <?php include('partials\navbar.php')?>
-    <?php include('partials\menuLinks.php')?>
+    <?php include('partials/navbar.php')?>
+    <?php include('partials/menuLinks.php')?>
     
 
     <?php if (isset($_REQUEST['info'])){ ?>
@@ -142,4 +142,4 @@
       </form>
 <!-- footer -->
 
-<?php require_once('partials\footer.php') ?>
+<?php require_once('partials/footer.php') ?>

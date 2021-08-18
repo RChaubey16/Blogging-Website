@@ -140,7 +140,11 @@ nav .nav-links ul li:hover {
 }
 
 .home__imgUploadForm {
-  padding: 7vh 0;
+  display: flex;
+  flex-direction: column;
+  margin-left: 35vw;
+  width: 30%;
+  padding: 20px;
   text-align: center;
   background-color: lightgray;
 }

@@ -7,14 +7,14 @@
     }
 
 ?> 
-<?php require_once('partials\header.php') ?>
+<?php require_once('partials/header.php') ?>
     <title>BlogIt | Create</title>
 </head>
 <body>
 
     <!-- Navbar -->
-    <?php include('partials\navbar.php')?>
-    <?php include('partials\menuLinks.php')?>
+    <?php include('partials/navbar.php')?>
+    <?php include('partials/menuLinks.php')?>
 
     <div class = 'create-post'>
         <form method="POST">
@@ -25,4 +25,4 @@
         </form>
     </div>
 
-<?php require_once('partials\footer.php') ?>
+<?php require_once('partials/footer.php') ?>

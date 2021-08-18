@@ -1,7 +1,7 @@
 <?php 
     
     // establishing a connection to the database 
-    $conn = mysqli_connect("localhost", "root", "", "blogsite");
+    $conn = mysqli_connect("localhost", "ruturaj", "Ruturaj@78", "blogsite");
 
     // Checking if the connection is established or not
     if (!$conn){

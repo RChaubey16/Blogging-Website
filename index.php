@@ -8,20 +8,20 @@
     }
 ?> 
 
-<?php require_once('partials\header.php') ?>
+<?php require_once('partials/header.php') ?>
 
     <title>BlogIt</title>
 </head>
 <body>
     <!-- Navbar -->
-    <?php include('partials\navbar.php')?>
-    <?php include('partials\menuLinks.php')?>
+    <?php include('partials/navbar.php')?>
+    <?php include('partials/menuLinks.php')?>
 
     <div class="carousel-container">
         <div class="carousel-slide">
 
             <?php 
-                $sql = "SELECT * FROM images ORDER BY id DESC";
+                $sql = "SELECT * FROM images ORDER BY image_order ASC";
                 $res = mysqli_query($conn, $sql); 
 
 
@@ -60,7 +60,12 @@
     <form action="upload.php" method="POST" enctype='multipart/form-data' class = "home__imgUploadForm">
         <h3>Create your own image Slider!</h3>
         <br>
-        <input type="file" name ="img-input" id = "image" required>
+        <div class="field">
+            <input type="file" name ="img-input" id = "image" required>
+        </div>
+        <div class="field">
+            <input type="text" name = "img_order" placeholder = "Order number" required>
+        </div>
         <button name="new_img" id = "add-post-btn">Send</button>     
         <!-- <a href="deleteBanner.php" id = 'delete-post-btn'><i class="fas fa-trash-alt"></i></a>  -->
     </form>
@@ -121,5 +126,5 @@
         </div>
     </div>
     
-<script src = "static\js\carousel.js"></script>
-<?php require_once('partials\footer.php') ?>
+<script src = "static/js/carousel.js"></script>
+<?php require_once('partials/footer.php') ?>

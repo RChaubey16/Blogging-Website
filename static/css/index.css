@@ -6,6 +6,10 @@
   font-family: "Montserrat", sans-serif;
 }
 
+body {
+ overflow-x: hidden;
+}
+
 /* Navbar */
 
 .nav {
@@ -118,6 +122,7 @@ nav .nav-links ul li:hover {
 }
 
 .carousel-slide img {
+  /* position: fixed; */
   width: 100%;
   object-fit: cover;
 }
@@ -139,10 +144,12 @@ nav .nav-links ul li:hover {
   color: #0488d1;
 }
 
+
 .home__imgUploadForm {
   display: flex;
   flex-direction: column;
-  margin-left: 35vw;
+  /* align-items: center; */
+  margin: 10vh 0 10vh 35vw;
   width: 30%;
   padding: 20px;
   text-align: center;
@@ -165,11 +172,39 @@ nav .nav-links ul li:hover {
   background-color: transparent;
 }
 
+
 .home__deleteForm button i {
   color: red;
 }
 
+.home__deleteForm .left{
+  margin-left: 35px;
+ 
+}
+
+.home__deleteForm .right{
+  margin-left: 65px;
+}
+
+.banner__image-order{
+  position: absolute;
+  margin-left: 100px;
+  margin-top: 7px;
+  font-weight: 800;
+  font-size: 20px;
+  color: red;
+}
+
+
+
+
+
 /* Blogs List - index.php*/
+
+.index__btns{
+  display: flex;
+  justify-content: space-between;
+}
 
 #create-blog-button {
   height: 60px;

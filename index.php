@@ -17,67 +17,24 @@
     <?php include('partials/navbar.php')?>
     <?php include('partials/menuLinks.php')?>
 
-    <div class="carousel-container">
-        <div class="carousel-slide">
-
-            <?php 
-                $sql = "SELECT * FROM images ORDER BY image_order ASC";
-                $res = mysqli_query($conn, $sql); 
-
-
-                if (mysqli_num_rows($res) > 0){
-                    while ($images = mysqli_fetch_assoc($res)) { ?>
-
-                        <!-- Delete banner image button -->
-                        <form action = "deleteBanner.php" class="home__deleteForm" method = "POST">
-
-                            <input type="text" hidden name = "img_id" value = "<?php echo $images['id']; ?>">
-
-                            <button name = "delete_btn">
-                                <i class="fas fa-2x fa-times-circle"
-                                name = "icon"></i>
-                            </button>
-                            
-                        </form>
-
-                        <!-- Banner Image -->
-                        <img src="uploads/<?=$images['image']?>" alt="" id = "<?php echo $images['id']?>"> 
-                           
-            <?php } } ?>
-                
-        </div>
-    </div>
-
-    <div class="carousel-btns">
-        <button id = "prevBtn"><i class="fas fa-3x fa-arrow-alt-circle-left"></i></button>
-        <button id = "nextBtn"><i class="fas fa-3x fa-arrow-alt-circle-right"></i></button>
-    </div>
-
-    <div class="fade">
-        
-    </div>
-
-    <form action="upload.php" method="POST" enctype='multipart/form-data' class = "home__imgUploadForm">
-        <h3>Create your own image Slider!</h3>
-        <br>
-        <div class="field">
-            <input type="file" name ="img-input" id = "image" required>
-        </div>
-        <div class="field">
-            <input type="text" name = "img_order" placeholder = "Order number" required>
-        </div>
-        <button name="new_img" id = "add-post-btn">Send</button>     
-        <!-- <a href="deleteBanner.php" id = 'delete-post-btn'><i class="fas fa-trash-alt"></i></a>  -->
-    </form>
 
     <div>
 
-        <?php if ($_SESSION['loggedin'] == true) { ?>
-            <div id="create-blog-button">
-                <a href="createPost.php">+ Create a new Blog</a>
-            </div>
-        <?php } ?>
+        <div class="index__btns">
 
+            <?php if ($_SESSION['loggedin'] == true) { ?>
+                <div id="create-blog-button">
+                    <a href="createPost.php">+ Create a new Blog</a>
+                </div>
+
+                <div id="create-blog-button">
+                    <a href="banner.php"><i class="fas fa-sliders-h"></i> Slider</a>
+                </div>
+            <?php } ?>
+
+
+        </div>
+        
         <hr>
 
         <?php if (isset($_REQUEST['info'])){ ?>
@@ -126,5 +83,5 @@
         </div>
     </div>
     
-<script src = "static/js/carousel.js"></script>
+
 <?php require_once('partials/footer.php') ?>

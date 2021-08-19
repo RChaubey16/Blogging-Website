@@ -35,7 +35,7 @@
             ?>
            
             <picture>
-                <source media="(max-width: 465px)" srcset="uploads/IMG-611a2f856ddf68.71025663.jpg">
+                <source media="(max-width: 465px)" srcset="uploads/new_img.jpg">
                 <source media="(max-width: 650px)" srcset="uploads/new_img.jpg">
                 <img src="uploads/IMG-611a2e459bb001.67294963.jpg">
             </picture>

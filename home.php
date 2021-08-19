@@ -16,11 +16,28 @@
             <!-- Using GD library functions -->
 
 
+
+            <?php
+   
+                    $file = "uploads/IMG-611a2e459bb001.67294963.jpg";
+                    list($width, $height) = getimagesize($file);
+                    // echo $width;
+                    $new_width = 1200;
+                    $new_height = 860;
+                    // below function will create a black image of the mentioned dimensions
+                    $newimage = imagecreatetruecolor($new_width, $new_height);
+                    $source = imagecreatefromjpeg($file);
+                    // in below function, first 2 zeros represent the x and y-axis of new image and the next two zeros represent the x and y-axis of source
+                    imagecopyresized($newimage, $source, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
+                    $filename = 'new_img.jpg';
+                    imagejpeg($newimage, 'uploads/'.$filename);
+
+            ?>
            
             <picture>
-                <source media="(max-width: 465px)" srcset="uploads\IMG-611a2f856ddf68.71025663.jpg">
-                <source media="(max-width: 650px)" srcset="uploads\new_image.jpg">
-                <img src="uploads\IMG-611a2e459bb001.67294963.jpg">
+                <source media="(max-width: 465px)" srcset="uploads/IMG-611a2f856ddf68.71025663.jpg">
+                <source media="(max-width: 650px)" srcset="uploads/new_img.jpg">
+                <img src="uploads/IMG-611a2e459bb001.67294963.jpg">
             </picture>
 
 

@@ -201,6 +201,8 @@ nav .nav-links ul li:hover {
 
 /* Blogs List - index.php*/
 
+
+
 .index__btns{
   display: flex;
   justify-content: space-between;
@@ -225,9 +227,11 @@ nav .nav-links ul li:hover {
   color: lightgray;
 }
 
+
 .blog-list-box {
   display: flex;
   justify-content: space-around;
+  
   flex-wrap: wrap;
   height: auto;
   padding: 30px;
@@ -279,6 +283,8 @@ nav .nav-links ul li:hover {
   font-size: 1.4rem;
   font-weight: 800;
 }
+
+
 
 /* createPost */
 

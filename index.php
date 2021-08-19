@@ -18,7 +18,7 @@
     <?php include('partials/menuLinks.php')?>
 
 
-    <div>
+    <div class = "index__container">
 
         <div class="index__btns">
 
@@ -64,23 +64,32 @@
         <?php } ?>
 
 
+        <div class = "index__main">
 
-        <div class="blog-list-box">
-            <?php foreach($query as $q) { ?>
-                <div class = 'card'>
-                    <div>
-                        <div class = "card-body">
-                            <h3 class = 'heading'><?php echo $q['title'] ?></h3>
-                            <!-- <p id = "content"><?php echo $q['content'] ?></p> -->
-                            <div class = "read-more-btn">
-                                <a href="blogPage.php?id=<?php echo $q['id']?>&user_id=<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+            <div class="blog-list-box">
+                <?php foreach($query as $q) { ?>
+                    <div class = 'card'>
+                        <div>
+                            <div class = "card-body">
+                                <h3 class = 'heading'><?php echo $q['title'] ?></h3>
+                                <!-- <p id = "content"><?php echo $q['content'] ?></p> -->
+                                <div class = "read-more-btn">
+                                    <a href="blogPage.php?id=<?php echo $q['id']?>&user_id=<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+                                </div>
+                                
                             </div>
-                            
                         </div>
                     </div>
-                </div>
-            <?php } ?>
+                <?php } ?>
+
+             </div>
+
+
         </div>
+
+        
+
+
     </div>
     
 

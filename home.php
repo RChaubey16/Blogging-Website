@@ -13,11 +13,17 @@
     <div class="carousel-container">
         <div class="carousel-slide">
 
+            <!-- Using GD library functions -->
+
+
+           
             <picture>
                 <source media="(max-width: 465px)" srcset="uploads\IMG-611a2f856ddf68.71025663.jpg">
-                <source media="(max-width: 650px)" srcset="uploads\IMG-611a30c14ba913.40198938.jpg">
+                <source media="(max-width: 650px)" srcset="uploads\new_image.jpg">
                 <img src="uploads\IMG-611a2e459bb001.67294963.jpg">
             </picture>
+
+
             
         </div>
     </div>

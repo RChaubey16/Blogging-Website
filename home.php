@@ -13,29 +13,11 @@
     <div class="carousel-container">
         <div class="carousel-slide">
 
-            <!-- Using GD library functions -->
-
-            <?php
-   
-                    $file = "uploads/pexels-kehn-hermano-7148542.jpg";
-                    list($width, $height) = getimagesize($file);
-                    // echo $width;
-                    $new_width = 1200;
-                    $new_height = 860;
-                    // below function will create a black image of the mentioned dimensions
-                    $newimage = imagecreatetruecolor($new_width, $new_height);
-                    $source = imagecreatefromjpeg($file);
-                    // in below function, first 2 zeros represent the x and y-axis of new image and the next two zeros represent the x and y-axis of source
-                    imagecopyresized($newimage, $source, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
-                    $filename = 'new_img1.jpg';
-                    imagejpeg($newimage, 'uploads/'.$filename);
-
-            ?>
            
             <picture>
-                <source media="(max-width: 465px)" srcset="uploads/new_img.jpg">
-                <source media="(max-width: 650px)" srcset="uploads/new_img.jpg">
-                <img src="uploads/IMG-611a2e459bb001.67294963.jpg">
+                <source media="(max-width: 465px)" srcset="uploads/resized_IMG-611faaa999c126.57732191.jpg">
+                <source media="(max-width: 650px)" srcset="uploads/resized_IMG-1629461690.jpg">
+                <img src="uploads/GoldenGate.jpg">
             </picture>
 
 
@@ -64,20 +46,20 @@
 
             <h2 id = "index__bloggersHeading">Quotes</h2>
 
-            <div class="blogger-container">
+            <div class="blogger-container quote-box">
                 
                 <div class="blogger-avatar quote-bullet">
                     <i class="fas fa-3x fa-caret-right"></i>
                 </div>
                 <div class="blogger-details quote-details">
 
-                    <p>The way to get started is to quit talking and begin doing. -<i style = "color: black;">Walt Disney</i></p>
+                    <p>The way to get started is to quit talking and begin doing. -<br><i style = "color: black;">Walt Disney</i></p>
 
                 </div>
                     
             </div>
 
-            <div class="blogger-container">
+            <div class="blogger-container quote-box">
                 
                 <div class="blogger-avatar quote-bullet">
                     <i class="fas fa-3x fa-caret-right"></i>
@@ -90,7 +72,7 @@
                     
             </div>
 
-            <div class="blogger-container">
+            <div class="blogger-container quote-box">
                 
                 <div class="blogger-avatar quote-bullet">
                     <i class="fas fa-3x fa-caret-right"></i>

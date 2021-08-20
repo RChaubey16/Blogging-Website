@@ -19,14 +19,25 @@
         if (in_array($fileActualExtension, $extensions)){
             if($imgError === 0){
                 if($imgSize < 1000000000){
+                    
                     $imgNameNew = uniqid("IMG-", true).".".$fileActualExtension;
                     $imgDestination = "uploads/".$imgNameNew;
                     move_uploaded_file($imgTmpName, $imgDestination);
 
+                    // --------------------------
+                    include_once('imgResize.php');
+                    $targetfile = "uploads/".$imgNameNew;
+                    $resizedfile = "uploads/resized_".$imgNameNew;
+                    $width = 860;
+                    $height = 600;
+                    resize_image($targetfile, $resizedfile, $width, $height, $fileActualExtension);
+                    //---------------------------
+            
+
                     // Insert into db
                     $sql = "INSERT INTO images(image_order, image) VALUES('$imgOrder','$imgNameNew ')";
                     mysqli_query($conn, $sql);
-                    header('Location: index.php?uploaded'); 
+                    header('Location: banner.php?uploaded'); 
                 } else {
                     
                     echo "Your file is too large";
@@ -38,10 +49,6 @@
             echo 'you cannot upload files of this type';
         }
 
-    }
-
-    if (isset($_REQUEST['leftShift'])){
-        
     }
 
 ?>

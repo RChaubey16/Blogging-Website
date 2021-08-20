@@ -370,6 +370,11 @@ nav .nav-links ul li:hover {
 /*Home Page - quote Section*/
 .quotes-container{
   height: 500px;
+  background-color: white;
+}
+
+.quote-box{
+  background-color: lightgray;
 }
 
 .quote-bullet{
@@ -381,6 +386,7 @@ nav .nav-links ul li:hover {
   /* padding: 0; */
   margin-left: 30px;
   font-size: 1.1rem;
+  margin-right: 5px;
 }
 
 

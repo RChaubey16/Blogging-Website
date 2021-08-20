@@ -18,7 +18,7 @@
 
     <div class = 'create-post'>
         <form method="POST">
-            <input type="text" name="title" class='create-post-title' placeholder="Blog Title" required>
+            <input type="text" name="title" class='create-post-title' placeholder="Blog Title" autocomplete = "off" required>
             <textarea name="content" cols="30" rows="40" placeholder="Write your blog here...." required></textarea>
             <input type='text' hidden name = "userId" value = "<?php echo $_SESSION['uid']; ?>">
             <button name = "new_post" id='add-post-btn'>Add Post</button>

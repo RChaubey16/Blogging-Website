@@ -11,6 +11,9 @@
         <div class="nav-links">
             <ul>
                 <li>
+                    <a href="bloggers.php">Bloggers</a>
+                </li>
+                <li>
                     <a href="logout.php">Logout</a>
                 </li>
                 <li id = 'close-menu-btn-box'>

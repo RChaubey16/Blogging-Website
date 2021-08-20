@@ -67,6 +67,7 @@
         <div class = "index__main">
 
             <div class="blog-list-box">
+                 
                 <?php foreach($query as $q) { ?>
                     <div class = 'card'>
                         <div>
@@ -81,6 +82,41 @@
                         </div>
                     </div>
                 <?php } ?>
+
+             </div>
+
+             <div class="index__bloggers hide-style">
+
+                    <h2 id = "index__bloggersHeading">Bloggers</h2>
+
+                <?php 
+                    $sql = "SELECT * FROM userdetails ORDER By user_id DESC";
+                    $res = mysqli_query($conn, $sql);
+                                
+                        foreach($res as $a) {  
+                                    
+                            if ($_SESSION['username'] == $a['name']){
+                                continue;
+                            } else { ?>
+
+                                <a href="profile.php?uid=<?php echo $a['user_id']?>">
+
+                                    <div class="blogger-container">
+                                        <div class="blogger-avatar">
+                                            <img src="https://image.flaticon.com/icons/png/512/3237/3237472.png" alt="">
+                                            <!-- <i class="fas fa-3x fa-user"></i> -->
+                                        </div>
+                                        <div class="blogger-details">
+
+                                            <p><?php echo $a['name']?></p>
+
+                                        </div>
+                                        <input type="text" name = "uname" value="<?php echo $a['name'] ?>" hidden>
+                                        <input type="text" name = "uemail" value="<?php echo $a['email'] ?>" hidden>
+                                    </div>
+
+                                </a>
+                <?php } } ?>
 
              </div>
 

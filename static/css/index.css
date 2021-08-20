@@ -360,11 +360,27 @@ nav .nav-links ul li:hover {
 }
 
 .blogger-details{
-  margin-right: 30%;
+  margin-right: 20%;
   font-size: 1.5rem;
   font-weight: 600;
   color: #0488d1;
 
+}
+
+/*Home Page - quote Section*/
+.quotes-container{
+  height: 500px;
+}
+
+.quote-bullet{
+  margin-top: 10px;
+}
+
+
+.quote-details {
+  /* padding: 0; */
+  margin-left: 30px;
+  font-size: 1.1rem;
 }
 
 
@@ -637,6 +653,7 @@ input[type="checkbox"] {
   font-weight: 600;
   font-size: 1rem;
 }
+
 
 
 /*Media Queries*/

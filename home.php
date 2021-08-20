@@ -43,7 +43,7 @@
         </div>
     </div>
     
-    <div>
+    <div class = "index__main">
         <div class="blog-list-box">
             <?php foreach($query as $q) { ?>
                 <div class = 'card'>
@@ -59,6 +59,58 @@
                 </div>
             <?php } ?>
         </div>
+
+        <div class="index__bloggers hide-style quotes-container">
+
+            <h2 id = "index__bloggersHeading">Quotes</h2>
+
+            <div class="blogger-container">
+                
+                <div class="blogger-avatar quote-bullet">
+                    <i class="fas fa-3x fa-caret-right"></i>
+                </div>
+                <div class="blogger-details quote-details">
+
+                    <p>The way to get started is to quit talking and begin doing. -<i style = "color: black;">Walt Disney</i></p>
+
+                </div>
+                    
+            </div>
+
+            <div class="blogger-container">
+                
+                <div class="blogger-avatar quote-bullet">
+                    <i class="fas fa-3x fa-caret-right"></i>
+                </div>
+                <div class="blogger-details quote-details">
+
+                    <p>The greatest glory in living lies not in never falling, but in rising every time we fall. -<i style = "color: black;">Nelson Mandela</i></p>
+
+                </div>
+                    
+            </div>
+
+            <div class="blogger-container">
+                
+                <div class="blogger-avatar quote-bullet">
+                    <i class="fas fa-3x fa-caret-right"></i>
+                </div>
+                <div class="blogger-details quote-details">
+
+                    <p>The future belongs to those who believe in the beauty of their dreams. -<i style = "color: black;">Eleanor Roosevelt</i></p>
+
+                </div>
+                    
+            </div>
+
+
+
+
+        </div>
+
+
+        </div>
+
     </div>
     
 

@@ -31,4 +31,20 @@ https://github.com/RChaubey16/Blogging-Website.git
 * Create a database in phpmyadmin named ```blogsite``` to store all the blog-related details.
 * Open the newly created database and import the ```blogsite.sql``` file provided with the repo. (this file contains all the table structures and so on).
 
+# 4. Create a config file.
+* Place a file named "config.php" in the project directory, with the following info : 
+```
+<?php 
 
+$database = [
+    'host' => 'DB_hostname',
+    'username' => 'DB_username',
+    'password' => 'DB_password',
+    'database' => 'DB_name',
+];
+
+?>
+```
+
+# Contributors
+* [RChaubey16](https://github.com/RChaubey16) (Ruturaj Chaubey).

@@ -63,6 +63,8 @@
 
         <?php } ?>
 
+     
+
 
         <div class = "index__main">
 
@@ -73,7 +75,8 @@
                         <div>
                             <div class = "card-body">
                                 <h3 class = 'heading'><?php echo $q['title'] ?></h3>
-                                <!-- <p id = "content"><?php echo $q['content'] ?></p> -->
+                                <p id = "content"><?php echo substr($q['content'], 0, 92
+                                ) . "...."; ?></p>
                                 <div class = "read-more-btn">
                                     <a href="blogPage.php?id=<?php echo $q['id']?>&user_id=<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
                                 </div>

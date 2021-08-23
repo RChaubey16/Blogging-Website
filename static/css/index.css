@@ -271,6 +271,7 @@ nav .nav-links ul li:hover {
   border-radius: 10px;
 }
 
+
 .heading {
   padding: 5px;
   color: #632b06;
@@ -304,6 +305,18 @@ nav .nav-links ul li:hover {
   margin: 20px 30px 20px 0;
   font-size: 1.4rem;
   font-weight: 800;
+}
+
+#content{
+  padding: 10px;
+  padding-top: 25px;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.home__blogs{
+  margin-bottom: 150px;
+  height: 90vh;
 }
 
 
@@ -700,6 +713,9 @@ input[type="checkbox"] {
   color: rgb(80, 76, 76);
 }
 
+.personal__content{
+  color: white;
+}
 
 
 /*Media Queries*/

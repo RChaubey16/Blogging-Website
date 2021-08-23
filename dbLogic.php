@@ -19,6 +19,7 @@
         $title = $_REQUEST['title'];
         $content = $_REQUEST['content'];
         $userId = $_REQUEST['userId'];
+        $userName = $_REQUEST['user_name'];
 
 
         $sql_query = "INSERT INTO blogsdata(title, content, user_id) VALUES('$title', '$content', $userId)";
@@ -90,5 +91,6 @@
             exit();
         }
     }
+
    
 ?>

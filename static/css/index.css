@@ -306,6 +306,9 @@ nav .nav-links ul li:hover {
   font-weight: 800;
 }
 
+
+
+
 /*All bloggers section*/
 
 .index__bloggers::-webkit-scrollbar{
@@ -611,6 +614,11 @@ input[type="checkbox"] {
 }
 
 /*Profile Page*/
+.profile__box{
+  display: flex;
+  justify-content: space-between;
+}
+
 
 .profile__heading{
   position: relative;
@@ -621,6 +629,7 @@ input[type="checkbox"] {
 }
 
 .profile__container{
+  display: inline-block;
   width: 30%;
   height: 60vh;
   padding: 30px;
@@ -658,6 +667,37 @@ input[type="checkbox"] {
   padding-left: 10px;
   font-weight: 600;
   font-size: 1rem;
+}
+
+/*---Personal Blogs-----*/
+
+.personal-blog-list{
+  margin-top: 30px;
+  width: 60%;
+  height: 85vh;
+  overflow-y: scroll;
+ 
+}
+
+.personal-blog-list::-webkit-scrollbar{
+  display: none;
+}
+
+.personal-blog-list .card{
+  width: 80%;
+  margin-left: 130px;
+  background-color: #596064;
+}
+
+.personal-blog-list .read-more-btn{
+  text-align: flex-start;
+  margin-left: -50px;
+}
+
+.personal-blog-list h1{
+  text-align: center;
+  margin-top: 30vh;
+  color: rgb(80, 76, 76);
 }
 
 
@@ -734,12 +774,30 @@ input[type="checkbox"] {
   }
 
   /*Profile Page*/
+
+  .profile__box{
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .profile__heading{
-    left: 35%;
+    left: 42%;
+  }
+
+  .profile__avatar{
+    margin-left: 40%;
   }
   .profile__container{
-    width: 70%;
+   width: 80%;
+
   }
+
+  .personal-blog-list{
+    width: 100%;
+    margin-left: -60px;
+  }
+
+
 }
 
 @media only screen and (max-width: 412px) {
@@ -871,12 +929,29 @@ input[type="checkbox"] {
     left: 37%;
   }
 
+  .profile__avatar{
+    margin-left: 36%;
+  }
+
   .profile__container{
     margin: 10px;
     margin-top: 70px;
     width: 95%;
     height: 50vh;
   }
+
+  .personal-blog-list{
+    width: 100%;
+    margin-left: -110px;
+  }
+
+  .personal-blog-list .card{
+    width: 80%;
+    margin-left: 130px;
+    /* z-index: 1000; */
+  }
+
+
 }
 
 @media only screen and (max-width: 375px) {

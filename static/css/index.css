@@ -476,6 +476,8 @@ nav .nav-links ul li:hover {
 
 /* blogPage */
 
+
+
 #heading {
   text-align: center;
   margin: 30px 300px;
@@ -528,6 +530,87 @@ nav .nav-links ul li:hover {
 
 #delete-post-btn:hover {
   background-color: rgb(133, 29, 29);
+}
+
+.blog__comments-container{
+  text-align: center;
+  padding: 10px;
+}
+
+.blog__comments-container h2{
+  margin-bottom: 30px;
+}
+
+.blog__comments-container form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.blog__comments-container form>input{
+  width: 40%;
+  height: 40px;
+  background-color: lightgray;
+  border: 0;
+  border-radius: 10px;
+  padding-left: 15px;
+  margin-right: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  outline: 0;
+}
+
+.blog__comments-container form>button{
+  height: 37px;
+  border: 0;
+  background-color: #0488d1;
+  padding: 10px;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.blog__comment-box{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  height: 80vh;
+  overflow-y: scroll;
+  padding-bottom: 70px;
+
+}
+
+.blog__comment-box::-webkit-scrollbar{
+  display: none;
+}
+
+.blog__comment{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 40%;
+  margin-top: 20px;
+  background-color: lightgray;
+ 
+}
+
+.comment__username{
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.comment__content{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: whitesmoke;
+  width: 60%;
+  height: 4vh;
+  margin-left: 20px;
+  border-radius: 10px;
 }
 
 /* Login and Register Page */

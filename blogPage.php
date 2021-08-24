@@ -32,6 +32,42 @@
                 </div>
             <?php } ?>
 
+            <div class="blog__comments-container">
+
+                <h2>Comments</h2>
+
+                <?php if (isset($_SESSION['loggedin'])) { ?>
+                    <form action="comments.php" method="POST">
+                        <input type="text" name = 'comment-box' placeholder = "Write a comment.." autocomplete = "off">
+                        <input type="text" name = 'user-id' value = "<?php echo $_SESSION['uid']?>" hidden>
+                        <input type="text" name = 'blog-id' value = "<?php echo $q['id']?>" hidden>
+                        <button name = 'comment-btn'>Comment</button>
+                    </form>
+                <?php } ?>
+
+                <?php
+                    include "comments.php";
+                    $blog_id = $q['id'];
+                    $sql_query = "SELECT userdetails.name, comment FROM userdetails JOIN comments ON userdetails.user_id = uid WHERE bid = $blog_id";
+                    $result = mysqli_query($conn, $sql_query);
+                ?>
+
+                <div class="blog__comment-box">
+                    <?php foreach($result as $r) { ?>
+                        <div class="blog__comment">
+                            
+                            <div class="comment__username">
+                                <h3><?php echo $r['name']?></h3>
+                            </div>
+                            <br>
+                            <div class="comment__content">
+                                <p><?php echo $r['comment']?></p>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+
         <?php } ?>
     </div>
 

@@ -613,6 +613,26 @@ nav .nav-links ul li:hover {
   border-radius: 10px;
 }
 
+.blog__likes{
+  display: flex;
+  /* border: 1px solid black; */
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.blog__likes a{
+  margin-left: 10px;
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: black;
+}
+
+.blog__likes a i {
+  color: red;
+}
+
 /* Login and Register Page */
 
 .login-signup-header {

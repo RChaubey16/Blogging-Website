@@ -116,6 +116,8 @@
                                         </div>
                                         <input type="text" name = "uname" value="<?php echo $a['name'] ?>" hidden>
                                         <input type="text" name = "uemail" value="<?php echo $a['email'] ?>" hidden>
+
+                                    
                                     </div>
 
                                 </a>

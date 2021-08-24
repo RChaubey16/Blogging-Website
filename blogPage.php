@@ -20,6 +20,13 @@
             </div>
 
             <p class='blog-content'><?php echo nl2br($q['content']); ?></p>
+
+            <div class="blog__likes">
+                <a href = "comments.php?bid=<?php echo $q['id']; ?>">
+                    <i class="far fa-star"></i>
+                    <span name = "blog__likes-count">0</span>
+                </a>
+            </div>
             
             
             <?php if (isset($_SESSION['loggedin']) && $_SESSION['uid'] == $q['user_id']) { ?>

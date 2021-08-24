@@ -44,7 +44,7 @@
             header("Location: index.php");
             exit;
         }
-    
+      
     ?>
 
     <div class="profile__box">
@@ -62,33 +62,20 @@
 
             <form action="" method = "POST">
 
-            <!-- <?php if (isset($_REQUEST['uid'])) { ?>
-                    <?php if ($_REQUEST['uid'] == $_SESSION['uid']) { ?>
-                    
-                        <label for="uname">Name</label>
-                            <input type="text" name = 'uname' value = "<?php echo $_SESSION['username'] ?>" > 
-                        <label for="uname">Email</label>
-                            <input type="text" name = 'uemail' value = "<?php echo $email ?>" disabled>
-                        <input type="text" name = 'profile-user-id' value = "<?php echo $_SESSION['uid']?>" hidden>
-                        <button name = 'profile-submit-btn' id = "add-post-btn">Submit</button>
-
-                    <?php } else { ?>
-                        <label for="uname">Name</label>
-                            <input type="text" name = 'uname' value = "<?php echo $name ?>" disabled>
-        
-                        <label for="uname">Email</label>
-                            <input type="text" name = 'uemail' value = "<?php echo $email ?>" disabled>
-
-                    <?php } ?>
-                <?php } ?> -->
-
                 <label for="uname">Name</label>
                     <input type="text" name = 'uname' value = "<?php echo $name ?>" disabled>
         
                 <label for="uname">Email</label>
-                    <input type="text" name = 'uemail' value = "<?php echo $email ?>" disabled>
-                
-                
+                    <input type="text" name = 'uemail' value = "<?php echo $email ?>" disabled>   
+
+                <?php
+                    $query = "SELECT id  FROM blogsdata WHERE user_id = $id";
+                    $res = mysqli_query($conn, $query); 
+                    $ans = mysqli_num_rows($res);
+
+                ?>  
+
+                <p>Blogs: <?php echo $ans; ?></p>
             
             </form>
         
@@ -108,8 +95,6 @@
 
             
             ?>
-
-
 
             <div class="personal-blog-list">
                 <?php if (mysqli_num_rows($ans) == 0) { ?>

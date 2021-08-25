@@ -41,9 +41,24 @@
                     <a href = "like.php?type=article&id=<?php echo $q['id']; ?>&user_id=<?php echo $q['user_id']; ?>">
                         <i class="far fa-star"></i>
                         <span name = "blog__likes-count"><?php echo ($ans); ?></span>
+
                     </a>
-                    
+
                 </div>
+
+                <?php
+                    $user = $_SESSION['uid'];
+                    $id = $q['id'];
+                    $query = "SELECT id FROM blog_likes WHERE (user = $user AND blog = $id)";
+                    $result = mysqli_query($conn, $query);
+                    $ans = mysqli_num_rows($result);
+
+                    if ($ans === 1) { ?>
+                        
+                        <p class = "like-msg">You have liked this post</p>
+                            
+
+                <?php } ?>
 
             <?php } ?>
 

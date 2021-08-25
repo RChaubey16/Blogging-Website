@@ -532,6 +532,8 @@ nav .nav-links ul li:hover {
   background-color: rgb(133, 29, 29);
 }
 
+/*Comments Section*/
+
 .blog__comments-container{
   text-align: center;
   padding: 10px;
@@ -633,6 +635,11 @@ nav .nav-links ul li:hover {
 
 .blog__likes a i {
   color: red;
+}
+
+.like-msg{
+  text-align: center; 
+  margin-bottom: 40px;
 }
 
 /* Login and Register Page */
@@ -888,6 +895,12 @@ input[type="checkbox"] {
     justify-content: center;
   }
 
+  /*Comments Section*/
+  .blog__comment{
+    width: 60%;
+  }
+
+
   /*Create Post Page*/
   .create-post-title {
     width: 80%;
@@ -997,6 +1010,15 @@ input[type="checkbox"] {
 
   .hide-style{
     display: none;
+  }
+
+  /*Comments Section*/
+  .blog__comments-container form>input{
+    width: 70%;
+  }
+
+  .blog__comment{
+    width: 100%;
   }
 
   /*Bloggers page */

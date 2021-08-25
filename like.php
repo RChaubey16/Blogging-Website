@@ -10,10 +10,19 @@
         $userId = $_GET['user_id'];
         $loggedInUser = $_SESSION['uid'];
 
-        // $query = "SELECT id FROM blog_likes WHERE (user = $loggedInUser AND blog = $id)";
-        // $result = mysqli_num_rows(mysqli_query($conn, $query));
+        // Deleting a like
+        $query = "SELECT id FROM blog_likes WHERE (user = $loggedInUser AND blog = $id)";
+        $result = mysqli_query($conn, $query);
+        $ans = mysqli_num_rows($result);
+
+        if ($ans === 1){
+            $sql = "DELETE FROM blog_likes WHERE (user = $loggedInUser AND blog = $id)";
+            mysqli_query($conn, $sql);
+            header("Location: blogPage.php?id=$id&user_id=$userId&disliked");
+            exit;
+        }
         
-        
+        // Inserting a like
         if ($type == "article"){
             $sql = "INSERT INTO blog_likes(user, blog)
                         SELECT {$_SESSION['uid']}, {$id}
@@ -25,11 +34,10 @@
                             WHERE user = {$_SESSION['uid']}
                             AND blog = {$id})
                         LIMIT 1 ";
-            mysqli_query($conn, $sql);
-                    
-                    
             // $_SESSION['uid'] will be stored in user column and
             // $id is the blog-id which will be stored in blog column
+            mysqli_query($conn, $sql);
+                    
         }
 
         header("Location: blogPage.php?id=$id&user_id=$userId");

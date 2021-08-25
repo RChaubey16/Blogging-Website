@@ -21,12 +21,33 @@
 
             <p class='blog-content'><?php echo nl2br($q['content']); ?></p>
 
-            <div class="blog__likes">
-                <a href = "comments.php?bid=<?php echo $q['id']; ?>">
-                    <i class="far fa-star"></i>
-                    <span name = "blog__likes-count">0</span>
-                </a>
-            </div>
+
+            <!-- *************************** -->
+
+            <?php if ($_SESSION['loggedin']) { ?>
+
+                <div class="blog__likes">
+
+                    <?php 
+
+                        $id = $q['id'];
+                        $sql = "SELECT id from blog_likes where blog = $id";
+                        $result = mysqli_query($conn, $sql);
+                        // $sql = "SELECT blogsdata.id, blogsdata.title, COUNT(blog_likes.id) AS likes FROM blogsdata LEFT JOIN blog_likes ON blogsdata.id = blog_likes.blog GROUP BY blogsdata.id";
+                        // $result = mysqli_query($conn, $sql);
+                        $ans = mysqli_num_rows($result);
+                    ?>
+                
+                    <a href = "like.php?type=article&id=<?php echo $q['id']; ?>&user_id=<?php echo $q['user_id']; ?>">
+                        <i class="far fa-star"></i>
+                        <span name = "blog__likes-count"><?php echo ($ans); ?></span>
+                    </a>
+                    
+                </div>
+
+            <?php } ?>
+
+
             
             
             <?php if (isset($_SESSION['loggedin']) && $_SESSION['uid'] == $q['user_id']) { ?>

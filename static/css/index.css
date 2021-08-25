@@ -627,6 +627,8 @@ nav .nav-links ul li:hover {
   font-size: 1.6rem;
   text-decoration: none;
   color: black;
+  border: 0;
+
 }
 
 .blog__likes a i {

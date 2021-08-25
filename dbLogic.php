@@ -21,7 +21,6 @@
         $userId = $_REQUEST['userId'];
         $userName = $_REQUEST['user_name'];
 
-
         $sql_query = "INSERT INTO blogsdata(title, content, user_id) VALUES('$title', '$content', $userId)";
         mysqli_query($conn, $sql_query);
 

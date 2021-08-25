@@ -784,7 +784,7 @@ input[type="checkbox"] {
   font-weight: 700;
 }
 
-.profile__container form input{
+.profile__container form input, textarea{
   height: 5vh;
   margin-bottom: 30px;
   background-color: white;
@@ -793,6 +793,19 @@ input[type="checkbox"] {
   font-weight: 600;
   font-size: 1rem;
 }
+
+.profile__bio{
+  height: 10vh;
+  padding-top: 10px;
+  outline: 0;
+}
+
+.profile__container form p{
+  display: flex;
+  justify-content: space-between;
+}
+
+
 
 /*---Personal Blogs-----*/
 

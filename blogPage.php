@@ -93,9 +93,14 @@
                     $blog_id = $q['id'];
                     $sql_query = "SELECT userdetails.name, comment FROM userdetails JOIN comments ON userdetails.user_id = uid WHERE bid = $blog_id";
                     $result = mysqli_query($conn, $sql_query);
+                    $ans = mysqli_num_rows($result);
                 ?>
 
                 <div class="blog__comment-box">
+                    <?php if ($ans == 0) { ?>
+                        <h2>No comments to show!</h2>
+                    <?php } ?>
+
                     <?php foreach($result as $r) { ?>
                         <div class="blog__comment">
                             

@@ -34,11 +34,12 @@
 
         if (isset($_REQUEST['uid'])){
             $id = $_REQUEST['uid'];
-            $sql = "SELECT name, email from userdetails where user_id = $id";
+            $sql = "SELECT * from userdetails where user_id = $id";
             $ans = mysqli_query($conn, $sql);
             $result = mysqli_fetch_assoc($ans);
             $name = $result['name'];
             $email = $result['email'];
+            $bio = $result['bio'];
         
         } else {
             header("Location: index.php");
@@ -60,13 +61,25 @@
         
 
 
-            <form action="" method = "POST">
+            <form method = "POST">
 
                 <label for="uname">Name</label>
                     <input type="text" name = 'uname' value = "<?php echo $name ?>" disabled>
         
-                <label for="uname">Email</label>
-                    <input type="text" name = 'uemail' value = "<?php echo $email ?>" disabled>   
+                <!-- <label for="uname">Email</label>
+                    <input type="text" name = 'uemail' value = "<?php echo $email ?>" disabled>    -->
+
+                    <input name = "profile__user_id" type="text" value = "<?php echo $id?>" hidden>
+                
+                <!-- Bio -->
+                <label for="profile__bio">Bio</label>
+                    <?php if ($_SESSION['uid'] == $id) { ?>
+                        <textarea class = "profile__bio" name="profile__bio" cols="30" rows="7" placeholder = "Tell us something about you..."><?php echo $bio; ?></textarea>
+                    <?php } else { ?>
+                        <textarea class = "profile__bio" cols="30" rows="7" placeholder = "Tell us something about you..." disabled><?php echo $bio; ?></textarea>
+                    <?php } ?>
+
+                
 
                 <?php
                     $query = "SELECT id  FROM blogsdata WHERE user_id = $id";
@@ -75,7 +88,12 @@
 
                 ?>  
 
-                <p>Blogs: <?php echo $ans; ?></p>
+                <p>
+                    Blogs: <?php echo $ans; ?>
+                    <?php if ($_SESSION['uid'] == $id) { ?>
+                        <button name = "profile__btn" id = "add-post-btn">Submit</button>
+                    <?php } ?>
+                </p>
             
             </form>
         

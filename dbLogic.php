@@ -91,5 +91,15 @@
         }
     }
 
+
+    // Updating profile bio 
+    if (isset($_POST['profile__btn'])){
+        $bio = $_POST['profile__bio'];
+        $profile_id = $_POST['profile__user_id'];
+        $sql = "UPDATE userdetails SET bio = '$bio' WHERE user_id = $profile_id";
+        mysqli_query($conn, $sql);
+        header("Location: profile.php?uid=$profile_id");
+        exit;
+    }
    
 ?>

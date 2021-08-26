@@ -58,13 +58,21 @@
 
     // update the blog query
     if (isset($_REQUEST['update'])){
+
+        // using mysql prepared
+        $sql = $conn->prepare("UPDATE blogsdata SET title = ?, content = ?
+        WHERE id = ?");
+        $sql->bind_param("ssi", $title, $content, $id);
+
         $id = $_REQUEST['id'];
         $title = $_REQUEST['title'];
         $content = $_REQUEST['content'];
+        $sql->execute();
 
-        $sql = "UPDATE blogsdata SET title = '$title', content = '$content'
-         WHERE id = $id";
-        mysqli_query($conn, $sql);
+        // Normal SQL query
+        // $sql = "UPDATE blogsdata SET title = '$title', content = '$content'
+        //  WHERE id = $id";
+        // mysqli_query($conn, $sql);
 
         header("Location: index.php?info=updated");
         exit();
@@ -113,10 +121,18 @@
 
     // Updating profile bio 
     if (isset($_POST['profile__btn'])){
+
+        // Using Mysql prepared statement
+        $sql = $conn->prepare("UPDATE userdetails SET bio = ? WHERE user_id = ?");
+        $sql->bind_param("si", $bio, $profile_id);
         $bio = $_POST['profile__bio'];
         $profile_id = $_POST['profile__user_id'];
-        $sql = "UPDATE userdetails SET bio = '$bio' WHERE user_id = $profile_id";
-        mysqli_query($conn, $sql);
+        $sql->execute();
+
+        // Normal SQL Queries
+        // $sql = "UPDATE userdetails SET bio = '$bio' WHERE user_id = $profile_id";
+        // mysqli_query($conn, $sql);
+        
         header("Location: profile.php?uid=$profile_id");
         exit;
     }

@@ -91,7 +91,7 @@
                 <p>
                     Blogs: <?php echo $ans; ?>
                     <?php if ($_SESSION['uid'] == $id) { ?>
-                        <button name = "profile__btn" id = "add-post-btn">Submit</button>
+                        <button name = "profile__btn" id = "add-post-btn">Update</button>
                     <?php } ?>
                 </p>
             

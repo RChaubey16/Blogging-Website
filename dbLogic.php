@@ -16,16 +16,35 @@
 
     // inserting the new blog into database
     if (isset($_REQUEST['new_post'])){
+
+        $blog_image = $_FILES['blog__img'];
+
+        $filename = $blog_image['name'];
+        $filename_tmp = $blog_image['tmp_name'];
+
+        $profile_ext = explode('.', $filename);
+        $filecheck = strtolower(end($profile_ext));
+
+        $file_ext_stored = array('jpeg', 'png', 'jpg');
+
+        if (in_array($filecheck, $file_ext_stored)){
+            
+            $destinationFile = "uploads/" . $filename;
+            move_uploaded_file($filename_tmp, $destinationFile);
+        }
+
+
         $title = $_REQUEST['title'];
         $content = $_REQUEST['content'];
         $userId = $_REQUEST['userId'];
         $userName = $_REQUEST['user_name'];
 
-        $sql_query = "INSERT INTO blogsdata(title, content, user_id) VALUES('$title', '$content', $userId)";
+
+        $sql_query = "INSERT INTO blogsdata(title, content, user_id, blog_image) VALUES('$title', '$content', $userId, '$destinationFile')";
         mysqli_query($conn, $sql_query);
 
         // redirecting to the home page
-        header("Location: index.php?info=added");
+        header("Location: index.php?info=added&dest=$filename");
         exit();
     }
 

@@ -19,6 +19,12 @@
                 <h1 id = "heading"><?php echo $q['title']; ?></h1>
             </div>
 
+            <?php if ($q['blog_image'] != "") { ?>
+                <div class="blog__imageContainer">
+                    <img src="<?php echo $q['blog_image'] ?>" alt="">
+                </div>
+            <?php } ?>
+
             <p class='blog-content'><?php echo nl2br($q['content']); ?></p>
 
 

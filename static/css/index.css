@@ -532,6 +532,19 @@ nav .nav-links ul li:hover {
   background-color: rgb(133, 29, 29);
 }
 
+.blog__imageContainer{
+  height: 60vh;
+  width: 100%;
+  margin-top: 60px;
+
+}
+
+.blog__imageContainer img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 /*Comments Section*/
 
 .blog__comments-container{

@@ -19,6 +19,19 @@
                 <h1 id = "heading"><?php echo $q['title']; ?></h1>
             </div>
 
+            <?php 
+                // Query to access authorname of the blog
+                $sql = $conn->prepare("SELECT userdetails.name FROM userdetails JOIN blogsdata WHERE (userdetails.user_id = blogsdata.user_id AND id = ?)");
+                $sql->bind_param('i', $id);
+                $id = $q['id'];
+                $sql->execute();
+                $result = $sql->get_result();
+                $ans = $result->fetch_assoc();
+                $blog_user_name = $ans['name'];
+            ?>
+
+            <p id = "blogPage__author">by <?php echo $blog_user_name;  ?></p>
+
             <?php if ($q['blog_image'] != "") { ?>
                 <div class="blog__imageContainer">
                     <img src="<?php echo $q['blog_image'] ?>" alt="">
@@ -36,11 +49,18 @@
 
                     <?php 
 
+                        $sql = $conn->prepare("SELECT id from blog_likes where blog = ?");
+                        $sql->bind_param("i", $id);
                         $id = $q['id'];
-                        $sql = "SELECT id from blog_likes where blog = $id";
-                        $result = mysqli_query($conn, $sql);
+                        $sql->execute();
+                        $result = $sql->get_result();
+
+                        // $sql = "SELECT id from blog_likes where blog = $id";
+                        // $result = mysqli_query($conn, $sql);
+                        
                         // $sql = "SELECT blogsdata.id, blogsdata.title, COUNT(blog_likes.id) AS likes FROM blogsdata LEFT JOIN blog_likes ON blogsdata.id = blog_likes.blog GROUP BY blogsdata.id";
                         // $result = mysqli_query($conn, $sql);
+
                         $ans = mysqli_num_rows($result);
                     ?>
                 

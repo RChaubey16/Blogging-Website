@@ -281,6 +281,14 @@ nav .nav-links ul li:hover {
   border-radius: 10px;
 }
 
+#homePage__author{
+  margin: 0 10px;
+  margin-top: 10px;
+  font-weight: 700;
+  color:#034f77; 
+  text-align: right;
+}
+
 .blog-tile-img{
   height: 20vh;
   width: 100%;
@@ -294,6 +302,7 @@ nav .nav-links ul li:hover {
 }
 
 .read-more-btn {
+  display: flex; 
   padding: 30px;
   margin-top: 40px;
 }
@@ -302,7 +311,7 @@ nav .nav-links ul li:hover {
   text-decoration: none;
   font-weight: 600;
   padding: 10px;
-  margin-left: 40px;
+  /* margin-left: 40px; */
   color: white;
   border-radius: 5px;
   background-color: #0488d1;
@@ -503,6 +512,13 @@ nav .nav-links ul li:hover {
   color: #0488d1;
   background-color: #2c2b2b;
   border-radius: 10px;
+}
+
+#blogPage__author{
+  text-align: center;
+  color: rgb(104, 100, 100);
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .blog-content {
@@ -907,6 +923,7 @@ input[type="checkbox"] {
   }
 
   .card {
+    width: 100%;
     margin: 0 20px 30px 10px;
   }
 
@@ -1033,6 +1050,9 @@ input[type="checkbox"] {
   }
 
   /*Home Page*/
+  /* #content {
+    display:none;
+  } */
   .read-more-btn a {
     margin-left: 40px;
   }
@@ -1057,6 +1077,11 @@ input[type="checkbox"] {
   }
 
   /*Comments Section*/
+
+  .blog__imageContainer{
+    height: 35vh;
+  }
+
   .blog__comments-container form>input{
     width: 70%;
   }

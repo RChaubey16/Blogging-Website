@@ -75,6 +75,20 @@
                         <div>
                             <div class = "card-body">
                                 <h3 class = 'heading'><?php echo $q['title'] ?></h3>
+
+                                <?php 
+                                // Query to access authorname of the blog
+                                 $sql = $conn->prepare("SELECT userdetails.name FROM userdetails JOIN blogsdata WHERE (userdetails.user_id = blogsdata.user_id AND id = ?)");
+                                 $sql->bind_param('i', $id);
+                                 $id = $q['id'];
+                                 $sql->execute();
+                                 $result = $sql->get_result();
+                                 $ans = $result->fetch_assoc();
+                                 $blog_user_name = $ans['name'];
+                                ?>
+
+                                <p id='homePage__author'>- <?php echo $blog_user_name; ?></p>
+
                                 <div class="blog-tile-img">
                                     
                                     <img src="<?php echo $q['blog_image']?>" alt="">

@@ -124,6 +124,9 @@
                     
                             <div class = "card-body">
                                 <h3 class = 'heading'><?php echo $a['title'] ?></h3>
+                                <div class="blog-tile-img">
+                                    <img src="<?php echo $a['blog_image']?>" alt="">
+                                </div>
                                 <p id = "content" class = "personal__content"><?php echo substr($a['content'], 0, 202
                                 ) . "...."; ?></p>
                                 <div class = "read-more-btn">

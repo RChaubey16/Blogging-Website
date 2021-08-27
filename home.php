@@ -32,6 +32,9 @@
                 
                         <div class = "card-body">
                             <h3 class = 'heading'><?php echo $q['title'] ?></h3>
+                            <div class="blog-tile-img">
+                                <img src="<?php echo $q['blog_image']?>" alt="">
+                            </div>
                             <p id = "content"><?php echo substr($q['content'], 0, 92
                                 ) . "...."; ?></p>
                             <div class = "read-more-btn">

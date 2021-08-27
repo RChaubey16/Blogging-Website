@@ -266,7 +266,7 @@ nav .nav-links ul li:hover {
   padding: 20px;
   margin-bottom: 70px;
   margin: 0 70px 70px 50px;
-  width: 300px;
+  width: 500px;
   background-color: rgb(233, 229, 229);
   border-radius: 10px;
 }
@@ -279,6 +279,18 @@ nav .nav-links ul li:hover {
   font-size: 1.5rem;
   background-color: #fff;
   border-radius: 10px;
+}
+
+.blog-tile-img{
+  height: 20vh;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.blog-tile-img img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .read-more-btn {
@@ -472,6 +484,12 @@ nav .nav-links ul li:hover {
 .create-post textarea:focus,
 .create-post-title:focus {
   outline: none;
+}
+
+.blog-image{
+  margin-top: 40px;
+  padding: 15px;
+  background-color: lightgray;
 }
 
 /* blogPage */
@@ -1089,6 +1107,10 @@ input[type="checkbox"] {
   }
 
   .create-post textarea {
+    width: 95%;
+  }
+
+  .blog-image{
     width: 95%;
   }
 

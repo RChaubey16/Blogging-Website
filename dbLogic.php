@@ -51,7 +51,7 @@
      // edit page query
      if (isset($_REQUEST['id'])){
         $id = $_REQUEST['id'];
-
+        
         $sql = "SELECT * FROM blogsdata WHERE id = $id";
         $query = mysqli_query($conn, $sql);
     }
@@ -80,10 +80,24 @@
 
     // Delete the blog query
     if (isset($_REQUEST['delete'])){
-        $id = $_REQUEST['id'];
 
-        $sql = "DELETE FROM blogsdata WHERE id = $id";
-        $query = mysqli_query($conn, $sql);
+        $sql = $conn->prepare("SELECT blog_image from blogsdata WHERE id = ?");
+        $sql->bind_param("i", $id);
+        $id = $_REQUEST['id'];
+        $sql->execute();
+        $result = $sql->get_result();
+        $ans = $result->fetch_assoc();
+        $filename = $ans['blog_image'];
+        if (isset($filename)){
+            // deletes the image from /uploads as well
+            unlink($filename);
+        }
+
+        $sqlDelete = $conn->prepare("DELETE FROM blogsdata WHERE id = ?");
+        $sqlDelete->bind_param("i", $id);
+        $sqlDelete->execute();
+        // $sql = "DELETE FROM blogsdata WHERE id = $id";
+        // $query = mysqli_query($conn, $sql);
 
         header("Location: index.php?info=deleted");
         exit();
@@ -136,7 +150,6 @@
         header("Location: profile.php?uid=$profile_id");
         exit;
     }
-
     
    
 ?>

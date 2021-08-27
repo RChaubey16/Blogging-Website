@@ -19,7 +19,10 @@
     <div class = 'create-post'>
         <form method="POST" enctype="multipart/form-data">
             <input type="text" name="title" class='create-post-title' placeholder="Blog Title" autocomplete = "off" required>
-            <input type="file" name="blog__img">
+        
+
+                <input type="file" name="blog__img" class = "blog-image">
+            
             <textarea name="content" cols="30" rows="40" placeholder="Write your blog here...." required></textarea>
             <input type='text' hidden name = "userId" value = "<?php echo $_SESSION['uid']; ?>">
             <button name = "new_post" id='add-post-btn'>Add Post</button>
@@ -28,4 +31,3 @@
 
 <?php require_once('partials/footer.php') ?>
 
-<!-- <input type="file" name="profile_img" class="input my-3" value="<?php echo $_POST['profile_img']; ?>"> -->

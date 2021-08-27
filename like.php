@@ -5,15 +5,24 @@
     session_start();
 
     if (isset($_GET['type'], $_GET['id'], $_GET['user_id'])){
+
+        // Deleting a like
+        // mysql prepared statements
+        $sql = $conn->prepare("SELECT id FROM blog_likes WHERE (user = ? AND blog = ?)");
+        $sql->bind_param("ii", $loggedInUser, $id);
         $type = $_GET['type'];
         $id = $_GET['id'];
         $userId = $_GET['user_id'];
         $loggedInUser = $_SESSION['uid'];
-
-        // Deleting a like
-        $query = "SELECT id FROM blog_likes WHERE (user = $loggedInUser AND blog = $id)";
-        $result = mysqli_query($conn, $query);
+        $sql->execute();
+        $result = $sql->get_result();
         $ans = mysqli_num_rows($result);
+
+
+        // Normal Sql Query
+        // $query = "SELECT id FROM blog_likes WHERE (user = $loggedInUser AND blog = $id)";
+        // $result = mysqli_query($conn, $query);
+        // $ans = mysqli_num_rows($result);
 
         if ($ans === 1){
             $sql = "DELETE FROM blog_likes WHERE (user = $loggedInUser AND blog = $id)";

@@ -2,9 +2,26 @@
     include "dbLogic.php";
 
     if (isset($_POST['delete_btn'])){
+
+        $sql = $conn->prepare("SELECT image FROM images WHERE id = ?");
+        $sql->bind_param("i", $id);
+        $sqlDel = $conn->prepare("DELETE FROM images where id = ?");
+        $sqlDel->bind_param("i", $id);
+
         $id = $_POST['img_id'];
-        $sql = "DELETE FROM images where id = $id";
-        $res = mysqli_query($conn, $sql);
+        $sql->execute();
+        $result = $sql->get_result();
+        $ans = $result->fetch_assoc();
+        $filename = $ans['image'];
+        if (isset($filename)){
+            // deletes the image from /uploads as well
+            unlink($filename);
+        }
+        $sqlDel->execute();
+
+        // $sql = "DELETE FROM images where id = $id";
+        // $res = mysqli_query($conn, $sql);
+        
         header("Location: banner.php?del");
         exit;
     }

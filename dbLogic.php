@@ -136,5 +136,7 @@
         header("Location: profile.php?uid=$profile_id");
         exit;
     }
+
+    
    
 ?>

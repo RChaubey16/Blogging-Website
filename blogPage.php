@@ -97,7 +97,7 @@
                 <?php
                     include "comments.php";
                     $blog_id = $q['id'];
-                    $sql_query = "SELECT userdetails.name, comment FROM userdetails JOIN comments ON userdetails.user_id = uid WHERE bid = $blog_id";
+                    $sql_query = "SELECT userdetails.name, comment, id FROM userdetails JOIN comments ON userdetails.user_id = uid WHERE bid = $blog_id";
                     $result = mysqli_query($conn, $sql_query);
                     $ans = mysqli_num_rows($result);
                 ?>
@@ -117,10 +117,36 @@
                             <div class="comment__content">
                                 <p><?php echo $r['comment']?></p>
                             </div>
+
+                            <div class="blog__likes">
+
+                               
+                                <a href = "comments.php?type=comment&id=<?php echo $r['id']; ?>">
+
+                                    <?php 
+
+                                        $sql = $conn->prepare("SELECT likes FROM comments WHERE id = ?");
+                                        $sql->bind_param("i", $cid);
+                                        $cid = $r['id'];
+                                        $sql->execute();
+                                        $result = $sql->get_result();
+                                        $ans = $result->fetch_assoc();
+                                     
+                                        
+                                    ?>
+                                        
+                                    <i class="far fa-star"></i>
+                                    <span name = "blog__likes-count"><?php echo ($ans['likes']); ?></span>
+
+                                </a>
+                                
+
+                            </div>
+
                         </div>
                     <?php } ?>
                 </div>
-            </div>
+            </div> 
 
         <?php } ?>
     </div>

@@ -62,7 +62,7 @@
     <link rel="stylesheet" href="static/css/style.css">
     <title>BlogIt | Login</title>
 </head>
-<body>
+<body style = "background-color: #ece9e9;">
     <!-- Navbar -->
     <?php include('partials/navbar.php')?>
     <?php include('partials/menuLinks.php')?>

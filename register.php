@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="static/css/style.css?v=<?php echo time(); ?>">
     <title>BlogIt | Register</title>
 </head>
-<body>
+<body style = "background-color: #ece9e9;">
     <!-- Navbar -->
     <?php include('partials/navbar.php')?>
     <?php include('partials/menuLinks.php')?>

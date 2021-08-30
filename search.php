@@ -24,7 +24,7 @@
 
     <?php if (mysqli_num_rows($result) == 0) { ?>
 
-        <h2 class = "search__heading">No Blogs related to: <?php echo $category; ?></h2>
+        <h2 class = "search__heading">No Blogs related to: <span style = "color: #0488d1;"><?php echo $category; ?></span></h2>
 
         <div class="search__noDataFound">
             <img src="https://image.freepik.com/free-vector/no-data-concept-illustration_114360-616.jpg" alt="">
@@ -32,7 +32,7 @@
 
     <?php } else { ?>
 
-        <h2 class = "search__heading">Showing Blogs related to: <?php echo $category; ?></h2>
+        <h2 class = "search__heading">Showing Blogs related to: <span style = "color: #0488d1;"><?php echo $category; ?></span></h2>
 
         <div class = "index__main">
             <div class="blog-list-box home__blogs"> 

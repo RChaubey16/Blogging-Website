@@ -36,11 +36,11 @@
 
         $title = $_REQUEST['title'];
         $content = $_REQUEST['content'];
+        $category = $_REQUEST['blog__topic'];
         $userId = $_REQUEST['userId'];
         $userName = $_REQUEST['user_name'];
 
-
-        $sql_query = "INSERT INTO blogsdata(title, content, user_id, blog_image) VALUES('$title', '$content', $userId, '$destinationFile')";
+        $sql_query = "INSERT INTO blogsdata(title, content, user_id, blog_image, category) VALUES('$title', '$content', $userId, '$destinationFile', '$category')";
         mysqli_query($conn, $sql_query);
 
         // redirecting to the home page
@@ -150,6 +150,7 @@
         header("Location: profile.php?uid=$profile_id");
         exit;
     }
+
     
    
 ?>

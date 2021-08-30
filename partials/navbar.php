@@ -10,10 +10,10 @@
         </div>
 
         <div class="nav__searchContainer">
-            <form action="">
-                <input type="text" name='searchBar' class="nav__searchBar" placeholder="Search Category">
-                <button><i class="fas fa-search"></i></button>
-            </form>
+            <form action="search.php" method = "POST">
+                <input type="text" name='searchBar' class="nav__searchBar" placeholder="Search Category" autocomplete="off">
+                <button name = "nav__searchBtn"><i class="fas fa-search"></i></button>
+        </form>
         </div>
         
         <div class="right-nav">

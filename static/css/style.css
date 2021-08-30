@@ -219,6 +219,19 @@
   }
 }
 
+.home__blogCarousel {
+  width: 80%;
+  margin: 0 12vw;
+  margin-top: 4vh;
+  padding: 20px;
+}
+
+.home__blogCarousel .home__blogCarouselHeading {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #0488d1;
+}
+
 .blog-tile-img img {
   -webkit-transition: all 150ms ease-in-out;
   transition: all 150ms ease-in-out;

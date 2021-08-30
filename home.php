@@ -3,6 +3,11 @@
     session_start();
 ?> 
 <?php require_once('partials/header.php') ?>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="static/css/style.css?v=<?php echo time(); ?>">
     <title>BlogIt - Home</title>
 </head>
@@ -14,6 +19,55 @@
     <div class="home__imgContainer">
         <div class="home__imageDark"></div>
         <img src="https://1.bp.blogspot.com/-0FL-YgfsMOU/YL76dPlRYBI/AAAAAAAAK28/Ta4Y4TE2keYiGX_T2jHlT2rWGZL1A3noQCNcBGAsYHQ/s16000/mountain2.jpg" alt="">
+    </div>
+
+    <div class="home__blogCarousel">
+        <h2 class = "home__blogCarouselHeading">
+            <i class="fas fa-mail-bulk"></i>    
+            RECENT BLOGS
+        </h2>
+        <div class="home__blogCarouselImages">
+            
+            <?php
+                $sql = $conn->prepare("SELECT * FROM blogsdata ORDER BY id DESC LIMIT 5");
+                $sql->execute();
+                $result = $sql->get_result();
+            ?>
+            <?php foreach($result as $q) { ?>
+                    <div class = 'card search-card'>
+                    
+                        <div class = "card-body">
+                            <h3 class = 'heading'><?php echo $q['title'] ?></h3>
+
+                            <?php 
+                                // Query to access authorname of the blog
+                                $sql = $conn->prepare("SELECT userdetails.name FROM userdetails JOIN blogsdata WHERE (userdetails.user_id = blogsdata.user_id AND id = ?)");
+                                $sql->bind_param('i', $id);
+                                $id = $q['id'];
+                                $sql->execute();
+                                $result = $sql->get_result();
+                                $ans = $result->fetch_assoc();
+                                $blog_user_name = $ans['name'];
+                            ?>
+
+                            <p id='homePage__author'>- <?php echo $blog_user_name; ?></p>
+
+                            <div class="blog-tile-img">
+                                    <img src="<?php echo $q['blog_image']?>" alt="">
+                                </div>
+                            <p id = "content"><?php echo substr($q['content'], 0, 92
+                                    ) . "...."; ?></p>
+                            <div class = "read-more-btn">
+                                <a href="blogPage.php?id=<?php echo $q['id']?>&user_id=<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+                            </div>
+                                
+                        </div>
+                        
+                </div>
+            <?php } ?>
+            
+
+        </div>
     </div>
 
     <?php 
@@ -133,16 +187,23 @@
                 </div>
                     
             </div>
-
-
-
-
         </div>
-
-
-        </div>
-
     </div>
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+                $('.home__blogCarouselImages').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true, 
+                autoplaySpeed: 2000,
+            });
+	    });
+        
+    </script>
 
 <?php require_once('partials/footer.php') ?>

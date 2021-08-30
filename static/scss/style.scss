@@ -230,6 +230,21 @@ $black: rgb(8, 8, 8);
     }
 }
 
+// Blogs Carousel component
+
+.home__blogCarousel{
+    width: 80%;
+    margin: 0 12vw;
+    margin-top: 4vh;
+    padding: 20px;
+
+    .home__blogCarouselHeading{
+        text-align: center;
+        margin-bottom: 50px;
+        color: $common;
+    }
+}
+
 // Blog List Component - Home page
 
 .blog-tile-img{

@@ -49,7 +49,13 @@
   background-color: #e7e3e3;
 }
 
-.nav .nav__searchContainer form i {
+.nav .nav__searchContainer form button {
+  font-size: 1.2rem;
+  background: transparent;
+  border: 0;
+}
+
+.nav .nav__searchContainer form button i {
   color: #757272;
 }
 
@@ -112,10 +118,88 @@
   height: 50vh;
 }
 
+.home__imgContainer .home__imageDark {
+  position: absolute;
+  width: 100%;
+  height: 50vh;
+  background: rgba(0, 0, 0, 0.3);
+}
+
 .home__imgContainer img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.home__bannerContent {
+  position: absolute;
+  top: 20vh;
+  left: 32%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 25vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home__bannerContent .home__bannerContent-title h1 {
+  font-size: 37px;
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 0px 0px 10px black;
+}
+
+.home__bannerContent .home__bannerContent-desc p {
+  font-size: 1rem;
+  line-height: 25px;
+  color: #bebdbd;
+}
+
+.home__bannerContent .home__bannerContent-btn button {
+  height: 40px;
+  background-color: #0488d1;
+  border: 0;
+  border-radius: 7px;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.home__bannerContent .home__bannerContent-btn button a {
+  height: 30px;
+  padding: 20px 25px;
+  text-decoration: none;
+  color: white;
+}
+
+.home__bannerContent .home__bannerContent-btn button:hover {
+  background-color: #080808;
+}
+
+@media only screen and (max-width: 768px) {
+  .home__bannerContent {
+    left: 10%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .home__imgContainer {
+    height: 40vh;
+  }
+  .home__bannerContent {
+    top: 15%;
+    left: 5%;
+  }
+  .home__bannerContent .home__bannerContent-title h1 {
+    text-align: center;
+  }
 }
 /*# sourceMappingURL=style.css.map */

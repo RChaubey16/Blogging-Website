@@ -3,7 +3,7 @@
 ?> 
 
 <?php require_once('partials/header.php') ?>
-
+<link rel="stylesheet" href="static/css/style.css?v=<?php echo time(); ?>">
     <title>Blog It | Edit</title>
 </head>
 <body>

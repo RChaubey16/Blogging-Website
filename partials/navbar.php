@@ -1,5 +1,7 @@
 <!-- navbar -->
-
+<?php 
+    include "dbLogic.php";
+?>
 <nav class="nav">
         <div class="left-div">
             <a href="index.php" class='icon'>
@@ -10,7 +12,7 @@
         <div class="nav__searchContainer">
             <form action="">
                 <input type="text" name='searchBar' class="nav__searchBar" placeholder="Search Category">
-                <i class="fas fa-search"></i>
+                <button><i class="fas fa-search"></i></button>
             </form>
         </div>
         

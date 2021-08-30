@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 23, 2021 at 11:42 AM
+-- Generation Time: Aug 30, 2021 at 09:22 AM
 -- Server version: 8.0.26-0ubuntu0.20.04.2
 -- PHP Version: 8.0.9
 
@@ -32,8 +32,35 @@ CREATE TABLE `blogsdata` (
   `id` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `content` longtext NOT NULL,
-  `user_id` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `user_id` int NOT NULL,
+  `blog_image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blog_likes`
+--
+
+CREATE TABLE `blog_likes` (
+  `id` int NOT NULL,
+  `user` int NOT NULL,
+  `blog` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` int NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `uid` int NOT NULL,
+  `bid` int NOT NULL,
+  `likes` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -45,7 +72,7 @@ CREATE TABLE `images` (
   `id` int NOT NULL,
   `image_order` int NOT NULL,
   `image` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -58,8 +85,9 @@ CREATE TABLE `userdetails` (
   `name` varchar(20) NOT NULL,
   `email` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
+  `bio` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -69,7 +97,22 @@ CREATE TABLE `userdetails` (
 -- Indexes for table `blogsdata`
 --
 ALTER TABLE `blogsdata`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `blog_likes`
+--
+ALTER TABLE `blog_likes`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`uid`),
+  ADD KEY `bid` (`bid`);
 
 --
 -- Indexes for table `images`
@@ -96,6 +139,18 @@ ALTER TABLE `blogsdata`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `blog_likes`
+--
+ALTER TABLE `blog_likes`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
@@ -106,6 +161,23 @@ ALTER TABLE `images`
 --
 ALTER TABLE `userdetails`
   MODIFY `user_id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `blogsdata`
+--
+ALTER TABLE `blogsdata`
+  ADD CONSTRAINT `blogsdata_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `userdetails` (`user_id`);
+
+--
+-- Constraints for table `comments`
+--
+ALTER TABLE `comments`
+  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `userdetails` (`user_id`),
+  ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`bid`) REFERENCES `blogsdata` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

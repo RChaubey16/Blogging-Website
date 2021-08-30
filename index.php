@@ -10,7 +10,7 @@
 
 <?php require_once('partials/header.php') ?>
 <link rel="stylesheet" href="static/css/style.css?v=<?php echo time(); ?>">
-    <title>BlogIt</title>
+    <title>BlogIt - Feed</title>
 </head>
 <body>
     <!-- Navbar -->

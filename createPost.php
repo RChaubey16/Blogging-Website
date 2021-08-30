@@ -20,7 +20,7 @@
     <div class = 'create-post'>
         <form method="POST" enctype="multipart/form-data">
             <input type="text" name="title" class='create-post-title' placeholder="Blog Title" autocomplete = "off" required>
-            <input type="text" name="blog__topic" class = "create-post-title" placeholder = "Blog Category" required>
+            <input type="text" name="blog__topic" class = "create-post-title" placeholder = "Blog Category" autocomplete = "off" required>
             <input type="file" name="blog__img" class = "blog-image">
             
             <textarea name="content" cols="30" rows="40" placeholder="Write your blog here...." required></textarea>

@@ -219,6 +219,15 @@
   }
 }
 
+.blog-tile-img img {
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+
+.blog-tile-img img:hover {
+  opacity: 0.8;
+}
+
 .search__heading {
   margin: 40px 0;
   text-align: center;

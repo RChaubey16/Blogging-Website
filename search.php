@@ -14,7 +14,7 @@
     <?php 
 
         if (isset($_POST['searchBar'])) {
-            $sql = $conn->prepare("SELECT * FROM blogsdata WHERE category = ?");
+            $sql = $conn->prepare("SELECT * FROM blogsdata WHERE category = ? ORDER BY id DESC");
             $sql->bind_param("s", $category);
             $category = $_POST["searchBar"];
             $sql->execute();

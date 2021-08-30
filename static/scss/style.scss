@@ -230,6 +230,17 @@ $black: rgb(8, 8, 8);
     }
 }
 
+// Blog List Component - Home page
+
+.blog-tile-img{
+    img{
+        transition: all 150ms ease-in-out;
+    }
+    img:hover{
+        opacity: 0.8;
+    }
+}
+
 // Search Page 
 
 .search__heading{

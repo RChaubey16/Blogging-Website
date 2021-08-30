@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins",sans-serif;
+}
+
+/* NavBar Component */
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #ffffff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-family: "Poppins",sans-serif;
+}
+
+.nav .icon {
+  letter-spacing: 1px;
+  font-size: 1.7rem;
+  font-weight: bolder;
+  color: #0488d1;
+  text-decoration: none;
+}
+
+.nav .nav__searchContainer form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav .nav__searchContainer form input {
+  height: 3.3vh;
+  width: 17vw;
+  padding-left: 0.7rem;
+  margin-right: 0.3rem;
+  border-radius: 7px;
+  border: 0;
+  outline: 0;
+  background-color: #e7e3e3;
+}
+
+.nav .nav__searchContainer form i {
+  color: #757272;
+}
+
+.nav .right-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #080808;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 22px;
+}
+
+.nav .right-nav .nav-links a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #080808;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+
+.nav .right-nav .nav-links a:hover {
+  color: #0488d1;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .nav__searchContainer {
+    display: none;
+  }
+  .right-nav .menu-icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .right-nav .nav-links {
+    display: none;
+  }
+  .nav-box .nav-links ul li {
+    text-transform: uppercase;
+  }
+  .nav-box .nav-links ul li a {
+    color: #080808;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+  }
+  .nav-box .nav-links ul li a:hover {
+    color: #0488d1;
+    text-decoration: none;
+  }
+}
+
+.home__imgContainer {
+  width: 100%;
+  height: 50vh;
+}
+
+.home__imgContainer img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=style.css.map */

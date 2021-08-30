@@ -3,6 +3,7 @@
     session_start();
 ?> 
 <?php require_once('partials/header.php') ?>
+    <link rel="stylesheet" href="static/css/style.css">
     <title>BlogIt | Home</title>
 </head>
 <body>
@@ -10,23 +11,12 @@
     <?php include('partials/navbar.php')?>
     <?php include('partials/menuLinks.php')?>
 
-    <div class="carousel-container">
-        <div class="carousel-slide">
-
-           
-            <picture>
-                <source media="(max-width: 465px)" srcset="uploads/resized_IMG-611faaa999c126.57732191.jpg">
-                <source media="(max-width: 650px)" srcset="uploads/resized_IMG-1629461690.jpg">
-                <img src="uploads/GoldenGate.jpg">
-            </picture>
-
-    
-
-        </div>
+    <div class="home__imgContainer">
+        <img src="https://1.bp.blogspot.com/-0FL-YgfsMOU/YL76dPlRYBI/AAAAAAAAK28/Ta4Y4TE2keYiGX_T2jHlT2rWGZL1A3noQCNcBGAsYHQ/s16000/mountain2.jpg" alt="">
     </div>
     
     <div class = "index__main">
-        <div class="blog-list-box home__blogs">
+        <div class="blog-list-box home__blogs"> 
             <?php foreach($query as $q) { ?>
                 <div class = 'card'>
                 

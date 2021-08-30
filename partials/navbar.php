@@ -6,12 +6,20 @@
                 BLOG IT!
             </a>
         </div>
+
+        <div class="nav__searchContainer">
+            <form action="">
+                <input type="text" name='searchBar' class="nav__searchBar" placeholder="Search Category">
+                <i class="fas fa-search"></i>
+            </form>
+        </div>
         
         <div class="right-nav">
 
 
             <div class="menu-icon" id = "menu-box">
-                <img src="static\images\icons8-menu-24.png" alt="" >
+                <!-- <img src="static\images\icons8-menu-24.png" alt="" > -->
+                <i class="fas fa-2x fa-bars"></i>
             </div>
 
 

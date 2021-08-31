@@ -11,7 +11,7 @@
 
         <div class="nav__searchContainer">
             <form action="search.php" method = "GET">
-                <input type="text" name='searchBar' class="nav__searchBar" placeholder="Search Category" autocomplete="off">
+                <input type="text" name='searchBar' class="nav__searchBar" placeholder="Search Query" autocomplete="off">
                 <button name = "nav__searchBtn"><i class="fas fa-search"></i></button>
         </form>
         </div>

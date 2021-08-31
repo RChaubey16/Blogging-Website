@@ -14,11 +14,22 @@
     <?php 
 
         if (isset($_GET['searchBar'])) {
-            $sql = $conn->prepare("SELECT * FROM blogsdata WHERE category = ? ORDER BY id DESC");
-            $sql->bind_param("s", $category);
+
+            //Example of the query : "SELECT * FROM liam WHERE Description LIKE '%".$term."%'"
+
             $category = $_GET["searchBar"];
-            $sql->execute();
-            $result = $sql->get_result();
+            $search = '%'.$category.'%';
+            $sql = "SELECT * FROM blogsdata JOIN userdetails ON (blogsdata.user_id = userdetails.user_id) WHERE category LIKE '".$search."' OR content LIKE'".$search."' OR title LIKE '".$search."' OR name LIKE '".$search."'";
+            $result = mysqli_query($conn, $sql);
+
+            // $sql = $conn->prepare("SELECT * FROM blogsdata JOIN userdetails ON (blogsdata.user_id = userdetails.user_id) WHERE category LIKE '?' OR content LIKE '?' OR title LIKE '?' OR name LIKE '?'");
+            // $sql->bind_param("s", $search);
+            // $category = $_GET["searchBar"];
+            // $search = '%'.$category.'%';
+            // $sql->execute();
+            // // $category = $_GET["searchBar"];
+            // // $sql->execute();
+            // $result = $sql->get_result();
         }
     ?>
 
@@ -40,7 +51,6 @@
                     <div class = 'card search-card'>
                     
                             <div class = "card-body">
-                                <h3 class = 'heading'><?php echo $q['title'] ?></h3>
 
                                 <?php 
                                     // Query to access authorname of the blog
@@ -53,15 +63,23 @@
                                     $blog_user_name = $ans['name'];
                                 ?>
 
-                                <p id='homePage__author'>- <?php echo $blog_user_name; ?></p>
-
                                 <div class="blog-tile-img">
                                     <img src="<?php echo $q['blog_image']?>" alt="">
                                 </div>
+
+                                <h3 class = 'heading'><?php echo $q['title'] ?></h3>
+
+                                <div class="blog__details">
+                                    <p id='homePage__author'><i class="fas fa-user"></i> <?php echo $blog_user_name; ?></p>
+                                    <p id='homePage__author'><i class="far fa-clock"></i> 16 June, 2021</p>
+                                </div>
+
                                 <p id = "content"><?php echo substr($q['content'], 0, 92
                                     ) . "...."; ?></p>
+
                                 <div class = "read-more-btn">
                                     <a href="blogPage.php?id=<?php echo $q['id']?>&user_id=<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+                                    <a href="search.php?searchBar=<?php echo $q['category'];?>" style = 'background-color: gray;'><?php echo $q['category'];?></a>
                                 </div>
                                 
                             </div>

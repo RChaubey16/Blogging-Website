@@ -445,6 +445,11 @@
   margin: 0;
 }
 
+.card #content {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .card .blog__details {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -247,7 +247,7 @@ nav .nav-links ul li:hover {
 
 .blog-list-box {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 75%;
   flex-wrap: wrap;
   height: 80vh;

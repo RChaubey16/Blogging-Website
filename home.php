@@ -34,39 +34,87 @@
                 $result = $sql->get_result();
             ?>
             <?php foreach($result as $q) { ?>
-                    <div class = 'card search-card'>
-                    
-                        <div class = "card-body">
-                            <h3 class = 'heading'><?php echo $q['title'] ?></h3>
+                <div class = 'card search-card'>
+                    <div class = "card-body">
 
-                            <?php 
-                                // Query to access authorname of the blog
-                                $sql = $conn->prepare("SELECT userdetails.name FROM userdetails JOIN blogsdata WHERE (userdetails.user_id = blogsdata.user_id AND id = ?)");
-                                $sql->bind_param('i', $id);
-                                $id = $q['id'];
-                                $sql->execute();
-                                $result = $sql->get_result();
-                                $ans = $result->fetch_assoc();
-                                $blog_user_name = $ans['name'];
-                            ?>
+                        <?php 
+                            // Query to access authorname of the blog
+                            $sql = $conn->prepare("SELECT userdetails.name FROM userdetails JOIN blogsdata WHERE (userdetails.user_id = blogsdata.user_id AND id = ?)");
+                            $sql->bind_param('i', $id);
+                            $id = $q['id'];
+                            $sql->execute();
+                            $result = $sql->get_result();
+                            $ans = $result->fetch_assoc();
+                            $blog_user_name = $ans['name'];
+                        ?>
 
-                            <p id='homePage__author'>- <?php echo $blog_user_name; ?></p>
-
-                            <div class="blog-tile-img">
-                                    <img src="<?php echo $q['blog_image']?>" alt="">
-                                </div>
-                            <p id = "content"><?php echo substr($q['content'], 0, 92
-                                    ) . "...."; ?></p>
-                            <div class = "read-more-btn">
-                                <a href="blogPage.php?id=<?php echo $q['id']?>&user_id=<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                                
+                        <div class="blog-tile-img">
+                            <img src="<?php echo $q['blog_image']?>" alt="">
                         </div>
-                        
+
+                        <h3 class = 'heading'><?php echo $q['title'] ?></h3>
+
+                        <div class="blog__details">
+                            <p id='homePage__author'><i class="fas fa-user"></i> <?php echo $blog_user_name; ?></p>
+                            <p id='homePage__author'><i class="far fa-clock"></i> 16 June, 2021</p>
+                        </div>
+
+
+                        <p id = "content"><?php echo substr($q['content'], 0, 72) . "...."; ?></p>
+
+                        <div class = "read-more-btn">
+                            <a href="blogPage.php?id=<?php echo $q['id']?>&user_id=<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+                            <a href="search.php?searchBar=<?php echo $q['category'];?>" style = 'background-color: gray;'><?php echo $q['category'];?></a>
+                        </div>
+
+                    </div>
+                                    
                 </div>
             <?php } ?>
-            
+                        
 
+        </div>
+    </div>
+
+    <div class="home__blogCardsBox">
+        <?php  
+            $sql = $conn->prepare("SELECT * FROM blogsdata ORDER BY id LIMIT 2");
+            $sql->execute();
+            $result = $sql->get_result();
+        ?>
+        <div class="home__blogCards">
+            <?php foreach ($result as $r) { ?>
+                <div class="home__blogCard1">
+                    <a href="blogPage.php?id=<?php echo $r['id']; ?>&user_id=<?php echo $r['user_id']; ?>">
+                        <img src="<?php echo $r['blog_image'] ?>" alt="">
+                    </a>
+                    <div class="home__blogCardDetails">
+                        <button><?php echo $r['category']; ?></button>
+                        <h3 class = 'heading'><?php echo $r['title'] ?></h3>
+                        <div class="blog__details">
+                            <?php 
+                                // Query to access authorname of the blog
+                                 $sql = $conn->prepare("SELECT userdetails.name FROM userdetails JOIN blogsdata WHERE (userdetails.user_id = blogsdata.user_id AND id = ?)");
+                                 $sql->bind_param('i', $id);
+                                 $id = $r['id'];
+                                 $sql->execute();
+                                 $result = $sql->get_result();
+                                 $ans = $result->fetch_assoc();
+                                 $blog_user_name = $ans['name'];
+                            ?>
+                            <p id='homePage__author'><i class="fas fa-user"></i> <?php echo $blog_user_name; ?></p>
+                            <p id='homePage__author'><i class="far fa-clock"></i> 16 June, 2021</p>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+
+    <div class="home__BannerTwo">
+        <img src="https://jonnajintonsweden.com/wp-content/uploads/2020/09/morning-dimma3-4500x1873.jpg" alt="">
+        <div class="home__BannerTwoDetails">
+            <h3>"Blogging is not rocket science. It's about being yourself and putting what you have into it."</h3>
         </div>
     </div>
 
@@ -102,7 +150,6 @@
                 <div class = 'card'>
                 
                         <div class = "card-body">
-                            <h3 class = 'heading'><?php echo $q['title'] ?></h3>
 
                             <?php 
                                 // Query to access authorname of the blog
@@ -115,15 +162,23 @@
                                  $blog_user_name = $ans['name'];
                             ?>
 
-                            <p id='homePage__author'>- <?php echo $blog_user_name; ?></p>
-
                             <div class="blog-tile-img">
                                 <img src="<?php echo $q['blog_image']?>" alt="">
                             </div>
-                            <p id = "content"><?php echo substr($q['content'], 0, 92
-                                ) . "...."; ?></p>
+
+                            <h3 class = 'heading'><?php echo $q['title'] ?></h3>
+
+                            <div class="blog__details">
+                                <p id='homePage__author'><i class="fas fa-user"></i> <?php echo $blog_user_name; ?></p>
+                                <p id='homePage__author'><i class="far fa-clock"></i> 16 June, 2021</p>
+                            </div>
+                            
+
+                            <!-- <p id = "content"><?php echo substr($q['content'], 0, 92) . "...."; ?></p> -->
+
                             <div class = "read-more-btn">
                                 <a href="blogPage.php?id=<?php echo $q['id']?>&user_id=<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+                                <a href="search.php?searchBar=<?php echo $q['category'];?>" style = 'background-color: gray;'><?php echo $q['category'];?></a>
                             </div>
                             
                         </div>
@@ -201,6 +256,27 @@
                 slidesToScroll: 1,
                 autoplay: true, 
                 autoplaySpeed: 2000,
+                responsive: [
+                    {
+                    breakpoint: 769,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: false,
+                    }
+                    },
+                    {
+                    breakpoint: 413,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                    },
+                    // You can unslick at a given breakpoint now by adding:
+                    // settings: "unslick"
+                    // instead of a settings object
+                ]
             });
 	    });
         

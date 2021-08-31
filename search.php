@@ -13,10 +13,10 @@
 
     <?php 
 
-        if (isset($_POST['searchBar'])) {
+        if (isset($_GET['searchBar'])) {
             $sql = $conn->prepare("SELECT * FROM blogsdata WHERE category = ? ORDER BY id DESC");
             $sql->bind_param("s", $category);
-            $category = $_POST["searchBar"];
+            $category = $_GET["searchBar"];
             $sql->execute();
             $result = $sql->get_result();
         }

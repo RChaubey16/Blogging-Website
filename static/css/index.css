@@ -303,7 +303,7 @@ nav .nav-links ul li:hover {
 
 .read-more-btn {
   display: flex; 
-  padding: 30px;
+  padding: 20px;
   margin-top: 40px;
 }
 
@@ -319,6 +319,10 @@ nav .nav-links ul li:hover {
 
 .read-more-btn a:hover {
   background-color: #034f77;
+}
+
+.profile-read-btn a{
+  margin-left: 50px;
 }
 
 #user-heading {

@@ -129,7 +129,7 @@
                                 </div>
                                 <p id = "content" class = "personal__content"><?php echo substr($a['content'], 0, 202
                                 ) . "...."; ?></p>
-                                <div class = "read-more-btn">
+                                <div class = "read-more-btn profile-read-btn">
                                     <a href="blogPage.php?id=<?php echo $a['id']?>&user_id=<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
                                 </div>
                                 

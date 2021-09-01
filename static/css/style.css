@@ -221,7 +221,7 @@
 
 .home__blogCarousel {
   width: 80%;
-  margin: 0 12vw;
+  margin: 0 11vw;
   margin-top: 4vh;
   padding: 20px;
 }
@@ -265,7 +265,7 @@
 .home__blogCardsBox .home__blogCards .home__blogCard1 {
   height: 100%;
   width: 45%;
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .home__blogCardsBox .home__blogCards .home__blogCard1 img {

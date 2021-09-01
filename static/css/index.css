@@ -265,7 +265,7 @@ nav .nav-links ul li:hover {
   flex-direction: column;
   padding: 20px;
   margin-bottom: 70px;
-  margin: 0 70px 70px 50px;
+  margin: 0 10px 30px 10px;
   width: 500px;
   background-color: rgb(233, 229, 229);
   border-radius: 10px;
@@ -351,7 +351,7 @@ nav .nav-links ul li:hover {
 
 .index__bloggers{
   height: 80vh;
-  width: 25%;
+  width: 40%;
   margin: 35px 20px 0 0;
   padding: 15px;
   overflow-y: scroll;  

@@ -189,7 +189,133 @@
 
         <div class="index__bloggers hide-style quotes-container">
 
-            <h2 id = "index__bloggersHeading">Quotes</h2>
+            <!-- ***************** Sidebar - Social Section ****************** -->
+            <div class="social__container">
+                <div class="social__title">
+                    <h3 class="social__heading"> Social Plugin </h3>
+                </div>
+                <div class="social__content">
+                    <ul class="social-counter social social-color">
+                        <li class="facebook">
+                            <a href="https://www.facebook.com/" target="_blank" title="facebook">
+                                <i class="fab fa-2x fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="twitter">
+                            <a href="https://twitter.com/?lang=en" target="_blank" title="twitter">
+                                <i class="fab fa-2x fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="linkedin">
+                            <a href="https://www.linkedin.com/" target="_blank" title="linkedin">
+                                <i class="fab fa-2x fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                        <li class="reddit">
+                            <a href="https://www.reddit.com/" target="_blank" title="reddit">
+                                <i class="fab fa-2x fa-reddit"></i>
+                            </a>
+                        </li>
+                        <li class="pinterest">
+                            <a href="https://in.pinterest.com/" target="_blank" title="pinterest">
+                                <i class="fab fa-2x fa-pinterest-p"></i>
+                            </a>
+                        </li>
+                        <li class="instagram">
+                            <a href="https://www.instagram.com/" target="_blank" title="instagram">
+                                <i class="fab fa-2x fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="youtube">
+                            <a href="https://www.youtube.com/" target="_blank" title="youtube">
+                                <i class="fab fa-2x fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li class="whatsapp">
+                            <a href="https://www.whatsapp.com/" target="_blank" title="whatsapp">
+                                <i class="fab fa-2x fa-whatsapp"></i>
+                            </a>
+                        </li>
+                        <li class="github">
+                            <a href="https://github.com/" target="_blank" title="github">
+                                <i class="fab fa-2x fa-github"></i>
+                            </a>
+                        </li>       
+                        <li class="slack">
+                            <a href="https://slack.com/intl/en-in/" target="_blank" title="slack">
+                                <i class="fab fa-2x fa-slack"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ***************** Sidebar - Popular Posts ****************** -->
+
+            <div class="popularPosts__container">
+                <div class="popularPosts__title">
+                    <h3 class="popularPosts__heading">
+                            Popular Posts
+                        </h3>
+                    </div>
+                <?php 
+                    $sql = $conn->prepare("SELECT * from blogsdata ORDER BY id ASC LIMIT 3");
+                    $sql->execute();
+                    $result = $sql->get_result();
+                
+                    foreach($result as $r) {  ?>
+
+                    <div class="popularPosts__content">
+                        <div class="popularPosts__img">
+                            <img src="<?php echo $r['blog_image']; ?>" alt="">
+                        </div>
+                        <div class="popularPosts__info">
+                            <a href="http://localhost/BlogIt/blogPage.php?id=<?php echo $r['id']; ?>&user_id=<?php echo $r['user_id']; ?>">
+                                <?php echo substr($r['content'], 0, 60) . "..."; ?>
+                            </a>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+
+            <!-- *************** SideBar - Category Section ****************** -->
+
+            <div class="category__container">
+                <div class="category__title">
+                    <h3 class="category__heading">
+                        Categories
+                    </h3>
+                </div>
+
+                <?php 
+                    $sql = $conn->prepare("SELECT category FROM blogsdata LIMIT 4");
+                    $sql->execute();
+                    $result = $sql->get_result();
+
+                    foreach ($result as $a) { ?>
+
+                    <a href="search.php?searchBar=<?php echo $a['category']; ?>&nav__searchBtn=">
+                        <div class="category__content">
+                            <div class="category__info">
+                                > <?php echo $a['category']; ?>
+                            </div>
+                            <div class="category__count">
+                                <?php 
+                                    $sql = $conn->prepare("SELECT id FROM blogsdata where category = ?");
+                                    $sql->bind_param("s", $category);
+                                    $category = $a['category'];
+                                    $sql->execute();
+                                    $result = $sql->get_result();
+                                    $count = mysqli_num_rows($result);
+                                ?>
+                                (<?php echo $count; ?>)
+                            </div>
+                        </div>
+                    </a>
+                <?php } ?>
+            </div>
+
+            <!-- <h2 id = "index__bloggersHeading">Quotes</h2>
 
             <div class="blogger-container quote-box">
                 
@@ -241,7 +367,7 @@
 
                 </div>
                     
-            </div>
+            </div> -->
         </div>
     </div>
     

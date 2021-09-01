@@ -413,6 +413,294 @@
   }
 }
 
+.index__main {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.index__main .blog-list-box {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 95vh;
+}
+
+.index__main .blog-list-box .card {
+  width: 400px;
+}
+
+.index__main .index__bloggers {
+  height: auto;
+}
+
+.index__main .index__bloggers .social__container {
+  width: 100%;
+  padding: 7px 0 0 13px;
+  margin-bottom: 15px;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+.index__main .index__bloggers .social__container .social__title .social__heading {
+  position: relative;
+  display: block;
+  height: 34px;
+  font-size: 1.3rem;
+  color: #19ddc4;
+  font-weight: 600;
+  line-height: 34px;
+  padding: 0;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #f2f2f6;
+}
+
+.index__main .index__bloggers .social__container .social__content ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style: none;
+}
+
+.index__main .index__bloggers .social__container .social__content ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 4vw;
+  height: 6vh;
+  margin: 0 15px 10px 0;
+  -webkit-transition: all .17s ease-in-out;
+  transition: all .17s ease-in-out;
+}
+
+.index__main .index__bloggers .social__container .social__content ul li:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
+.index__main .index__bloggers .social__container .social__content ul .facebook {
+  background-color: #4267B2;
+}
+
+.index__main .index__bloggers .social__container .social__content ul .facebook a i {
+  color: white;
+}
+
+.index__main .index__bloggers .social__container .social__content ul .twitter {
+  background-color: #0077b5;
+}
+
+.index__main .index__bloggers .social__container .social__content ul .twitter a i {
+  color: white;
+}
+
+.index__main .index__bloggers .social__container .social__content ul .linkedin {
+  background-color: #1DA1F2;
+}
+
+.index__main .index__bloggers .social__container .social__content ul .linkedin a i {
+  color: white;
+}
+
+.index__main .index__bloggers .social__container .social__content ul .reddit {
+  background-color: #FF5700;
+}
+
+.index__main .index__bloggers .social__container .social__content ul .reddit a i {
+  color: white;
+}
+
+.index__main .index__bloggers .social__container .social__content ul .pinterest {
+  background-color: #E60023;
+}
+
+.index__main .index__bloggers .social__container .social__content ul .pinterest a i {
+  color: white;
+}
+
+.index__main .index__bloggers .social__container .social__content ul .instagram {
+  background-color: #E1306C;
+}
+
+.index__main .index__bloggers .social__container .social__content ul .instagram a i {
+  color: white;
+}
+
+.index__main .index__bloggers .social__container .social__content ul .youtube {
+  background-color: #FF0000;
+}
+
+.index__main .index__bloggers .social__container .social__content ul .youtube a i {
+  color: white;
+}
+
+.index__main .index__bloggers .social__container .social__content ul .whatsapp {
+  background-color: #25D366;
+}
+
+.index__main .index__bloggers .social__container .social__content ul .whatsapp a i {
+  color: white;
+}
+
+.index__main .index__bloggers .social__container .social__content ul .github {
+  background-color: #4078c0;
+}
+
+.index__main .index__bloggers .social__container .social__content ul .github a i {
+  color: white;
+}
+
+.index__main .index__bloggers .social__container .social__content ul .slack {
+  background-color: #E01E5A;
+}
+
+.index__main .index__bloggers .social__container .social__content ul .slack a i {
+  color: white;
+}
+
+.index__main .index__bloggers .popularPosts__container {
+  padding: 7px 13px 7px 13px;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+.index__main .index__bloggers .popularPosts__container .popularPosts__title .popularPosts__heading {
+  position: relative;
+  display: block;
+  height: 34px;
+  font-size: 1.3rem;
+  color: #19ddc4;
+  font-weight: 600;
+  line-height: 34px;
+  padding: 0;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #f2f2f6;
+}
+
+.index__main .index__bloggers .popularPosts__container .popularPosts__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+}
+
+.index__main .index__bloggers .popularPosts__container .popularPosts__content .popularPosts__img {
+  height: 11vh;
+  width: 30%;
+  margin-right: 10px;
+}
+
+.index__main .index__bloggers .popularPosts__container .popularPosts__content .popularPosts__img img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-transition: all .17s ease-in-out;
+  transition: all .17s ease-in-out;
+}
+
+.index__main .index__bloggers .popularPosts__container .popularPosts__content .popularPosts__img img:hover {
+  opacity: 0.8;
+}
+
+.index__main .index__bloggers .popularPosts__container .popularPosts__content .popularPosts__info {
+  width: 90%;
+  margin-right: 0.5rem;
+}
+
+.index__main .index__bloggers .popularPosts__container .popularPosts__content .popularPosts__info a {
+  font-size: 1rem;
+  color: black;
+  font-weight: 700;
+  -webkit-transition: all .17s ease-in-out;
+  transition: all .17s ease-in-out;
+}
+
+.index__main .index__bloggers .popularPosts__container .popularPosts__content .popularPosts__info a:hover {
+  color: #19ddc4;
+}
+
+.index__main .index__bloggers .category__container {
+  padding: 7px 13px 7px 13px;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+}
+
+.index__main .index__bloggers .category__container .category__title .category__heading {
+  position: relative;
+  display: block;
+  height: 34px;
+  font-size: 1.3rem;
+  color: #19ddc4;
+  font-weight: 600;
+  line-height: 34px;
+  padding: 0;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #f2f2f6;
+}
+
+.index__main .index__bloggers .category__container a {
+  color: #080808;
+}
+
+.index__main .index__bloggers .category__container .category__content {
+  margin-bottom: 15px;
+  padding-bottom: 20px;
+  padding: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 2px solid #f2f2f6;
+  -webkit-transition: all .17s ease-in-out;
+  transition: all .17s ease-in-out;
+}
+
+.index__main .index__bloggers .category__container .category__content .category__info, .index__main .index__bloggers .category__container .category__content .category__conunt {
+  margin-bottom: 10px;
+}
+
+.index__main .index__bloggers .category__container .category__content:hover {
+  color: #19ddc4;
+}
+
+@media only screen and (max-width: 769px) {
+  .index__main {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 5vh;
+  }
+  .index__main .blog-list-box {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .index__main .blog-list-box .card {
+    width: 315px;
+  }
+  .index__main .index__bloggers .social__container .social__content ul {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .index__main .index__bloggers .social__container .social__content ul li {
+    width: 13vw;
+  }
+}
+
 .blog-tile-img img {
   -webkit-transition: all 150ms ease-in-out;
   transition: all 150ms ease-in-out;

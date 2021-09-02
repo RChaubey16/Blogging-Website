@@ -89,32 +89,7 @@
 
                 <?php } ?>
 
-                <!-- ******************************************** -->
-
-                <div class="blog__likes">
-
-                    <!-- liking the post -->
-            
-                    <i <?php if (userLiked($q['id'])): ?>
-                            class="fas fa-2x fa-thumbs-up like-btn"
-                        <?php else: ?>
-                            class="far fa-2x fa-thumbs-up like-btn"  
-                        <?php endif ?>  
-                        data-id = "<?php echo $q['id']; ?>"></i>
-                    <input type="text" hidden id = "user" value = "<?php echo $_SESSION['uid']; ?>">
-                    <span class = "likes"><?php echo getLikes($q['id']); ?></span>
-                    
-
-                    <!-- Disliking the post -->
-
-                    <i <?php if (userDisliked($q['id'])): ?>
-                            class="fas fa-2x fa-thumbs-down dislike-btn"
-                        <?php else: ?>
-                            class="far fa-2x fa-thumbs-down dislike-btn"  
-                        <?php endif ?>  
-                        data-id = "<?php echo $q['id']; ?>"></i>
-                        <span class = "likes"><?php echo getDislikes($q['id']); ?></span>
-                </div>   
+          
 
             <?php } ?>
 

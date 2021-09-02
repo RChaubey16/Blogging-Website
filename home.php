@@ -371,8 +371,56 @@
         </div>
     </div>
 
- 
-        
+    <!-- Footer -->
+
+    <div class="footer">
+        <div class="details">
+
+            <div class="location">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="location-details">
+
+                    <p>Example Street.</p>
+                </div>
+            </div>
+            <div class="phone">
+                <i class="fas fa-phone"></i>
+                <div class="location-details">
+
+                    <p>+1 9999 9999</p>
+                </div>
+            </div>
+            <div class="email">
+                <i class="fas fa-envelope-square"></i>
+                <div class="location-details">
+                    <p>example@example.com</p>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div class="links">
+            
+            <ul>
+                <!-- <h3>Links</h3> -->
+                <li>
+                    <a href="home.php">> Home</a>
+                </li>
+                <li>
+                     <a href="login.php">> Login</a>
+                </li>
+                <li>
+                    <a href="register.php">> Register</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="about">
+            <h3>About Us</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+        </div>
+    </div>
 
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>

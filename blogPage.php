@@ -1,9 +1,12 @@
 <?php 
     include "dbLogic.php";
+    include "likes.php";
     session_start();
 ?> 
 <?php require_once('partials/header.php') ?>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+<script src="static/js/like.js"></script>
 <link rel="stylesheet" href="static/css/style.css?v=<?php echo time(); ?>">
     <title>BlogIt - Blog</title>
 </head>
@@ -85,6 +88,33 @@
                             
 
                 <?php } ?>
+
+                <!-- ******************************************** -->
+
+                <div class="blog__likes">
+
+                    <!-- liking the post -->
+            
+                    <i <?php if (userLiked($q['id'])): ?>
+                            class="fas fa-2x fa-thumbs-up like-btn"
+                        <?php else: ?>
+                            class="far fa-2x fa-thumbs-up like-btn"  
+                        <?php endif ?>  
+                        data-id = "<?php echo $q['id']; ?>"></i>
+                    <input type="text" hidden id = "user" value = "<?php echo $_SESSION['uid']; ?>">
+                    <span class = "likes"><?php echo getLikes($q['id']); ?></span>
+                    
+
+                    <!-- Disliking the post -->
+
+                    <i <?php if (userDisliked($q['id'])): ?>
+                            class="fas fa-2x fa-thumbs-down dislike-btn"
+                        <?php else: ?>
+                            class="far fa-2x fa-thumbs-down dislike-btn"  
+                        <?php endif ?>  
+                        data-id = "<?php echo $q['id']; ?>"></i>
+                        <span class = "likes"><?php echo getDislikes($q['id']); ?></span>
+                </div>   
 
             <?php } ?>
 
@@ -171,4 +201,7 @@
         <?php } ?>
     </div>
 
-    <?php require_once('partials/footer.php') ?>
+<script src="static/js/like.js"></script>
+
+   
+<?php require_once('partials/footer.php') ?>

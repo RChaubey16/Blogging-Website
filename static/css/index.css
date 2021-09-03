@@ -1127,7 +1127,7 @@ input[type="checkbox"] {
   .action-btns a,
   #delete-post-btn {
     padding: 7px 35px;
-    margin: 0 50px 50px 50px;
+    margin: 0;
   }
 
   /*Create Post Page*/

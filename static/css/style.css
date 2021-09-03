@@ -429,11 +429,11 @@
   width: 400px;
 }
 
-.index__main .index__bloggers {
+.index__bloggers {
   height: auto;
 }
 
-.index__main .index__bloggers .social__container {
+.index__bloggers .social__container {
   width: 100%;
   padding: 7px 0 0 13px;
   margin-bottom: 15px;
@@ -441,7 +441,7 @@
           box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);
 }
 
-.index__main .index__bloggers .social__container .social__title .social__heading {
+.index__bloggers .social__container .social__title .social__heading {
   position: relative;
   display: block;
   height: 34px;
@@ -454,7 +454,7 @@
   border-bottom: 2px solid #f2f2f6;
 }
 
-.index__main .index__bloggers .social__container .social__content ul {
+.index__bloggers .social__container .social__content ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -463,7 +463,7 @@
   list-style: none;
 }
 
-.index__main .index__bloggers .social__container .social__content ul li {
+.index__bloggers .social__container .social__content ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -480,98 +480,98 @@
   transition: all .17s ease-in-out;
 }
 
-.index__main .index__bloggers .social__container .social__content ul li:hover {
+.index__bloggers .social__container .social__content ul li:hover {
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
 }
 
-.index__main .index__bloggers .social__container .social__content ul .facebook {
+.index__bloggers .social__container .social__content ul .facebook {
   background-color: #4267B2;
 }
 
-.index__main .index__bloggers .social__container .social__content ul .facebook a i {
+.index__bloggers .social__container .social__content ul .facebook a i {
   color: white;
 }
 
-.index__main .index__bloggers .social__container .social__content ul .twitter {
+.index__bloggers .social__container .social__content ul .twitter {
   background-color: #0077b5;
 }
 
-.index__main .index__bloggers .social__container .social__content ul .twitter a i {
+.index__bloggers .social__container .social__content ul .twitter a i {
   color: white;
 }
 
-.index__main .index__bloggers .social__container .social__content ul .linkedin {
+.index__bloggers .social__container .social__content ul .linkedin {
   background-color: #1DA1F2;
 }
 
-.index__main .index__bloggers .social__container .social__content ul .linkedin a i {
+.index__bloggers .social__container .social__content ul .linkedin a i {
   color: white;
 }
 
-.index__main .index__bloggers .social__container .social__content ul .reddit {
+.index__bloggers .social__container .social__content ul .reddit {
   background-color: #FF5700;
 }
 
-.index__main .index__bloggers .social__container .social__content ul .reddit a i {
+.index__bloggers .social__container .social__content ul .reddit a i {
   color: white;
 }
 
-.index__main .index__bloggers .social__container .social__content ul .pinterest {
+.index__bloggers .social__container .social__content ul .pinterest {
   background-color: #E60023;
 }
 
-.index__main .index__bloggers .social__container .social__content ul .pinterest a i {
+.index__bloggers .social__container .social__content ul .pinterest a i {
   color: white;
 }
 
-.index__main .index__bloggers .social__container .social__content ul .instagram {
+.index__bloggers .social__container .social__content ul .instagram {
   background-color: #E1306C;
 }
 
-.index__main .index__bloggers .social__container .social__content ul .instagram a i {
+.index__bloggers .social__container .social__content ul .instagram a i {
   color: white;
 }
 
-.index__main .index__bloggers .social__container .social__content ul .youtube {
+.index__bloggers .social__container .social__content ul .youtube {
   background-color: #FF0000;
 }
 
-.index__main .index__bloggers .social__container .social__content ul .youtube a i {
+.index__bloggers .social__container .social__content ul .youtube a i {
   color: white;
 }
 
-.index__main .index__bloggers .social__container .social__content ul .whatsapp {
+.index__bloggers .social__container .social__content ul .whatsapp {
   background-color: #25D366;
 }
 
-.index__main .index__bloggers .social__container .social__content ul .whatsapp a i {
+.index__bloggers .social__container .social__content ul .whatsapp a i {
   color: white;
 }
 
-.index__main .index__bloggers .social__container .social__content ul .github {
+.index__bloggers .social__container .social__content ul .github {
   background-color: #4078c0;
 }
 
-.index__main .index__bloggers .social__container .social__content ul .github a i {
+.index__bloggers .social__container .social__content ul .github a i {
   color: white;
 }
 
-.index__main .index__bloggers .social__container .social__content ul .slack {
+.index__bloggers .social__container .social__content ul .slack {
   background-color: #E01E5A;
 }
 
-.index__main .index__bloggers .social__container .social__content ul .slack a i {
+.index__bloggers .social__container .social__content ul .slack a i {
   color: white;
 }
 
-.index__main .index__bloggers .popularPosts__container {
+.index__bloggers .popularPosts__container {
   padding: 7px 13px 7px 13px;
   -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);
 }
 
-.index__main .index__bloggers .popularPosts__container .popularPosts__title .popularPosts__heading {
+.index__bloggers .popularPosts__container .popularPosts__title .popularPosts__heading {
   position: relative;
   display: block;
   height: 34px;
@@ -584,7 +584,7 @@
   border-bottom: 2px solid #f2f2f6;
 }
 
-.index__main .index__bloggers .popularPosts__container .popularPosts__content {
+.index__bloggers .popularPosts__container .popularPosts__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -594,13 +594,13 @@
   margin-bottom: 15px;
 }
 
-.index__main .index__bloggers .popularPosts__container .popularPosts__content .popularPosts__img {
+.index__bloggers .popularPosts__container .popularPosts__content .popularPosts__img {
   height: 11vh;
   width: 30%;
   margin-right: 10px;
 }
 
-.index__main .index__bloggers .popularPosts__container .popularPosts__content .popularPosts__img img {
+.index__bloggers .popularPosts__container .popularPosts__content .popularPosts__img img {
   height: 100%;
   width: 100%;
   -o-object-fit: contain;
@@ -609,16 +609,16 @@
   transition: all .17s ease-in-out;
 }
 
-.index__main .index__bloggers .popularPosts__container .popularPosts__content .popularPosts__img img:hover {
+.index__bloggers .popularPosts__container .popularPosts__content .popularPosts__img img:hover {
   opacity: 0.8;
 }
 
-.index__main .index__bloggers .popularPosts__container .popularPosts__content .popularPosts__info {
+.index__bloggers .popularPosts__container .popularPosts__content .popularPosts__info {
   width: 90%;
   margin-right: 0.5rem;
 }
 
-.index__main .index__bloggers .popularPosts__container .popularPosts__content .popularPosts__info a {
+.index__bloggers .popularPosts__container .popularPosts__content .popularPosts__info a {
   font-size: 1rem;
   color: black;
   font-weight: 700;
@@ -626,18 +626,18 @@
   transition: all .17s ease-in-out;
 }
 
-.index__main .index__bloggers .popularPosts__container .popularPosts__content .popularPosts__info a:hover {
+.index__bloggers .popularPosts__container .popularPosts__content .popularPosts__info a:hover {
   color: #19ddc4;
 }
 
-.index__main .index__bloggers .category__container {
+.index__bloggers .category__container {
   padding: 7px 13px 7px 13px;
   -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);
   margin-top: 20px;
 }
 
-.index__main .index__bloggers .category__container .category__title .category__heading {
+.index__bloggers .category__container .category__title .category__heading {
   position: relative;
   display: block;
   height: 34px;
@@ -650,11 +650,11 @@
   border-bottom: 2px solid #f2f2f6;
 }
 
-.index__main .index__bloggers .category__container a {
+.index__bloggers .category__container a {
   color: #080808;
 }
 
-.index__main .index__bloggers .category__container .category__content {
+.index__bloggers .category__container .category__content {
   margin-bottom: 15px;
   padding-bottom: 20px;
   padding: 0 10px;
@@ -669,11 +669,11 @@
   transition: all .17s ease-in-out;
 }
 
-.index__main .index__bloggers .category__container .category__content .category__info, .index__main .index__bloggers .category__container .category__content .category__conunt {
+.index__bloggers .category__container .category__content .category__info, .index__bloggers .category__container .category__content .category__conunt {
   margin-bottom: 10px;
 }
 
-.index__main .index__bloggers .category__container .category__content:hover {
+.index__bloggers .category__container .category__content:hover {
   color: #19ddc4;
 }
 
@@ -861,6 +861,10 @@
   margin-bottom: 4vh;
 }
 
+.footer .details .location i, .footer .details .phone i, .footer .details .email i {
+  color: #0488d1;
+}
+
 .footer .details .location .location-details, .footer .details .phone .location-details, .footer .details .email .location-details {
   margin-left: 25px;
 }
@@ -956,7 +960,7 @@
   }
 }
 
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 412px) {
   .footer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -974,6 +978,233 @@
     margin: 5vh 0;
   }
   .footer .about {
+    width: 100%;
+  }
+}
+
+/* Blog Page */
+.blogPage__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 80%;
+  height: auto;
+  margin-top: 5vh;
+  margin-left: 10vw;
+}
+
+.blogPage__container .blog-container {
+  width: 70%;
+  height: auto;
+  margin-right: 10px;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+.blogPage__container .blog-container #heading {
+  width: 90%;
+  padding: 0;
+  margin: 2vh 0 1vh 1vw;
+  text-align: left;
+  color: black;
+  background-color: white;
+  font-weight: normal;
+}
+
+.blogPage__container .blog-container .blogPage__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-left: 1vw;
+  border-bottom: 2px solid #f2f2f6;
+}
+
+.blogPage__container .blog-container .blogPage__details #homePage__author {
+  color: #AAAAAA;
+}
+
+.blogPage__container .blog-container .blog__imageContainer {
+  padding: 15px;
+  margin-top: 2vh;
+}
+
+.blogPage__container .blog-container .blog-content {
+  word-wrap: break-word;
+  width: 95%;
+  padding: 0;
+  margin: 2vw 0 1vw 1vw;
+  font-weight: normal;
+  color: #656565;
+  background-color: white;
+}
+
+.blogPage__container .blog-container .blog__category {
+  padding: 8px;
+  width: auto;
+  margin-left: 1vw;
+  font-size: 1rem;
+  background-color: white;
+  border: 0;
+  border: 1px solid lightgray;
+}
+
+.blogPage__container .blog-container .blog__likes {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 5vh 0;
+}
+
+.blogPage__container .blog-container .blog__likes .like-msg {
+  margin: 0;
+  padding-top: 1vh;
+  font-size: 1rem;
+}
+
+.blogPage__container .blog-container .action-btns a {
+  font-size: 1rem;
+  margin-right: 10px;
+  margin-bottom: 3vh;
+}
+
+.blogPage__container .blog-container .action-btns #delete-post-btn {
+  font-size: 1rem;
+  margin-right: 2vw;
+}
+
+.blogPage__container .blog-container .blogPage__suggestions {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.blogPage__container .blog-container .blogPage__suggestions .suggestion__title {
+  color: #19ddc4;
+  margin-bottom: 15px;
+}
+
+.blogPage__container .blog-container .blogPage__suggestions .posts_box {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.blogPage__container .blog-container .blogPage__suggestions .suggestion__posts {
+  width: 33%;
+}
+
+.blogPage__container .blog-container .blogPage__suggestions .suggestion__posts .post {
+  margin-right: 10px;
+}
+
+.blogPage__container .blog-container .blogPage__suggestions .suggestion__posts .post .post_img {
+  height: 18vh;
+  width: 100%;
+}
+
+.blogPage__container .blog-container .blogPage__suggestions .suggestion__posts .post .post_img img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all .17s ease-in-out;
+  transition: all .17s ease-in-out;
+}
+
+.blogPage__container .blog-container .blogPage__suggestions .suggestion__posts .post .post_img img:hover {
+  opacity: 0.8;
+}
+
+.blogPage__container .blog-container .blogPage__suggestions .suggestion__posts .post .post_title {
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+.blogPage__container .blog-container .blogPage__suggestions .suggestion__posts .post .post_title a {
+  text-decoration: none;
+  color: black;
+  -webkit-transition: all .17s ease-in-out;
+  transition: all .17s ease-in-out;
+}
+
+.blogPage__container .blog-container .blogPage__suggestions .suggestion__posts .post .post_title a:hover {
+  color: #19ddc4;
+}
+
+.blogPage__container .blog-container .blog__comments-container {
+  text-align: left;
+}
+
+.blogPage__container .blog-container .blog__comments-container h2 {
+  color: #19ddc4;
+}
+
+.blogPage__container .blog-container .blog__comments-container form {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.blogPage__container .blog-container .blog__comments-container form input {
+  font-weight: normal;
+}
+
+.blogPage__container .blog-container .blog__comments-container .blog__comment-box {
+  height: auto;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.blogPage__container .blog-container .blog__comments-container .blog__comment-box .blog__comment {
+  width: 80%;
+}
+
+.blogPage__container .blog-container .blog__comments-container .blog__comment-box .blog__comment .blog__likes {
+  margin: 0;
+}
+
+@media only screen and (max-width: 769px) {
+  .blogPage__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0;
+    width: 100%;
+  }
+  .blogPage__container .blog-container {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 412px) {
+  .blogPage__container .blog-container .action-btns {
+    margin-bottom: 20px;
+  }
+  .blogPage__container .blog-container .blog-content {
+    padding: 5px;
+  }
+  .blogPage__container .blog-container .blogPage__suggestions .posts_box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .blogPage__container .blog-container .blogPage__suggestions .posts_box .post {
+    margin-bottom: 20px;
+  }
+  .blogPage__container .blog-container .blogPage__suggestions .suggestion__posts {
+    width: 100%;
+  }
+  .blogPage__container .blog-container .blog__comments-container .blog__comment-box .blog__comment {
     width: 100%;
   }
 }

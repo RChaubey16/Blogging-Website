@@ -1145,6 +1145,20 @@ $black: rgb(8, 8, 8);
             margin-left: 0;
         }
     }
+    .index__bloggers{
+        .social__container{
+
+            .social__content{
+                ul{
+                    justify-content: center;
+                    li {
+                        width: 13vw;
+                    }
+                }
+            }    
+        }
+
+    }
 }
 
 @media only screen and (max-width: 412px) {

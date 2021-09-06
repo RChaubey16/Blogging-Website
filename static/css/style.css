@@ -1183,6 +1183,14 @@
     width: 100%;
     margin-left: 0;
   }
+  .index__bloggers .social__container .social__content ul {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .index__bloggers .social__container .social__content ul li {
+    width: 13vw;
+  }
 }
 
 @media only screen and (max-width: 412px) {

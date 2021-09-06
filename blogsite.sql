@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 30, 2021 at 09:22 AM
+-- Generation Time: Sep 06, 2021 at 09:13 AM
 -- Server version: 8.0.26-0ubuntu0.20.04.2
 -- PHP Version: 8.0.9
 
@@ -33,7 +33,8 @@ CREATE TABLE `blogsdata` (
   `title` varchar(255) NOT NULL,
   `content` longtext NOT NULL,
   `user_id` int NOT NULL,
-  `blog_image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+  `blog_image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `category` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -56,7 +57,7 @@ CREATE TABLE `blog_likes` (
 
 CREATE TABLE `comments` (
   `id` int NOT NULL,
-  `comment` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
   `uid` int NOT NULL,
   `bid` int NOT NULL,
   `likes` int NOT NULL
@@ -85,7 +86,7 @@ CREATE TABLE `userdetails` (
   `name` varchar(20) NOT NULL,
   `email` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
-  `bio` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `bio` text CHARACTER SET utf8mb4,
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

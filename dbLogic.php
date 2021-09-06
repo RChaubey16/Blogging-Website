@@ -35,7 +35,7 @@
 
 
         $title = $_REQUEST['title'];
-        $content = $_REQUEST['content'];
+        $content = $_REQUEST['editor1'];
         $category = $_REQUEST['blog__topic'];
         $userId = $_REQUEST['userId'];
         $userName = $_REQUEST['user_name'];
@@ -66,7 +66,7 @@
 
         $id = $_REQUEST['id'];
         $title = $_REQUEST['title'];
-        $content = $_REQUEST['content'];
+        $content = $_REQUEST['editor1'];
         $sql->execute();
 
         // Normal SQL query

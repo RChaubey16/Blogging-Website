@@ -59,8 +59,11 @@
                             <p id='homePage__author'><i class="far fa-clock"></i> 16 June, 2021</p>
                         </div>
 
+                        <div class="blogPage__content">
+                            
+                            <p id = "content"><?php echo substr($q['content'], 0, 72) . "...."; ?></p>
+                        </div>
 
-                        <p id = "content"><?php echo substr($q['content'], 0, 72) . "...."; ?></p>
 
                         <div class = "read-more-btn">
                             <a href="blogPage.php?id=<?php echo $q['id']?>&user_id=<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>

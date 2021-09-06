@@ -458,6 +458,10 @@ nav .nav-links ul li:hover {
   background-color: lightgray;
 }
 
+.create-post .blog-image{
+  margin-bottom: 40px;
+}
+
 .create-post textarea {
   margin: 0 50px;
   margin-top: 50px;
@@ -472,6 +476,10 @@ nav .nav-links ul li:hover {
   background-color: lightgray;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
+}
+
+.create-post button{
+  margin-bottom: 50px;
 }
 
 #add-post-btn {

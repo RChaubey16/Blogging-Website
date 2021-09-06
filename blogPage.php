@@ -46,7 +46,11 @@
                     </div>
                 <?php } ?>
 
-                <p class='blog-content'><?php echo nl2br($q['content']); ?></p>
+                <div class="blogPage__content">
+
+                    <p class='blog-content'><?php echo nl2br($q['content']); ?></p>
+                </div>
+
 
                 <button class = "blog__category"><?php echo $q['category']; ?></button>
 

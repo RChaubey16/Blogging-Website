@@ -1,0 +1,108 @@
+/* NavBar Component */
+
+.nav{
+    display: flex;
+    background: $white;
+    align-items: center;
+    justify-content: space-around;
+    font-family: $font-stack;
+
+    .icon {
+        letter-spacing: 1px;
+        font-size: 1.7rem;
+        font-weight: bolder;
+        color: $common;
+        text-decoration: none;
+    }
+
+    .nav__searchContainer{
+        form{
+            display: flex;
+            align-items: center;
+
+            input{
+                height: 3.3vh;
+                width: 17vw;
+                padding-left: 0.7rem;
+                margin-right: 0.3rem;
+                border-radius: 7px;
+                border: 0;
+                outline: 0;
+                background-color: $searchInput;
+            }
+
+            button{
+                font-size: 1.2rem;
+                background: transparent;
+                border: 0;
+
+                i{
+                    color: $searchIcon;
+                }
+            }
+        }
+    }
+
+    .right-nav {
+        display: flex;
+        color: $black;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1rem;
+        line-height: 22px;
+
+        .nav-links a{
+            margin-left: 15px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $black;
+            transition: all 150ms ease-in-out;
+        }
+
+        .nav-links a:hover{
+            color: $common;
+        }
+    }
+}
+
+@media only screen and (max-width: 769px) {
+
+    .nav{
+        justify-content: space-between;
+    }
+
+    .nav__searchContainer{
+        display: none;
+    }
+
+    .right-nav{
+        .menu-icon{
+            display: flex;
+        }
+
+        .nav-links{
+            display: none;
+        }
+    }
+
+    .nav-box{
+        z-index: 100000;
+        position: absolute;
+        width: 100%;
+
+        .nav-links{
+            ul li{
+                text-transform: uppercase;
+                
+                a{
+                    color: $black;  
+                    transition: all 150ms ease-in-out; 
+                }
+                a:hover{
+                    color: $common;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

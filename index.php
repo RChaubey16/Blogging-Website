@@ -164,8 +164,6 @@
                                 <div class="blogPage__content">
                                     <p id = "content"><?php echo substr($q['content'], 0, 92) . "...."; ?></p>    
                                 </div>
-                                    
-                                    
 
                                 <div class = "read-more-btn">
                                     <a href="blogPage.php?id=<?php echo $q['id']?>&user_id=<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>

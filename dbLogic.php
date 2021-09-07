@@ -122,7 +122,11 @@
 
         /* If user does not exists then register the user */
         if ($pwd === $con_pwd){
-            $sql_query = "INSERT INTO userdetails(name, email, password, date) VALUES('$name', '$email', '$pwd', current_timestamp())";
+
+            $hashed_password = password_hash($pwd, PASSWORD_DEFAULT);
+            $bio = '';
+
+            $sql_query = "INSERT INTO userdetails(name, email, password, bio, date) VALUES('$name', '$email', '$hashed_password', '$bio', current_timestamp())";
             mysqli_query($conn, $sql_query);
             header("Location: login.php?info=registered");
             exit();

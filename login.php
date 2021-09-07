@@ -12,14 +12,20 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
       $username = $_POST['username'];
       $password = $_POST['password'];
-
-      $sql = "SELECT * from userdetails where name = '$username' AND password = '$password'";
+      
+      $sql = "SELECT * from userdetails where name = '$username'";
       $result = mysqli_query($conn, $sql);
       $num = mysqli_num_rows($result);
       $row = mysqli_fetch_assoc($result);         // after executing the query, an object is returned. "mysqli_fetch_assoc()" converts the object into an associative array
 
-      if ($num == 1){
+      if ($password == $row['password']){
+        $auth = true;
+      }
 
+      $hashed_pwd = $row['password'];
+
+      if (password_verify($password, $hashed_pwd) or $auth == true){
+           
         if (!empty($_POST['remember'])){
 
           // Setting cookies

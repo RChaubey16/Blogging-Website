@@ -1,0 +1,8 @@
+@import './colors';
+
+@mixin socialIcons($bgcolor){
+    background-color: $bgcolor;
+    a i{
+        color: $white;
+    }
+}

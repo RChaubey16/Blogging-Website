@@ -1,5 +1,7 @@
 // Blog List Component - Home page
 
+
+
 .index__main{
     width: 80%;
     margin-left: 10%;
@@ -61,73 +63,44 @@
                     }
 
                     .facebook{
-                        background-color: $facebook;
-                        a i{
-                            color: $white;
-                        }
+                        @include socialIcons($facebook);
                     }
 
                     .twitter{
-                        background-color: $twitter;
-                        a i{
-                            color: $white;
-                        }
+                        @include socialIcons($twitter);
+                       
                     }
 
                     .linkedin{
-                        background-color: $linkedin;
-                        a i{
-                            color: $white;
-                        }
+                        @include socialIcons($linkedin);
                     }
 
                     .reddit{
-                        background-color: $reddit;
-                        a i{
-                            color: $white;
-                        }
+                        @include socialIcons($reddit);
                     }
 
                     .pinterest{
-                        background-color: $pinterest;
-                        a i{
-                            color: $white;
-                        }
+                        @include socialIcons($pinterest);
                     }
 
                     .instagram{
-                        background-color: $instagram;
-                        a i{
-                            color: $white;
-                        }
+                        @include socialIcons($instagram);
                     }
 
                     .youtube{
-                        background-color: $youtube;
-                        a i{
-                            color: $white;
-                        }
+                        @include socialIcons($youtube);
                     }
 
                     .whatsapp{
-                        background-color: $whatsapp;
-                        a i{
-                            color: $white;
-                        }
+                        @include socialIcons($whatsapp);
                     }
 
                     .github{
-                        background-color: $github;
-                        a i{
-                            color: $white;
-                        }
+                        @include socialIcons($github);
                     }
 
                     .slack{
-                        background-color: $slack;
-                        a i{
-                            color: $white;
-                        }
+                        @include socialIcons($slack);
                     }
                 }
             }

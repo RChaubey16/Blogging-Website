@@ -21,6 +21,31 @@
         <img src="https://1.bp.blogspot.com/-0FL-YgfsMOU/YL76dPlRYBI/AAAAAAAAK28/Ta4Y4TE2keYiGX_T2jHlT2rWGZL1A3noQCNcBGAsYHQ/s16000/mountain2.jpg" alt="">
     </div>
 
+    <?php 
+
+        $sql = $conn->prepare("SELECT * FROM blogsdata ORDER BY id ASC LIMIT 3");
+        $sql->execute();
+        $result = $sql->get_result();
+        $ans = $result->fetch_assoc();
+
+        if ($ans != null) { ?>
+
+        <div class="home__bannerContent">
+            <div class="home__bannerContent-title">
+                <h1> <?php echo $ans['title']; ?> </h1>
+            </div>
+            <div class="home__bannerContent-desc">
+                <p>
+                    <?php echo substr($ans['content'], 0, 90) . "..."; ?> 
+                </p>
+            </div>
+            <div class="home__bannerContent-btn">
+                <button> <a href="blogPage.php?id=<?php echo $ans['id']?>&user_id=<?php echo$ans['user_id']?>">Read More</a> </button>
+            </div>
+        </div>
+
+    <?php } ?>
+
     <div class="home__blogCarousel">
         <h2 class = "home__blogCarouselHeading">
             <i class="fas fa-mail-bulk"></i>    
@@ -59,10 +84,10 @@
                             <p id='homePage__author'><i class="far fa-clock"></i> 16 June, 2021</p>
                         </div>
 
-                        <div class="blogPage__content">
+                        <!-- <div class="blogPage__content">
                             
                             <p id = "content"><?php echo substr($q['content'], 0, 72) . "...."; ?></p>
-                        </div>
+                        </div> -->
 
 
                         <div class = "read-more-btn">
@@ -121,30 +146,6 @@
         </div>
     </div>
 
-    <?php 
-
-        $sql = $conn->prepare("SELECT * FROM blogsdata ORDER BY id DESC LIMIT 1");
-        $sql->execute();
-        $result = $sql->get_result();
-        $ans = $result->fetch_assoc();
-
-        if ($ans != null) { ?>
-
-    <div class="home__bannerContent">
-        <div class="home__bannerContent-title">
-            <h1> <?php echo $ans['title']; ?> </h1>
-        </div>
-        <div class="home__bannerContent-desc">
-            <p>
-                <?php echo substr($ans['content'], 0, 90) . "..."; ?> 
-            </p>
-        </div>
-        <div class="home__bannerContent-btn">
-            <button> <a href="blogPage.php?id=<?php echo $ans['id']?>&user_id=<?php echo$ans['user_id']?>">Read More</a> </button>
-        </div>
-    </div>
-
-    <?php } ?>
 
     
     <div class = "index__main">

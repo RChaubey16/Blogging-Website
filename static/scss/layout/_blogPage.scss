@@ -118,13 +118,12 @@
                         width: 100%;
 
                         img{
-                            height: 100%;
-                            width: 100%;
-                            object-fit: cover;
+                            @include imageCover;
                             transition: all .17s ease-in-out;
-                        }
-                        img:hover{
-                            opacity: 0.8;
+
+                            &:hover{
+                                opacity: 0.8;
+                            }
                         }
                     }
 
@@ -190,6 +189,10 @@
         .blog-container{
             width: 100%;
             margin-left: 0;
+
+            .blogPage__content{
+                padding: 0 4vw;
+            }
         }
     }
     .index__bloggers{
@@ -212,6 +215,10 @@
 
     .blogPage__container{
         .blog-container{
+
+            .blogPage__content{
+                padding: 0 8%;
+            }
 
             .action-btns{
                margin-bottom: 20px;

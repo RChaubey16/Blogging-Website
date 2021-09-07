@@ -62,10 +62,10 @@
                 text-decoration: none;
                 color: $white;
             }
-        }
 
-        button:hover{
-            background-color: $black;
+            &:hover{
+                background-color: $black;
+            }
         }
     }
 }

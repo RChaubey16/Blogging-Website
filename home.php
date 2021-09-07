@@ -23,7 +23,7 @@
 
     <?php 
 
-        $sql = $conn->prepare("SELECT * FROM blogsdata ORDER BY id ASC LIMIT 3");
+        $sql = $conn->prepare("SELECT * FROM blogsdata ORDER BY id ASC LIMIT 1");
         $sql->execute();
         $result = $sql->get_result();
         $ans = $result->fetch_assoc();

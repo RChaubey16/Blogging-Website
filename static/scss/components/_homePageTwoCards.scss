@@ -19,14 +19,12 @@
             margin-left: 10px;
 
             img{
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
+                @include imageCover;
                 transition: all .17s ease-in-out;
-            }
 
-            img:hover{
-                opacity: 0.8;       
+                &:hover{
+                    opacity: 0.8;
+                }
             }
         }
 

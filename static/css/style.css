@@ -1126,6 +1126,9 @@
     width: 100%;
     margin-left: 0;
   }
+  .blogPage__container .blog-container .blogPage__content {
+    padding: 0 4vw;
+  }
   .index__bloggers .social__container .social__content ul {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -1137,6 +1140,9 @@
 }
 
 @media only screen and (max-width: 412px) {
+  .blogPage__container .blog-container .blogPage__content {
+    padding: 0 8%;
+  }
   .blogPage__container .blog-container .action-btns {
     margin-bottom: 20px;
   }

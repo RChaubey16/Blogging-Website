@@ -24,7 +24,7 @@
 
     <?php 
 
-        $sql = $conn->prepare("SELECT * FROM blogsdata ORDER BY id ASC LIMIT 1");
+        $sql = $conn->prepare("SELECT * FROM blogsdata ORDER BY id DESC LIMIT 1");
         $sql->execute();
         $result = $sql->get_result();
         $ans = $result->fetch_assoc();
@@ -36,9 +36,13 @@
             <h1> <?php echo $ans['title']; ?> </h1>
         </div>
         <div class="home__bannerContent-desc">
-            <p>
-                <?php echo substr($ans['content'], 0, 90) . "..."; ?> 
-            </p>
+            <?php 
+                $content = $ans['content'];
+                $stripped_content = strip_tags($content);
+            ?>
+
+            <p id = "content"><?php echo substr($stripped_content, 0, 72) . "...."; ?></p>
+
         </div>
         <div class="home__bannerContent-btn">
             <button> <a href="blogPage.php?id=<?php echo $ans['id']?>&user_id=<?php echo$ans['user_id']?>">Read More</a> </button>
@@ -161,9 +165,13 @@
                                     <p id='homePage__author'><i class="far fa-clock"></i> 16 June, 2021</p>
                                 </div>
 
-                                <!-- <div class="blogPage__content">
-                                    <p id = "content"><?php echo substr($q['content'], 0, 92) . "...."; ?></p>    
-                                </div> -->
+                                <?php 
+                                    $content = $q['content'];
+                                    $stripped_content = strip_tags($content);
+                                ?>
+
+                                <p id = "content"><?php echo substr($stripped_content, 0, 92) . "...."; ?></p>
+
 
                                 <div class = "read-more-btn">
                                     <a href="blogPage.php?id=<?php echo $q['id']?>&user_id=<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
@@ -221,6 +229,58 @@
 
 
     </div>
+
+        <!-- Footer -->
+
+        <div class="footer">
+        <div class="details">
+
+            <div class="location">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="location-details">
+
+                    <p>Example Street.</p>
+                </div>
+            </div>
+            <div class="phone">
+                <i class="fas fa-phone"></i>
+                <div class="location-details">
+
+                    <p>+1 9999 9999</p>
+                </div>
+            </div>
+            <div class="email">
+                <i class="fas fa-envelope-square"></i>
+                <div class="location-details">
+                    <p>example@example.com</p>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div class="links">
+            
+            <ul>
+                <!-- <h3>Links</h3> -->
+                <li>
+                    <a href="home.php"> Home</a>
+                </li>
+                <li>
+                     <a href="login.php"> Login</a>
+                </li>
+                <li>
+                    <a href="register.php"> Register</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="about">
+            <h3>About Us</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+        </div>
+    </div>
+
     
 
 <?php require_once('partials/footer.php') ?>

@@ -23,7 +23,7 @@
 
     <?php 
 
-        $sql = $conn->prepare("SELECT * FROM blogsdata ORDER BY id ASC LIMIT 1");
+        $sql = $conn->prepare("SELECT * FROM blogsdata ORDER BY id DESC LIMIT 1");
         $sql->execute();
         $result = $sql->get_result();
         $ans = $result->fetch_assoc();
@@ -35,9 +35,13 @@
                 <h1> <?php echo $ans['title']; ?> </h1>
             </div>
             <div class="home__bannerContent-desc">
-                <p>
-                    <?php echo substr($ans['content'], 0, 90) . "..."; ?> 
-                </p>
+                <?php 
+                    $content = $ans['content'];
+                    $stripped_content = strip_tags($content);
+                ?>
+
+                <p id = "content"><?php echo substr($stripped_content, 0, 72) . "...."; ?></p>
+
             </div>
             <div class="home__bannerContent-btn">
                 <button> <a href="blogPage.php?id=<?php echo $ans['id']?>&user_id=<?php echo$ans['user_id']?>">Read More</a> </button>
@@ -84,11 +88,12 @@
                             <p id='homePage__author'><i class="far fa-clock"></i> 16 June, 2021</p>
                         </div>
 
-                        <!-- <div class="blogPage__content">
-                            
-                            <p id = "content"><?php echo substr($q['content'], 0, 72) . "...."; ?></p>
-                        </div> -->
+                        <?php 
+                            $content = $q['content'];
+                            $stripped_content = strip_tags($content);
+                        ?>
 
+                        <p id = "content"><?php echo substr($stripped_content, 0, 72) . "...."; ?></p>
 
                         <div class = "read-more-btn">
                             <a href="blogPage.php?id=<?php echo $q['id']?>&user_id=<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
@@ -177,8 +182,12 @@
                                 <p id='homePage__author'><i class="far fa-clock"></i> 16 June, 2021</p>
                             </div>
                             
+                            <?php 
+                                $content = $q['content'];
+                                $stripped_content = strip_tags($content);
+                            ?>
 
-                            <!-- <p id = "content"><?php echo substr($q['content'], 0, 92) . "...."; ?></p> -->
+                            <p id = "content"><?php echo substr($stripped_content, 0, 92) . "...."; ?></p>
 
                             <div class = "read-more-btn">
                                 <a href="blogPage.php?id=<?php echo $q['id']?>&user_id=<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
@@ -356,13 +365,13 @@
             <ul>
                 <!-- <h3>Links</h3> -->
                 <li>
-                    <a href="home.php">> Home</a>
+                    <a href="home.php"> Home</a>
                 </li>
                 <li>
-                     <a href="login.php">> Login</a>
+                     <a href="login.php"> Login</a>
                 </li>
                 <li>
-                    <a href="register.php">> Register</a>
+                    <a href="register.php"> Register</a>
                 </li>
             </ul>
         </div>

@@ -43,8 +43,53 @@
         $sql_query = "INSERT INTO blogsdata(title, content, user_id, blog_image, category) VALUES('$title', '$content', $userId, '$destinationFile', '$category')";
         mysqli_query($conn, $sql_query);
 
+        // Sending emails
+
+        $query = "SELECT * FROM subscribers ORDER BY id ASC LIMIT 1";
+        $result = mysqli_query($conn, $query);
+        $ans = mysqli_fetch_assoc($result);
+        $recipient = $ans['email'];
+
+        $alt_body = "Test Message - Ironman";
+
+        require 'PHPMailerAutoload.php';
+
+        $mail = new PHPMailer;
+
+        //$mail->SMTPDebug = 4;          //to get detailed output of server                      // Enable verbose debug output
+
+        $mail->isSMTP();                                      // Set mailer to use SMTP
+        $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+        $mail->SMTPAuth = true;                               // Enable SMTP authentication
+        $mail->Username = $email['myEmail'];                 // SMTP username
+        $mail->Password = $email['myPass'];                           // SMTP password
+        $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+        $mail->Port = 587;                                    // TCP port to connect to
+
+        $mail->setFrom($email['myEmail'], 'BlogIt');
+        $mail->addAddress('r@r.com');     // Add a recipient
+    
+        $mail->addReplyTo($email['myEmail']);
+    
+        // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+        $mail->isHTML(true);                                  // Set email format to HTML
+
+        $mail->Subject = 'New Blog is published!';
+        $mail->Body    = '<div>
+                            <img src = "https://image.freepik.com/free-vector/new-post-neon-signs-style-text_118419-1349.jpg">
+                            </div>';
+        $mail->AltBody = $alt_body;
+
+        if(!$mail->send()) {
+            echo 'Message could not be sent.';
+            echo 'Mailer Error: ' . $mail->ErrorInfo;
+        } else {
+            echo 'Message has been sent';
+        }
+
+
         // redirecting to the home page
-        header("Location: index.php?info=added&dest=$filename");
+        header("Location: index.php?info=added&dest=$filename&res=$recipient");
         exit();
     }
 

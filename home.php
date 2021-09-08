@@ -331,6 +331,25 @@
         </div>
     </div>
 
+    <!-- Subscribe Form -->
+
+    <div class="home__subscribeBox">
+        <div class="subscribe__details">
+            <div class="sub__heading">
+                <h2>Subscribe</h2>
+            </div>
+            <div class="sub__para">
+               <p>Subscribe our newsletter to stay updated every moment</p>
+            </div>
+        </div>
+        <div class="subscribe__form">
+            <form method="POST">
+                <input type="text" name="subscriber__email" placeholder="Just a step away, enter your email...">
+                <button name = "subscriber__submit" class='submit__btn'>Submit</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Footer -->
 
     <div class="footer">

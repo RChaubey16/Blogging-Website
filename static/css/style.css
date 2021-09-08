@@ -1,4 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+.submit__btn {
+  padding: 0.7rem;
+  border: 0;
+  background-color: #0488d1;
+  cursor: pointer;
+  -webkit-transition: all .17s ease-in-out;
+  transition: all .17s ease-in-out;
+  color: wheat;
+  font-weight: 700;
+}
+
+.submit__btn:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #080808;
+}
+
 /* global styling */
 * {
   margin: 0;
@@ -755,6 +771,72 @@
     width: 100%;
     -o-object-fit: contain;
        object-fit: contain;
+  }
+}
+
+.home__subscribeBox {
+  padding: 5vh 0;
+  background-color: #CAE8E2;
+}
+
+.home__subscribeBox .subscribe__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.home__subscribeBox .subscribe__details .sub__heading {
+  width: 30%;
+  padding: 1rem;
+  border-bottom: 3px solid gray;
+}
+
+.home__subscribeBox .subscribe__details .sub__para {
+  padding: 1rem;
+  font-size: 1.3rem;
+}
+
+.home__subscribeBox .subscribe__form form {
+  padding: 1.4rem;
+  text-align: center;
+}
+
+.home__subscribeBox .subscribe__form form input {
+  width: 23%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 0;
+  outline: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .home__subscribeBox .subscribe__form form input {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 413px) {
+  .home__subscribeBox .subscribe__form form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .home__subscribeBox .subscribe__form form input {
+    width: 100%;
+    margin-bottom: 1rem;
   }
 }
 

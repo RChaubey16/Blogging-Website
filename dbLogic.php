@@ -155,6 +155,14 @@
         exit;
     }
 
-    
-   
+    // Subscribe section
+
+    if (isset($_POST['subscriber__submit'])){
+        $sql = $conn->prepare("INSERT INTO subscribers(email) VALUES(?)");
+        $sql->bind_param('s', $email);
+        $email = $_POST['subscriber__email'];
+        $sql->execute();
+        header("Location: home.php?subscribed");
+    }
+
 ?>

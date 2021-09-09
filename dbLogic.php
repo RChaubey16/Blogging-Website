@@ -45,7 +45,7 @@
 
         // Sending emails
 
-        $sql = $conn->prepare("SELECT * FROM subscribers");
+        $sql = $conn->prepare("SELECT email FROM subscribers");
         $sql->execute();
         $res = $sql->get_result();
         
@@ -81,7 +81,8 @@
             $mail->Subject = 'New Blog is published!';
             $mail->Body    = '<div>
                                 <h2>New Blog Published</h2>
-                            </div>';
+                            </div>' . 
+                            '<p> To unsubscribe this website <a href = "http://localhost/BlogIt/unsubscribe.php?email='.$r['email'].'"> Click here </a></p>';
             $mail->AltBody = $alt_body;
 
             if(!$mail->send()) {

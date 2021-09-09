@@ -45,6 +45,13 @@
 
         // Sending emails
 
+        // getting latest blog
+        $sql = $conn->prepare("SELECT * from blogsdata ORDER BY id DESC LIMIT 1");
+        $sql->execute();
+        $ans = $sql->get_result();
+        $result = mysqli_fetch_assoc($ans);
+        $blog = $result['id'];
+
         $sql = $conn->prepare("SELECT email FROM subscribers");
         $sql->execute();
         $res = $sql->get_result();
@@ -82,7 +89,9 @@
             $mail->Body    = '<div>
                                 <h2>New Blog Published</h2>
                             </div>' . 
-                            '<p> To unsubscribe this website <a href = "http://localhost/BlogIt/unsubscribe.php?email='.$r['email'].'"> Click here </a></p>';
+                            '<p style = "font-size: 1.4rem"> To read the blog, <a style = "text-decoration:none" href = "http://localhost/BlogIt/blogPage.php?id='.$blog.'"> Click here </a></p>'.
+                            '<p style = "font-size: 1.4rem"> To unsubscribe this website <a style = "text-decoration:none" href = "http://localhost/BlogIt/unsubscribe.php?email='.$r['email'].'"> Click here </a></p>';
+            
             $mail->AltBody = $alt_body;
 
             if(!$mail->send()) {
@@ -213,7 +222,7 @@
         $sql->bind_param('s', $email);
         $email = $_POST['subscriber__email'];
         $sql->execute();
-        header("Location: home.php?subscribed");
+        header("Location: home.php?info=subscribed");
     }
 
 ?>

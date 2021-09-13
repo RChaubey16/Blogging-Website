@@ -5,4 +5,8 @@ body {
 h1 {
   font-size: 2rem;
   font-weight: 700;
+  color: black;
+}
+h1 a {
+  text-decoration: none;
 }

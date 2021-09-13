@@ -17,12 +17,18 @@
     <?php include('partials/navbar.php')?>
     <?php include('partials/menuLinks.php')?>
     
-    <h2 class = "search__heading">Successfully unsubscribed from BlogIt</h2>
+    <?php 
+        $email = $_GET['email'];
+    
+    ?>
 
-    <div class="search__noDataFound">
-        <img src="https://lh3.googleusercontent.com/proxy/Q_UZNMkNYkvw7X6cCMMAiwbRdzvNb7SXdTCF4XyBt0kRYAaDGbeudkjH8-XMCIPqe8-KLjLwelGQa7a2YldDG03ykm3ssjrIQz-Il-WTP8ZneNLtetD6uayjddGs13xJh8kNYu5hxVTHgsmBccGEDOQWGIDs7S4" alt="">
-    </div>
-    
-    
-    
+    <h2 class = "search__heading">Your email, <?php echo $email; ?> has successfully unsubscribed from BlogIt</h2>
+
+    <form method="POST">
+        <h2 class = "search__heading">If unsubscribed accidently, click the button below to re-subscribe again!</h2>
+        <input type="text" name="re_subscriber__email"  value="<?php echo $email;?>" hidden>
+        <button style = "margin-left: 48%;" name = "re_subscriber__submit" class='submit__btn'>Subscribe</button>
+    </form>
+
+
 <?php require_once('partials/footer.php') ?>

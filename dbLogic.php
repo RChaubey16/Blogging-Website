@@ -55,6 +55,7 @@
         $sql = $conn->prepare("SELECT email FROM subscribers");
         $sql->execute();
         $res = $sql->get_result();
+
         
         foreach ($res as $r){
 
@@ -221,6 +222,14 @@
         $sql = $conn->prepare("INSERT INTO subscribers(email) VALUES(?)");
         $sql->bind_param('s', $email);
         $email = $_POST['subscriber__email'];
+        $sql->execute();
+        header("Location: home.php?info=subscribed");
+    }
+
+    if (isset($_POST['re_subscriber__submit'])){
+        $sql = $conn->prepare("INSERT INTO subscribers(email) VALUES(?)");
+        $sql->bind_param('s', $email);
+        $email = $_POST['re_subscriber__email'];
         $sql->execute();
         header("Location: home.php?info=subscribed");
     }

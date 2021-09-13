@@ -26,5 +26,10 @@
   "homepage": "https://github.com/RChaubey16/Blogging-Website#readme",
   "dependencies": {
     "node-sass": "^6.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.39.2"
   }
 }

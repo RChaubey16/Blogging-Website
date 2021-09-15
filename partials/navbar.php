@@ -4,7 +4,7 @@
 ?>
 <nav class="nav">
         <div class="left-div">
-            <a href="index.php" class='icon'>
+            <a href="index" class='icon'>
                 BLOG IT!
             </a>
         </div>
@@ -46,11 +46,11 @@
                 <div class="nav-links">
                     <ul>
                         <li>
-                        <a href="login.php">Login</a>
+                        <a href="login">Login</a>
                         </li>
                         
                         <li>
-                            <a href="register.php">Register</a>
+                            <a href="register">Register</a>
                         </li>
                     </ul>
                 </div>

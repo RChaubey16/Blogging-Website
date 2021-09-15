@@ -9,7 +9,7 @@
 
 <?php require_once('partials/header.php') ?>
     <link rel="stylesheet" href="static/css/style.css?v=<?php echo time(); ?>">
-    <title>BlogIt - Register</title>
+    <title>BlogIt - Error</title>
 </head>
 <body style = "background-color: #ece9e9;">
     <!-- Navbar -->

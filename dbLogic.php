@@ -1,5 +1,6 @@
 <?php 
 
+    session_start();
     require 'config.php';
     
     // establishing a connection to the database 
@@ -59,11 +60,6 @@
 
         
         foreach ($res as $r){
-
-        // $query = "SELECT * FROM subscribers ORDER BY id ASC LIMIT 1";
-        // $result = mysqli_query($conn, $query);
-        // $ans = mysqli_fetch_assoc($result);
-        // $recipient = $ans['email'];
 
             require 'PHPMailerAutoload.php';
 

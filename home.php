@@ -44,7 +44,7 @@
 
             </div>
             <div class="home__bannerContent-btn">
-                <button> <a href="blogPage.php?id=<?php echo $ans['id']?>&user_id=<?php echo$ans['user_id']?>">Read More</a> </button>
+                <button> <a href="blogPage/<?php echo $ans['id']?>/<?php echo $ans['user_id']?>">Read More</a> </button>
             </div>
         </div>
 
@@ -107,7 +107,7 @@
                         <p id = "content"><?php echo substr($stripped_content, 0, 72) . "...."; ?></p>
 
                         <div class = "read-more-btn">
-                            <a href="blogPage.php?id=<?php echo $q['id']?>&user_id=<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+                            <a href="blogPage/<?php echo $q['id']?>/<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
                             <a href="search.php?searchBar=<?php echo $q['category'];?>" style = 'background-color: gray;'><?php echo $q['category'];?></a>
                         </div>
 
@@ -129,7 +129,7 @@
         <div class="home__blogCards">
             <?php foreach ($result as $r) { ?>
                 <div class="home__blogCard1">
-                    <a href="blogPage.php?id=<?php echo $r['id']; ?>&user_id=<?php echo $r['user_id']; ?>">
+                    <a href="blogPage/<?php echo $r ['id']?>/<?php echo $r['user_id']?>">
                         <img src="<?php echo $r['blog_image'] ?>" alt="">
                     </a>
                     <div class="home__blogCardDetails">
@@ -201,7 +201,7 @@
                             <p id = "content"><?php echo substr($stripped_content, 0, 92) . "...."; ?></p>
 
                             <div class = "read-more-btn">
-                                <a href="blogPage.php?id=<?php echo $q['id']?>&user_id=<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+                                <a href="blogPage/<?php echo $q['id']?>/<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
                                 <a href="search.php?searchBar=<?php echo $q['category'];?>" style = 'background-color: gray;'><?php echo $q['category'];?></a>
                             </div>
                             
@@ -294,7 +294,7 @@
                             <img src="<?php echo $r['blog_image']; ?>" alt="">
                         </div>
                         <div class="popularPosts__info">
-                            <a href="http://localhost/BlogIt/blogPage.php?id=<?php echo $r['id']; ?>&user_id=<?php echo $r['user_id']; ?>">
+                            <a href="http://localhost/BlogIt/blogPage/<?php echo $r ['id']?>/<?php echo $r['user_id']?>">
                                 <?php echo substr($r['content'], 0, 60) . "..."; ?>
                             </a>
                         </div>
@@ -318,7 +318,7 @@
 
                     foreach ($result as $a) { ?>
 
-                    <a href="search.php?searchBar=<?php echo $a['category']; ?>&nav__searchBtn=">
+                    <a href="search/<?php echo $a['category']; ?>">
                         <div class="category__content">
                             <div class="category__info">
                                 > <?php echo $a['category']; ?>

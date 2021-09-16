@@ -5,10 +5,9 @@
 ?> 
 <?php require_once('partials/header.php') ?>
 
-<base href ="http://localhost/BlogIt/" />
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
 <script src="static/js/like.js"></script>
+
 <link rel="stylesheet" href="static/css/style.css?v=<?php echo time(); ?>">
     <title>BlogIt - Blog</title>
 </head>

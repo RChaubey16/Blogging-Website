@@ -329,8 +329,11 @@
 
         // Password confirmation
         if ($pass == $con_pass){
+
+            $hashed_password = password_hash($pass, PASSWORD_DEFAULT);
+
             $sql = $conn->prepare("UPDATE userdetails SET password = ? WHERE user_id = ?");
-            $sql->bind_param("si", $pass, $userId);
+            $sql->bind_param("si", $hashed_password, $userId);
             $sql->execute();
 
             header("Location: login.php?info=resetdone");

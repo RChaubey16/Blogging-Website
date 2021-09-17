@@ -43,6 +43,11 @@ $database = [
     'database' => 'DB_name',
 ];
 
+$email = [
+    'myEmail' => 'your-email',
+    'myPass' => 'your-email-password',
+];
+
 ?>
 ```
 

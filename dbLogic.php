@@ -339,8 +339,6 @@
             header("Location: login.php?info=resetdone");
             exit;
         }
-
-
     }
 
 

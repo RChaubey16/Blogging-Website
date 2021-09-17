@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 06, 2021 at 05:47 PM
+-- Generation Time: Sep 17, 2021 at 04:23 PM
 -- Server version: 8.0.26-0ubuntu0.20.04.2
 -- PHP Version: 8.0.9
 
@@ -33,9 +33,9 @@ CREATE TABLE `blogsdata` (
   `title` varchar(255) NOT NULL,
   `content` longtext NOT NULL,
   `user_id` int NOT NULL,
-  `blog_image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `blog_image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `category` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -47,7 +47,7 @@ CREATE TABLE `blog_likes` (
   `id` int NOT NULL,
   `user` int NOT NULL,
   `blog` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -57,11 +57,24 @@ CREATE TABLE `blog_likes` (
 
 CREATE TABLE `comments` (
   `id` int NOT NULL,
-  `comment` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `uid` int NOT NULL,
   `bid` int NOT NULL,
   `likes` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `forgotpassword`
+--
+
+CREATE TABLE `forgotpassword` (
+  `id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `release_time` varchar(255) NOT NULL,
+  `expire_time` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -73,7 +86,18 @@ CREATE TABLE `images` (
   `id` int NOT NULL,
   `image_order` int NOT NULL,
   `image` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subscribers`
+--
+
+CREATE TABLE `subscribers` (
+  `id` int NOT NULL,
+  `email` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -85,10 +109,10 @@ CREATE TABLE `userdetails` (
   `user_id` int NOT NULL,
   `name` varchar(20) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
-  `bio` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `bio` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Indexes for dumped tables
@@ -116,10 +140,23 @@ ALTER TABLE `comments`
   ADD KEY `bid` (`bid`);
 
 --
+-- Indexes for table `forgotpassword`
+--
+ALTER TABLE `forgotpassword`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `images`
 --
 ALTER TABLE `images`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `subscribers`
+--
+ALTER TABLE `subscribers`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `userdetails`
@@ -152,9 +189,21 @@ ALTER TABLE `comments`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `forgotpassword`
+--
+ALTER TABLE `forgotpassword`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `subscribers`
+--
+ALTER TABLE `subscribers`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --

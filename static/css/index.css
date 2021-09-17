@@ -23,7 +23,7 @@ body {
 
 .nav-box {
   height: auto;
-  background-color: lightgray;
+  background-color: white;
   display: flex;
   flex-direction: column;
   display: none;

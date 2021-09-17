@@ -102,11 +102,11 @@
     text-transform: uppercase;
   }
   .nav-box .nav-links ul li a {
-    color: #080808;
+    color: #0488d1;
     transition: all 150ms ease-in-out;
   }
   .nav-box .nav-links ul li a:hover {
-    color: #0488d1;
+    color: #4078c0;
     text-decoration: none;
   }
 }

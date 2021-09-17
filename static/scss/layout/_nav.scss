@@ -95,11 +95,11 @@
                 text-transform: uppercase;
                 
                 a{
-                    color: $black;  
+                    color: $common;  
                     transition: all 150ms ease-in-out; 
                 }
                 a:hover{
-                    color: $common;
+                    color: $github;
                     text-decoration: none;
                 }
             }

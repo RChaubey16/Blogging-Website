@@ -306,6 +306,7 @@
         $con_pass = $_POST['confirmPassword'];
         $userId = $_POST['user-id'];
 
+        // fetching expire time
         $sql = $conn->prepare("SELECT * FROM forgotpassword WHERE user_id = ?");
         $sql->bind_param("i", $userId);
         $sql->execute();
@@ -315,6 +316,7 @@
         $current_time = date("H:i:s");
         $expire_time = $ans['expire_time'];
 
+        // checking if the time interval is valid
         if ($current_time > $expire_time){
 
             $sql = $conn->prepare("DELETE FROM forgotpassword WHERE user_id = ?");
@@ -325,6 +327,7 @@
             exit;
         }
 
+        // Password confirmation
         if ($pass == $con_pass){
             $sql = $conn->prepare("UPDATE userdetails SET password = ? WHERE user_id = ?");
             $sql->bind_param("si", $pass, $userId);

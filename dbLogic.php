@@ -231,4 +231,111 @@
         header("Location: home.php?info=subscribed");
     }
 
+    // Forgot Passsword
+ 
+   if (isset($_POST['new_pass'])){
+ 
+    $pass_email = $_POST['pass_email'];
+
+    $sql = $conn->prepare("SELECT user_id FROM userdetails WHERE email = ?");
+    $sql->bind_param("s", $pass_email);
+    $sql->execute();
+    $res = $sql->get_result();
+    $ans = $res->fetch_assoc();
+    $userId = $ans['user_id'];
+
+    if (empty($userId)){
+        header("Location: fpemail.php?info=invalid");
+        exit;
+    }
+
+        require 'PHPMailerAutoload.php';
+
+        $mail = new PHPMailer;
+
+        //$mail->SMTPDebug = 4;          //to get detailed output of server                      // Enable verbose debug output
+
+        $mail->isSMTP();                                      // Set mailer to use SMTP
+        $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+        $mail->SMTPAuth = true;                               // Enable SMTP authentication
+        $mail->Username = $email['myEmail'];                 // SMTP username
+        $mail->Password = $email['myPass'];                           // SMTP password
+        $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+        $mail->Port = 587;                                    // TCP port to connect to
+
+        $mail->setFrom($email['myEmail'], 'BlogIt');
+        $mail->addAddress($pass_email);     // Add a recipient
+   
+        $mail->addReplyTo($email['myEmail']);
+   
+        // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+        $mail->isHTML(true);                                  // Set email format to HTML
+
+        $mail->Subject = 'Password Reset - BlogIt';
+        $mail->Body    = '<div>
+                            <h2>BlogIt - Password Reset</h2>
+                        </div>' .
+                        '<p style = "font-size: 1.4rem"> To reset password, <a style = "text-decoration:none" href = "http://localhost/BlogIt/passwordReset.php?id='.$userId.'"> Click here </a></p>';
+       
+        $mail->AltBody = $alt_body;
+
+        if(!$mail->send()) {
+
+            echo 'Message could not be sent.';
+            echo 'Mailer Error: ' . $mail->ErrorInfo;
+        } else {
+
+            // Adding time interval
+            $release = date("H:i:s");
+            $endTime = strtotime("+15 minutes", strtotime($release));
+            $expire = date('H:i:s', $endTime);
+            $sql = $conn->prepare("INSERT INTO forgotpassword(user_id, release_time, expire_time) VALUES($userId, '$release', '$expire')");
+            $sql->execute();
+
+              // redirecting to the home page
+            header("Location: fpemail.php?info=sent");
+            exit();
+            echo 'Message has been sent';
+        }
+    }
+
+    // // password reset 
+
+    if (isset($_POST['pass_reset'])){
+        $pass = $_POST['password'];
+        $con_pass = $_POST['confirmPassword'];
+        $userId = $_POST['user-id'];
+
+        $sql = $conn->prepare("SELECT * FROM forgotpassword WHERE user_id = ?");
+        $sql->bind_param("i", $userId);
+        $sql->execute();
+        $res = $sql->get_result();
+        $ans = $res->fetch_assoc();
+
+        $current_time = date("H:i:s");
+        $expire_time = $ans['expire_time'];
+
+        if ($current_time > $expire_time){
+
+            $sql = $conn->prepare("DELETE FROM forgotpassword WHERE user_id = ?");
+            $sql->bind_param("i", $userId);
+            $sql->execute();
+
+            header("Location: fpemail.php?info=expired");
+            exit;
+        }
+
+        if ($pass == $con_pass){
+            $sql = $conn->prepare("UPDATE userdetails SET password = ? WHERE user_id = ?");
+            $sql->bind_param("si", $pass, $userId);
+            $sql->execute();
+
+            header("Location: login.php?info=resetdone");
+            exit;
+        }
+
+
+    }
+
+
 ?>

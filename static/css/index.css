@@ -767,6 +767,17 @@ input[type="checkbox"] {
   width: 20px;
   height: 20px;
 }
+ 
+.remember-me-box a{
+  text-align: right;
+  color: #0488d1;
+  text-decoration: none;
+}
+  
+.remember-me-box a:hover{
+  color: black
+}
+ 
 
 /* Alert Dialog box*/
 
@@ -1066,7 +1077,7 @@ input[type="checkbox"] {
     display:none;
   } */
   .read-more-btn a {
-    margin-left: 40px;
+    margin-left: -5px;
   }
 
   /*Login Page */

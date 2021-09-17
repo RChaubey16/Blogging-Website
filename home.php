@@ -202,7 +202,7 @@
 
                             <div class = "read-more-btn">
                                 <a href="blogPage/<?php echo $q['id']?>/<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
-                                <a href="search.php?searchBar=<?php echo $q['category'];?>" style = 'background-color: gray;'><?php echo $q['category'];?></a>
+                                <a href="search/<?php echo $q['category'];?>" style = 'background-color: gray;'><?php echo $q['category'];?></a>
                             </div>
                             
                         </div>
@@ -395,13 +395,13 @@
             <ul>
                 <!-- <h3>Links</h3> -->
                 <li>
-                    <a href="home.php"> Home</a>
+                    <a href="home"> Home</a>
                 </li>
                 <li>
-                     <a href="login.php"> Login</a>
+                     <a href="login"> Login</a>
                 </li>
                 <li>
-                    <a href="register.php"> Register</a>
+                    <a href="register"> Register</a>
                 </li>
             </ul>
         </div>

@@ -171,7 +171,7 @@
                             <img src="<?php echo $r['blog_image']; ?>" alt="">
                         </div>
                         <div class="popularPosts__info">
-                            <a href="http://localhost/BlogIt/blogPage.php?id=<?php echo $r['id']; ?>&user_id=<?php echo $r['user_id']; ?>">
+                            <a href="http://localhost/BlogIt/blogPage/<?php echo $r['id']; ?>/<?php echo $r['user_id']; ?>">
                                 <?php echo substr($r['content'], 0, 60) . "..."; ?>
                             </a>
                         </div>
@@ -195,7 +195,7 @@
 
                     foreach ($result as $a) { ?>
 
-                    <a href="search.php?searchBar=<?php echo $a['category']; ?>&nav__searchBtn=">
+                    <a href="search/<?php echo $a['category']; ?>">
                         <div class="category__content">
                             <div class="category__info">
                                 > <?php echo $a['category']; ?>

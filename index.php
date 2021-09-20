@@ -199,7 +199,7 @@
                                 continue;
                             } else { ?>
 
-                                <a href="profile.php?uid=<?php echo $a['user_id']?>">
+                                <a href="profile/<?php echo $a['user_id']?>">
 
                                     <div class="blogger-container">
                                         <div class="blogger-avatar">

@@ -45,7 +45,7 @@
 
         </div>
         <div class="home__bannerContent-btn">
-            <button> <a href="blogPage.php?id=<?php echo $ans['id']?>&user_id=<?php echo$ans['user_id']?>">Read More</a> </button>
+            <button> <a href="blogPage/<?php echo $ans['id']?>/<?php echo$ans['user_id']?>">Read More</a> </button>
         </div>
     </div>
 
@@ -58,7 +58,7 @@
 
             <?php if ($_SESSION['loggedin'] == true) { ?>
                 <div id="create-blog-button">
-                    <a href="createPost.php">+ Create a new Blog</a>
+                    <a href="createPost">+ Create a new Blog</a>
                 </div>
 
                 <div id="create-blog-button">
@@ -107,7 +107,7 @@
             <div class="home__blogCards">
                 <?php foreach ($result as $r) { ?>
                     <div class="home__blogCard1">
-                        <a href="blogPage.php?id=<?php echo $r['id']; ?>&user_id=<?php echo $r['user_id']; ?>">
+                        <a href="blogPage/<?php echo $r['id']; ?>/<?php echo $r['user_id']; ?>">
                             <img src="<?php echo $r['blog_image'] ?>" alt="">
                         </a>
                         <div class="home__blogCardDetails">
@@ -174,7 +174,7 @@
 
 
                                 <div class = "read-more-btn">
-                                    <a href="blogPage.php?id=<?php echo $q['id']?>&user_id=<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+                                    <a href="blogPage/<?php echo $q['id']?>/<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
                                     <a href="search.php?searchBar=<?php echo $q['category'];?>" style = 'background-color: gray;'><?php echo $q['category'];?></a>
                                 </div>
                                 
@@ -264,13 +264,13 @@
             <ul>
                 <!-- <h3>Links</h3> -->
                 <li>
-                    <a href="home.php"> Home</a>
+                    <a href="home"> Home</a>
                 </li>
                 <li>
-                     <a href="login.php"> Login</a>
+                     <a href="login"> Login</a>
                 </li>
                 <li>
-                    <a href="register.php"> Register</a>
+                    <a href="register"> Register</a>
                 </li>
             </ul>
         </div>

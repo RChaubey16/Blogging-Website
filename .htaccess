@@ -7,11 +7,20 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteCond %{REQUEST_FILENAME}\.php -f
 
+RewriteRule ^index/([0-9a-zA-Z_-]+) index.php?info=$1 [NC,L]
+RewriteRule ^home/([0-9a-zA-Z_-]+) home.php?info=$1 [NC,L]
 RewriteRule ^blogPage/([0-9]+)/([0-9]+) blogPage.php?id=$1&user_id=$2 [NC,L]
 RewriteRule ^search/([0-9a-zA-Z_-]+) search.php?searchBar=$1 [NC,L]
-RewriteRule ^index/([0-9a-zA-Z_-]+) index.php?info=$1 [NC,L]
+RewriteRule ^profile/([0-9a-zA-Z_-]+) profile.php?uid=$1 [NC,L]
+RewriteRule ^login/([0-9a-zA-Z_-]+) login.php?info=$1 [NC,L]
+RewriteRule ^search/([0-9a-zA-Z_-]+) search.php?searchBar=$1 [NC,L]
+RewriteRule ^register/([0-9a-zA-Z_-]+) register.php?info=$1 [NC,L]
+RewriteRule ^editBlog/([0-9a-zA-Z_-]+) editBlog.php?id=$1 [NC,L]
 
 RewriteRule ^login login.php [NC,L]
+RewriteRule ^logout logout.php [NC,L]
 RewriteRule ^register register.php [NC,L]
 RewriteRule ^index index.php [NC,L]
 RewriteRule ^home home.php [NC,L]
+RewriteRule ^createPost createPost.php [NC,L]
+RewriteRule ^forgotPassword fpemail.php [NC,L]

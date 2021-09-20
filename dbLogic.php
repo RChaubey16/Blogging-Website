@@ -132,7 +132,7 @@
         //  WHERE id = $id";
         // mysqli_query($conn, $sql);
 
-        header("Location: index.php?info=updated");
+        header("Location: index/updated");
         exit();
     }
 
@@ -174,7 +174,7 @@
         $result = mysqli_query($conn, $query);
         $num = mysqli_num_rows($result);
         if ($num >= 1){
-            header("Location: register.php?info=present");
+            header("Location: register/present");
             exit();
         }
 
@@ -186,10 +186,10 @@
 
             $sql_query = "INSERT INTO userdetails(name, email, password, bio, date) VALUES('$name', '$email', '$hashed_password', '$bio', current_timestamp())";
             mysqli_query($conn, $sql_query);
-            header("Location: login.php?info=registered");
+            header("Location: login/registered");
             exit();
         } else {
-            header("Location: register.php?info=error");
+            header("Location: register/error");
             exit();
         }
     }
@@ -220,7 +220,7 @@
         $sql->bind_param('s', $email);
         $email = $_POST['subscriber__email'];
         $sql->execute();
-        header("Location: home.php?info=subscribed");
+        header("Location: home/subscribed");
     }
 
     if (isset($_POST['re_subscriber__submit'])){
@@ -228,7 +228,7 @@
         $sql->bind_param('s', $email);
         $email = $_POST['re_subscriber__email'];
         $sql->execute();
-        header("Location: home.php?info=subscribed");
+        header("Location: home/subscribed");
     }
 
     // Forgot Passsword

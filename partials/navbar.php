@@ -27,7 +27,7 @@
 
             <?php if (isset($_SESSION['username'])) { ?>
                 <div class="user nav-links">
-                    <a href = "profile.php?uid=<?php echo $_SESSION['uid']?>"><?php echo $_SESSION['username']?></a>
+                    <a href = "profile/<?php echo $_SESSION['uid']?>"><?php echo $_SESSION['username']?></a>
                 </div>
             <?php } ?>
           
@@ -36,7 +36,7 @@
                 <div class="nav-links">
                     <ul>
                         <li>
-                            <a href="logout.php">Logout</a>
+                            <a href="logout">Logout</a>
                         </li>
                     </ul>
                 </div>

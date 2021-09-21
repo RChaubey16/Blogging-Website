@@ -84,7 +84,7 @@ nav .right-nav {
 
 .menu-icon {
   display: none;
-  
+  transition: all .17s ease-in-out;
 }
 
 nav .nav-links a{

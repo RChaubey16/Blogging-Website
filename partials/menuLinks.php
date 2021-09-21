@@ -19,9 +19,9 @@
                 <li>
                     <a href="logout.php">Logout</a>
                 </li>
-                <li id = 'close-menu-btn-box'>
+                <!-- <li id = 'close-menu-btn-box'>
                     <a id = "close-menu-btn"><i class="far fa-window-close"></i></a>
-                </li>
+                </li> -->
             </ul>
     </div>
 
@@ -36,9 +36,9 @@
                 <li>
                     <a href="register.php">Register</a>
                 </li>
-                <li id = 'close-menu-btn-box'>
+                <!-- <li id = 'close-menu-btn-box'>
                     <a id = "close-menu-btn"><i class="far fa-window-close"></i></a>
-                </li>
+                </li> -->
                 
             </ul>
         </div>

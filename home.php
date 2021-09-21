@@ -107,7 +107,7 @@
                         <p id = "content"><?php echo substr($stripped_content, 0, 72) . "...."; ?></p>
 
                         <div class = "read-more-btn">
-                            <a href="blogPage/<?php echo $q['id']?>/<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+                            <a href="blogPage/<?php echo $q['id']?>">Read More <i class="fas fa-chevron-right"></i></a>
                             <a href="search.php?searchBar=<?php echo $q['category'];?>" style = 'background-color: gray;'><?php echo $q['category'];?></a>
                         </div>
 
@@ -129,7 +129,7 @@
         <div class="home__blogCards">
             <?php foreach ($result as $r) { ?>
                 <div class="home__blogCard1">
-                    <a href="blogPage/<?php echo $r ['id']?>/<?php echo $r['user_id']?>">
+                    <a href="blogPage/<?php echo $r ['id']?>">
                         <img src="<?php echo $r['blog_image'] ?>" alt="">
                     </a>
                     <div class="home__blogCardDetails">

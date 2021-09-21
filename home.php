@@ -44,7 +44,7 @@
 
             </div>
             <div class="home__bannerContent-btn">
-                <button> <a href="blogPage/<?php echo $ans['id']?>/<?php echo $ans['user_id']?>">Read More</a> </button>
+                <button> <a href="blogPage/<?php echo $ans['id']?>">Read More</a> </button>
             </div>
         </div>
 

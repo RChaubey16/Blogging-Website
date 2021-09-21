@@ -18,7 +18,7 @@ RewriteRule ^index/([0-9a-zA-Z_-]+) index.php?info=$1 [NC,L]
 RewriteRule ^home/([0-9a-zA-Z_-]+) home.php?info=$1 [NC,L]
 
 # Redirects to blogPage page with some information about the operation performed
-RewriteRule ^blogPage/([0-9]+)/([0-9]+) blogPage.php?id=$1&user_id=$2 [NC,L]
+RewriteRule ^blogPage/([0-9]+) blogPage.php?id=$1 [NC,L]
 
 # Redirects to search page with some information about the operation performed
 RewriteRule ^search/([0-9a-zA-Z_-]+) search.php?searchBar=$1 [NC,L]

@@ -105,6 +105,9 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
   }
   .nav__searchContainer {
     display: none;
@@ -119,10 +122,12 @@
   }
   .nav-box {
     z-index: 100000;
-    position: absolute;
+    position: fixed;
     width: 100%;
+    top: 7vh;
   }
   .nav-box .nav-links ul li {
+    margin-left: 4vw;
     text-transform: uppercase;
   }
   .nav-box .nav-links ul li a {

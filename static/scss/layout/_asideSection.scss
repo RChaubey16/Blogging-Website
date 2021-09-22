@@ -251,3 +251,39 @@
     }
 }
 
+
+@media only screen and (max-width: 413px) {
+    .index__main{
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 5vh;
+
+        .blog-list-box{
+            display: block;
+            width: 100%;
+            justify-content: space-evenly;
+            padding: 0;
+            margin: 0;
+
+            .card{
+                margin: 0 0 4vh 0;
+                width: 100%;
+            }
+        }
+
+        .index__bloggers{
+            .social__container{
+
+                .social__content{
+                    ul{
+                        justify-content: center;
+                        li {
+                            width: 13vw;
+                        }
+                    }
+                }    
+            }
+
+        }
+    }
+}

@@ -962,6 +962,7 @@ input[type="checkbox"] {
 
   /*Login Page*/
   .login-form {
+    margin-top: 15vh;
     width: 50%;
   }
 

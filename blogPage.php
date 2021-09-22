@@ -353,7 +353,17 @@
 
     <!-- Footer -->
 
+    
     <div class="footer">
+
+        <div class="about">
+            <h3>About Us</h3>
+            <?php 
+                $about = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
+            ?>
+            <p><?php echo substr($about, 0, 170) . "..."; ?></p>
+        </div>
+
         <div class="details">
 
             <div class="location">
@@ -385,23 +395,20 @@
             <ul>
                 <!-- <h3>Links</h3> -->
                 <li>
-                    <a href="home.php">> Home</a>
+                    <a href="home"> Home</a>
                 </li>
                 <li>
-                     <a href="login.php">> Login</a>
+                     <a href="login"> Login</a>
                 </li>
                 <li>
-                    <a href="register.php">> Register</a>
+                    <a href="register"> Register</a>
                 </li>
             </ul>
         </div>
 
-        <div class="about">
-            <h3>About Us</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-        </div>
+        
     </div>
-
+    
 <script src="static/js/like.js"></script>
 
    

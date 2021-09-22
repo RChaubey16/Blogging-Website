@@ -72,7 +72,8 @@
         position: fixed;
         z-index: 1000;
         width: 100%;
-    }
+        top: 0;
+    
 
     .nav__searchContainer{
         display: none;
@@ -86,6 +87,7 @@
         .nav-links{
             display: none;
         }
+    }
     }
 
     .nav-box{

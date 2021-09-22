@@ -215,6 +215,16 @@
 
     .blogPage__container{
         .blog-container{
+            margin-top: 8vh;
+
+            #heading{
+                margin-left: 4vw;
+            }
+
+            .blog__category{
+                margin-left: 4vw;
+                margin-bottom: 2vh;
+            }
 
             .blogPage__content{
                 padding: 0 8%;

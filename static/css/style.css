@@ -108,16 +108,17 @@
     position: fixed;
     z-index: 1000;
     width: 100%;
+    top: 0;
   }
-  .nav__searchContainer {
+  .nav .nav__searchContainer {
     display: none;
   }
-  .right-nav .menu-icon {
+  .nav .right-nav .menu-icon {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  .right-nav .nav-links {
+  .nav .right-nav .nav-links {
     display: none;
   }
   .nav-box {
@@ -1037,6 +1038,7 @@
   .footer .about {
     width: 100%;
     margin-bottom: 1vh;
+    margin-top: 1vh;
   }
   .footer .about h3 {
     margin: 20px 0;
@@ -1269,6 +1271,16 @@
 }
 
 @media only screen and (max-width: 412px) {
+  .blogPage__container .blog-container {
+    margin-top: 8vh;
+  }
+  .blogPage__container .blog-container #heading {
+    margin-left: 4vw;
+  }
+  .blogPage__container .blog-container .blog__category {
+    margin-left: 4vw;
+    margin-bottom: 2vh;
+  }
   .blogPage__container .blog-container .blogPage__content {
     padding: 0 8%;
   }

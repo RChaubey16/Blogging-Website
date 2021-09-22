@@ -395,13 +395,13 @@
             <ul>
                 <!-- <h3>Links</h3> -->
                 <li>
-                    <a href="home"> Home</a>
+                    <a href="home"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> Home</a>
                 </li>
                 <li>
-                     <a href="login"> Login</a>
+                     <a href="login"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> Login</a>
                 </li>
                 <li>
-                    <a href="register"> Register</a>
+                    <a href="register"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> Register</a>
                 </li>
             </ul>
         </div>

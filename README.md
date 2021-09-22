@@ -50,6 +50,9 @@ $email = [
 
 ?>
 ```
+# 5. Technologies Used.
+  HTML, SASS, PHP and MYSQL
+
 
 # Contributors
 * [RChaubey16](https://github.com/RChaubey16) (Ruturaj Chaubey).

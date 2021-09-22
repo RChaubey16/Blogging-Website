@@ -5,7 +5,7 @@ A blogging website with CRUD operations which includes various functionalities f
 * Create/Delete/Edit Blogs.
 * A dynamic Image slider.
 * Register as a user.
-* Search posts based on category
+* Search articles based on category
 
 # Repository Structure
 * partials - contains all the repetitve code.

@@ -20,8 +20,8 @@
 
 
             <div class="menu-icon" id = "menu-box">
-                <!-- <img src="static\images\icons8-menu-24.png" alt="" > -->
-                <i class="fas fa-2x fa-bars"></i>
+                <i id = "bars_img" class="fas fa-2x fa-bars"></i>
+                <i id = "close_img" style = "display: none; color: red;" class="fas fa-2x fa-times-circle"></i>
             </div>
             
             <?php if (isset($_SESSION['username'])) { ?>

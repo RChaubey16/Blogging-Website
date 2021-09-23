@@ -260,6 +260,10 @@
     width: 100%;
     margin: 4vh 0 0 0;
   }
+  .home__blogCarousel .card {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
 }
 
 .home__blogCardsBox {

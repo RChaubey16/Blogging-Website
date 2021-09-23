@@ -157,5 +157,5 @@
         </div>
       </form>
 <!-- footer -->
-
+<script src="static/js/view-password.js"></script>
 <?php require_once('partials/footer.php') ?>

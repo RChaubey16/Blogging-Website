@@ -135,7 +135,7 @@
                                         <img src="<?php echo $r['blog_image']; ?>" alt="">
                                     </div>
                                     <div class="post_title">
-                                        <a href = "http://localhost/BlogIt/blogPage/<?php echo $r['id']; ?>/<?php echo $r['user_id'];?>"><?php echo $r['title']; ?></a>
+                                        <a href = "http://localhost/BlogIt/blogPage/<?php echo $r['id']; ?>"><?php echo $r['title']; ?></a>
                                     </div>
                                 </div>
                             </div>
@@ -301,7 +301,7 @@
                                 <img src="<?php echo $r['blog_image']; ?>" alt="">
                             </div>
                             <div class="popularPosts__info">
-                                <a href="http://localhost/BlogIt/blogPage/<?php echo $r['id']; ?>/<?php echo $r['user_id']; ?>">
+                                <a href="http://localhost/BlogIt/blogPage/<?php echo $r['id']; ?>">
                                     <?php echo substr($r['content'], 0, 60) . "..."; ?>
                                 </a>
                             </div>

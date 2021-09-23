@@ -23,8 +23,7 @@
                 <!-- <img src="static\images\icons8-menu-24.png" alt="" > -->
                 <i class="fas fa-2x fa-bars"></i>
             </div>
-
-
+            
             <?php if (isset($_SESSION['username'])) { ?>
                 <div class="user nav-links">
                     <a href = "profile/<?php echo $_SESSION['uid']?>"><?php echo $_SESSION['username']?></a>

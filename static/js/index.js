@@ -10,6 +10,7 @@ document.getElementById("menu-box").addEventListener("click", function () {
   if (flag == "off"){
     document.getElementById("nav-box").style.transition = "transform 0.4s";
     document.getElementById("nav-box").style.display = "flex";
+
     flag = "on";
     console.log(flag);
   } else if (flag == "on"){

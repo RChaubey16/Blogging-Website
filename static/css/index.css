@@ -1171,6 +1171,7 @@ input[type="checkbox"] {
 
   .profile__heading{
     left: 37%;
+    top: 10vh;
   }
 
   .profile__avatar{
@@ -1179,9 +1180,9 @@ input[type="checkbox"] {
 
   .profile__container{
     margin: 10px;
-    margin-top: 70px;
+    margin-top: 100px;
     width: 95%;
-    height: 50vh;
+    height: auto;
   }
 
   .personal-blog-list{
@@ -1192,7 +1193,6 @@ input[type="checkbox"] {
   .personal-blog-list .card{
     width: 80%;
     margin-left: 130px;
-    /* z-index: 1000; */
   }
 
 

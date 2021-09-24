@@ -18,10 +18,7 @@
             unlink($filename);
         }
         $sqlDel->execute();
-
-        // $sql = "DELETE FROM images where id = $id";
-        // $res = mysqli_query($conn, $sql);
-        
+                
         header("Location: banner.php?del");
         exit;
     }
@@ -55,7 +52,4 @@
     
         header("Location: banner.php?info=halt");
     }
-    
-    
-
 ?>

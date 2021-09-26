@@ -50,12 +50,12 @@
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
         $_SESSION['uid'] = $row['user_id'];     // as $row is now an associative array, we can access the values via its keys. 
-        header('Location: index.php?info=login');
+        header('Location: index/login');
         exit();
       }
       else {
         $showError = 'Invalid Credentials';
-        header('Location: login.php?info=error');
+        header('Location: login/error');
         exit();
       }
 
@@ -149,7 +149,7 @@
 
 
         <div class="remember-me-box">
-          <a href="fpemail.php">Forgot Password?</a>
+          <a href="forgotPassword">Forgot Password?</a>
         </div>
         
         <div>
@@ -157,5 +157,5 @@
         </div>
       </form>
 <!-- footer -->
-
+<script src="static/js/view-password.js"></script>
 <?php require_once('partials/footer.php') ?>

@@ -20,14 +20,13 @@
 
 
             <div class="menu-icon" id = "menu-box">
-                <!-- <img src="static\images\icons8-menu-24.png" alt="" > -->
-                <i class="fas fa-2x fa-bars"></i>
+                <i id = "bars_img" class="fas fa-2x fa-bars"></i>
+                <i id = "close_img" style = "display: none; color: red;" class="fas fa-2x fa-times-circle"></i>
             </div>
-
-
+            
             <?php if (isset($_SESSION['username'])) { ?>
                 <div class="user nav-links">
-                    <a href = "profile.php?uid=<?php echo $_SESSION['uid']?>"><?php echo $_SESSION['username']?></a>
+                    <a href = "profile/<?php echo $_SESSION['uid']?>"><?php echo $_SESSION['username']?></a>
                 </div>
             <?php } ?>
           
@@ -36,7 +35,7 @@
                 <div class="nav-links">
                     <ul>
                         <li>
-                            <a href="logout.php">Logout</a>
+                            <a href="logout">Logout</a>
                         </li>
                     </ul>
                 </div>

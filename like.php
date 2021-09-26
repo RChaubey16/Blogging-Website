@@ -19,11 +19,6 @@
         $ans = mysqli_num_rows($result);
 
 
-        // Normal Sql Query
-        // $query = "SELECT id FROM blog_likes WHERE (user = $loggedInUser AND blog = $id)";
-        // $result = mysqli_query($conn, $query);
-        // $ans = mysqli_num_rows($result);
-
         if ($ans === 1){
             $sql = "DELETE FROM blog_likes WHERE (user = $loggedInUser AND blog = $id)";
             mysqli_query($conn, $sql);

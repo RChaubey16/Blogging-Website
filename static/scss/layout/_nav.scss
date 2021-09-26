@@ -69,7 +69,11 @@
 
     .nav{
         justify-content: space-between;
-    }
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+        top: 0;
+    
 
     .nav__searchContainer{
         display: none;
@@ -84,14 +88,17 @@
             display: none;
         }
     }
+    }
 
     .nav-box{
         z-index: 100000;
-        position: absolute;
+        position: fixed;
         width: 100%;
+        top: 7vh;
 
         .nav-links{
             ul li{
+                margin-left: 4vw;
                 text-transform: uppercase;
                 
                 a{
@@ -106,3 +113,4 @@
         }
     }
 }
+

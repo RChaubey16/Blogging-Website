@@ -5,11 +5,24 @@ function closeFunction() {
 }
 
 // hamburger menu
-
+var bars = document.getElementById("bars_img");
+var close_menu = document.getElementById("close_img");
+var flag = "off";
 document.getElementById("menu-box").addEventListener("click", function () {
-  document.getElementById("nav-box").style.transition = "transform 0.4s";
-  document.getElementById("nav-box").style.display = "flex";
-  console.log("Hey");
+  if (flag == "off"){
+    document.getElementById("nav-box").style.transition = "transform 0.4s";
+    document.getElementById("nav-box").style.display = "flex";
+    bars.style.display = 'none';
+    close_menu.style.display = 'flex';
+    flag = "on";
+    console.log(flag);
+  } else if (flag == "on"){
+    document.getElementById("nav-box").style.display = "none";
+    bars.style.display = 'flex';
+    close_menu.style.display = 'none';
+    flag = "off";
+    console.log(flag);
+  }
 });
 
 document
@@ -19,12 +32,4 @@ document
     console.log("Hey");
   });
 
-/* View Password*/
-document.getElementById("login__eye").addEventListener("click", function () {
-  pwd = document.getElementById("login__pwd");
-  if (pwd.type == "password") {
-    pwd.type = "text";
-  } else {
-    pwd.type = "password";
-  }
-});
+

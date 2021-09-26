@@ -2,6 +2,6 @@
     session_start();
     session_unset();
     session_destroy();
-    header("Location: login.php?info=loggedOut");
+    header("Location: login/loggedOut");
     exit();
 ?>

@@ -44,7 +44,7 @@
 
             </div>
             <div class="home__bannerContent-btn">
-                <button> <a href="blogPage/<?php echo $ans['id']?>/<?php echo $ans['user_id']?>">Read More</a> </button>
+                <button> <a href="blogPage/<?php echo $ans['id']?>">Read More</a> </button>
             </div>
         </div>
 
@@ -107,7 +107,7 @@
                         <p id = "content"><?php echo substr($stripped_content, 0, 72) . "...."; ?></p>
 
                         <div class = "read-more-btn">
-                            <a href="blogPage/<?php echo $q['id']?>/<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+                            <a href="blogPage/<?php echo $q['id']?>">Read More <i class="fas fa-chevron-right"></i></a>
                             <a href="search.php?searchBar=<?php echo $q['category'];?>" style = 'background-color: gray;'><?php echo $q['category'];?></a>
                         </div>
 
@@ -129,7 +129,7 @@
         <div class="home__blogCards">
             <?php foreach ($result as $r) { ?>
                 <div class="home__blogCard1">
-                    <a href="blogPage/<?php echo $r ['id']?>/<?php echo $r['user_id']?>">
+                    <a href="blogPage/<?php echo $r ['id']?>">
                         <img src="<?php echo $r['blog_image'] ?>" alt="">
                     </a>
                     <div class="home__blogCardDetails">
@@ -201,7 +201,7 @@
                             <p id = "content"><?php echo substr($stripped_content, 0, 92) . "...."; ?></p>
 
                             <div class = "read-more-btn">
-                                <a href="blogPage/<?php echo $q['id']?>/<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+                                <a href="blogPage/<?php echo $q['id']?>">Read More <i class="fas fa-chevron-right"></i></a>
                                 <a href="search/<?php echo $q['category'];?>" style = 'background-color: gray;'><?php echo $q['category'];?></a>
                             </div>
                             
@@ -294,7 +294,7 @@
                             <img src="<?php echo $r['blog_image']; ?>" alt="">
                         </div>
                         <div class="popularPosts__info">
-                            <a href="http://localhost/BlogIt/blogPage/<?php echo $r ['id']?>/<?php echo $r['user_id']?>">
+                            <a href="http://localhost/BlogIt/blogPage/<?php echo $r ['id']?>">
                                 <?php echo substr($r['content'], 0, 60) . "..."; ?>
                             </a>
                         </div>
@@ -364,6 +364,15 @@
     <!-- Footer -->
 
     <div class="footer">
+
+        <div class="about">
+            <h3>About Us</h3>
+            <?php 
+                $about = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
+            ?>
+            <p><?php echo substr($about, 0, 170) . "..."; ?></p>
+        </div>
+
         <div class="details">
 
             <div class="location">
@@ -395,21 +404,18 @@
             <ul>
                 <!-- <h3>Links</h3> -->
                 <li>
-                    <a href="home"> Home</a>
+                    <a href="home"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> Home</a>
                 </li>
                 <li>
-                     <a href="login"> Login</a>
+                    <a href="login"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> Login</a>
                 </li>
                 <li>
-                    <a href="register"> Register</a>
+                    <a href="register"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> Register</a>
                 </li>
             </ul>
         </div>
 
-        <div class="about">
-            <h3>About Us</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-        </div>
+        
     </div>
 
     

@@ -65,9 +65,6 @@
 
                 <label for="uname">Name</label>
                     <input type="text" name = 'uname' value = "<?php echo $name ?>" disabled>
-        
-                <!-- <label for="uname">Email</label>
-                    <input type="text" name = 'uemail' value = "<?php echo $email ?>" disabled>    -->
 
                     <input name = "profile__user_id" type="text" value = "<?php echo $id?>" hidden>
                 

@@ -84,7 +84,7 @@ nav .right-nav {
 
 .menu-icon {
   display: none;
-  
+  transition: all .17s ease-in-out;
 }
 
 nav .nav-links a{
@@ -962,6 +962,7 @@ input[type="checkbox"] {
 
   /*Login Page*/
   .login-form {
+    margin-top: 15vh;
     width: 50%;
   }
 
@@ -1051,7 +1052,7 @@ input[type="checkbox"] {
   }
 
   .user {
-    margin: 10px 0 0 50px;
+    margin: 10px 0 0 0;
     text-align: start;
     color: #0488d1;
   }
@@ -1060,6 +1061,10 @@ input[type="checkbox"] {
     cursor: pointer;
     font-weight: 600;
     font-size: 1.3rem;
+  }
+
+  .login-form{
+    margin-top: 15vh;
   }
 
   /*Banner*/
@@ -1166,6 +1171,7 @@ input[type="checkbox"] {
 
   .profile__heading{
     left: 37%;
+    top: 10vh;
   }
 
   .profile__avatar{
@@ -1174,9 +1180,9 @@ input[type="checkbox"] {
 
   .profile__container{
     margin: 10px;
-    margin-top: 70px;
+    margin-top: 100px;
     width: 95%;
-    height: 50vh;
+    height: auto;
   }
 
   .personal-blog-list{
@@ -1187,7 +1193,6 @@ input[type="checkbox"] {
   .personal-blog-list .card{
     width: 80%;
     margin-left: 130px;
-    /* z-index: 1000; */
   }
 
 

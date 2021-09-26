@@ -106,7 +106,7 @@
                 
                 <?php if (isset($_SESSION['loggedin']) && $_SESSION['uid'] == $q['user_id']) { ?>
                     <div class='action-btns'>
-                        <a href="editBlog.php?id=<?php echo $q['id']?>" >Edit</a>
+                        <a href="editBlog/<?php echo $q['id']?>" >Edit</a>
                         <form method = "POST">
                             <input type='text' hidden name = "id" value = "<?php echo $q['id']; ?>">
                             <button name = "delete" id='delete-post-btn'>Delete</button>
@@ -135,7 +135,7 @@
                                         <img src="<?php echo $r['blog_image']; ?>" alt="">
                                     </div>
                                     <div class="post_title">
-                                        <a href = "http://localhost/BlogIt/blogPage.php?id=<?php echo $r['id']; ?>&user_id=<?php echo $r['user_id'];?>"><?php echo $r['title']; ?></a>
+                                        <a href = "http://localhost/BlogIt/blogPage/<?php echo $r['id']; ?>"><?php echo $r['title']; ?></a>
                                     </div>
                                 </div>
                             </div>
@@ -301,7 +301,7 @@
                                 <img src="<?php echo $r['blog_image']; ?>" alt="">
                             </div>
                             <div class="popularPosts__info">
-                                <a href="http://localhost/BlogIt/blogPage.php?id=<?php echo $r['id']; ?>&user_id=<?php echo $r['user_id']; ?>">
+                                <a href="http://localhost/BlogIt/blogPage/<?php echo $r['id']; ?>">
                                     <?php echo substr($r['content'], 0, 60) . "..."; ?>
                                 </a>
                             </div>
@@ -325,7 +325,7 @@
 
                         foreach ($result as $a) { ?>
 
-                        <a href="search.php?searchBar=<?php echo $a['category']; ?>&nav__searchBtn=">
+                        <a href="search/<?php echo $a['category']; ?>">
                             <div class="category__content">
                                 <div class="category__info">
                                     > <?php echo $a['category']; ?>
@@ -353,7 +353,17 @@
 
     <!-- Footer -->
 
+    
     <div class="footer">
+
+        <div class="about">
+            <h3>About Us</h3>
+            <?php 
+                $about = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
+            ?>
+            <p><?php echo substr($about, 0, 170) . "..."; ?></p>
+        </div>
+
         <div class="details">
 
             <div class="location">
@@ -385,23 +395,20 @@
             <ul>
                 <!-- <h3>Links</h3> -->
                 <li>
-                    <a href="home.php">> Home</a>
+                    <a href="home"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> Home</a>
                 </li>
                 <li>
-                     <a href="login.php">> Login</a>
+                     <a href="login"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> Login</a>
                 </li>
                 <li>
-                    <a href="register.php">> Register</a>
+                    <a href="register"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> Register</a>
                 </li>
             </ul>
         </div>
 
-        <div class="about">
-            <h3>About Us</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-        </div>
+        
     </div>
-
+    
 <script src="static/js/like.js"></script>
 
    

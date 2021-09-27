@@ -50,3 +50,4 @@ RewriteRule ^createPost createPost.php [NC,L]
 # Directs to forgot Password page
 RewriteRule ^forgotPassword fpemail.php [NC,L]
 RewriteRule ^study study.php [NC,L]
+RewriteRule ^food food.php [NC,L]

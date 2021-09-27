@@ -1,6 +1,6 @@
 <?php 
 
-    header("Location: http://localhost/BlogIt/search.php?searchBar=study", true, 301);
+    header("Location: http://localhost/BlogIt/search.php?searchBar=Travel", true, 302);
     exit;
 
 ?>

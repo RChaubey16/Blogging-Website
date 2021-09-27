@@ -69,13 +69,6 @@
                             $id = $q['id'];
                             $sql->execute();
                             $result = $sql->get_result();
-
-                            // $sql = "SELECT id from blog_likes where blog = $id";
-                            // $result = mysqli_query($conn, $sql);
-                            
-                            // $sql = "SELECT blogsdata.id, blogsdata.title, COUNT(blog_likes.id) AS likes FROM blogsdata LEFT JOIN blog_likes ON blogsdata.id = blog_likes.blog GROUP BY blogsdata.id";
-                            // $result = mysqli_query($conn, $sql);
-
                             $ans = mysqli_num_rows($result);
                         ?>
                     

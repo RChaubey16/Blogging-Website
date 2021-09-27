@@ -49,3 +49,4 @@ RewriteRule ^home home.php [NC,L]
 RewriteRule ^createPost createPost.php [NC,L]
 # Directs to forgot Password page
 RewriteRule ^forgotPassword fpemail.php [NC,L]
+RewriteRule ^study study.php [NC,L]

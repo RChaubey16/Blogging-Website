@@ -10,8 +10,8 @@
                 BLOG IT!
             </a>
             <span class="nav__languagesDiv">
-                <a href="index">English</a>
-                <a href="home.php?lang=hi">Hindi</a>
+                <a href="index" id = "language-en">English</a>
+                <a href="home.php?lang=hi" id = "language-hi">Hindi</a>
             </span>
         </div>
 

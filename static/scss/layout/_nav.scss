@@ -18,7 +18,7 @@
     .nav__languagesDiv{
         margin-left: 1rem;
         a{
-            padding-left: 1rem;
+            padding: 0.5rem;
             font-size: 1.2rem;
             text-decoration: none;
             color: black;
@@ -27,6 +27,16 @@
             &:hover{
                 color: $common;
 
+            }
+        }
+
+        .language_highlight{
+            background-color: $common;
+            color: $white;
+            border-radius: 0.1rem;
+
+            &:hover{
+                color: $black;
             }
         }
     }

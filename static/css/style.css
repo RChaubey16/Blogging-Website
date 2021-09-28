@@ -51,7 +51,7 @@
 }
 
 .nav .nav__languagesDiv a {
-  padding-left: 1rem;
+  padding: 0.5rem;
   font-size: 1.2rem;
   text-decoration: none;
   color: black;
@@ -61,6 +61,16 @@
 
 .nav .nav__languagesDiv a:hover {
   color: #0488d1;
+}
+
+.nav .nav__languagesDiv .language_highlight {
+  background-color: #0488d1;
+  color: #ffffff;
+  border-radius: 0.1rem;
+}
+
+.nav .nav__languagesDiv .language_highlight:hover {
+  color: #080808;
 }
 
 .nav .nav__searchContainer form {

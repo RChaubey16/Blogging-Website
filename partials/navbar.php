@@ -1,12 +1,18 @@
 <!-- navbar -->
 <?php 
     include "dbLogic.php";
+    include "translation.php";
+    $lang = !empty($_GET['lang']) ? $_GET['lang'] : "";
 ?>
 <nav class="nav">
         <div class="left-div">
             <a href="index" class='icon'>
                 BLOG IT!
             </a>
+            <span class="nav__languagesDiv">
+                <a href="index">English</a>
+                <a href="home.php?lang=hi">Hindi</a>
+            </span>
         </div>
 
         <div class="nav__searchContainer">
@@ -45,11 +51,13 @@
                 <div class="nav-links">
                     <ul>
                         <li>
-                        <a href="login">Login</a>
+                        <!-- <a href="login"><?php echo translate("Login"); ?></a> -->
+                        <a href=<?php echo ( ($lang == "hi") ? "login.php?lang=hi" : "login" ) ?>><?php echo translate("Login"); ?></a>
                         </li>
                         
                         <li>
-                            <a href="register">Register</a>
+                            <!-- <a href="register"><?php echo translate("Register"); ?></a> -->
+                            <a href=<?php echo ( ($lang == "hi") ? "register.php?lang=hi" : "register" ) ?>><?php echo translate("Register"); ?></a>
                         </li>
                     </ul>
                 </div>

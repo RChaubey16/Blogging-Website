@@ -46,6 +46,23 @@
   text-decoration: none;
 }
 
+.nav .nav__languagesDiv {
+  margin-left: 1rem;
+}
+
+.nav .nav__languagesDiv a {
+  padding-left: 1rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: black;
+  -webkit-transition: all .17s ease-in-out;
+  transition: all .17s ease-in-out;
+}
+
+.nav .nav__languagesDiv a:hover {
+  color: #0488d1;
+}
+
 .nav .nav__searchContainer form {
   display: -webkit-box;
   display: -ms-flexbox;

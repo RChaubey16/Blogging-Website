@@ -1,17 +1,23 @@
 <!-- navbar -->
 <?php 
     include "dbLogic.php";
+    include "translation.php";
+    $lang = !empty($_GET['lang']) ? $_GET['lang'] : "en";
 ?>
 <nav class="nav">
         <div class="left-div">
-            <a href="index" class='icon'>
+            <a href="index" class="icon">
                 BLOG IT!
             </a>
+            <span class="nav__languagesDiv">
+                <a href="index" id = "language-en">English</a>
+                <a href="home.php?lang=hi" id = "language-hi">Hindi</a>
+            </span>
         </div>
 
         <div class="nav__searchContainer">
             <form action="search.php" method = "GET">
-                <input type="text" name='searchBar' class="nav__searchBar" placeholder="Search Query" autocomplete="off" >
+                <input type="text" name='searchBar' class="nav__searchBar" placeholder=<?php echo ( ($lang == "hi") ? "खोजें " : "Search" ) ?> autocomplete="off" >
                 <button name = "nav__searchBtn"><i class="fas fa-search"></i></button>
             </form>
         </div>
@@ -35,7 +41,7 @@
                 <div class="nav-links">
                     <ul>
                         <li>
-                            <a href="logout">Logout</a>
+                            <a href="logout"><?php echo $language[$lang][2]; ?></a>
                         </li>
                     </ul>
                 </div>
@@ -45,11 +51,13 @@
                 <div class="nav-links">
                     <ul>
                         <li>
-                        <a href="login">Login</a>
+                        <!-- <a href="login"><?php echo translate("Login"); ?></a> -->
+                        <a href=<?php echo ( ($lang == "hi") ? "login.php?lang=hi" : "login" ) ?>><?php echo $language[$lang][0]; ?></a>
                         </li>
                         
                         <li>
-                            <a href="register">Register</a>
+                            <!-- <a href="register"><?php echo translate("Register"); ?></a> -->
+                            <a href=<?php echo ( ($lang == "hi") ? "register.php?lang=hi" : "register" ) ?>><?php echo $language[$lang][1]; ?></a>
                         </li>
                     </ul>
                 </div>

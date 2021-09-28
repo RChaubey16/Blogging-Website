@@ -404,13 +404,13 @@
             <ul>
                 <!-- <h3>Links</h3> -->
                 <li>
-                    <a href="home"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> Home</a>
+                    <a href="home"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> <?php echo $language[$lang][4]?> </a>
                 </li>
                 <li>
-                    <a href="login"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> Login</a>
+                    <a href="login"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> <?php echo $language[$lang][1]?> </a>
                 </li>
                 <li>
-                    <a href="register"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> Register</a>
+                    <a href="register"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> <?php echo $language[$lang][2]?> </a>
                 </li>
             </ul>
         </div>
@@ -447,9 +447,6 @@
                         slidesToScroll: 1
                     }
                     },
-                    // You can unslick at a given breakpoint now by adding:
-                    // settings: "unslick"
-                    // instead of a settings object
                 ]
             });
 	    });

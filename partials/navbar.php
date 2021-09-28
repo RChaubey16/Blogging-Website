@@ -2,7 +2,7 @@
 <?php 
     include "dbLogic.php";
     include "translation.php";
-    $lang = !empty($_GET['lang']) ? $_GET['lang'] : "";
+    $lang = !empty($_GET['lang']) ? $_GET['lang'] : "en";
 ?>
 <nav class="nav">
         <div class="left-div">
@@ -41,7 +41,7 @@
                 <div class="nav-links">
                     <ul>
                         <li>
-                            <a href="logout">Logout</a>
+                            <a href="logout"><?php echo $language[$lang][2]; ?></a>
                         </li>
                     </ul>
                 </div>
@@ -52,12 +52,12 @@
                     <ul>
                         <li>
                         <!-- <a href="login"><?php echo translate("Login"); ?></a> -->
-                        <a href=<?php echo ( ($lang == "hi") ? "login.php?lang=hi" : "login" ) ?>><?php echo translate("Login"); ?></a>
+                        <a href=<?php echo ( ($lang == "hi") ? "login.php?lang=hi" : "login" ) ?>><?php echo $language[$lang][0]; ?></a>
                         </li>
                         
                         <li>
                             <!-- <a href="register"><?php echo translate("Register"); ?></a> -->
-                            <a href=<?php echo ( ($lang == "hi") ? "register.php?lang=hi" : "register" ) ?>><?php echo translate("Register"); ?></a>
+                            <a href=<?php echo ( ($lang == "hi") ? "register.php?lang=hi" : "register" ) ?>><?php echo $language[$lang][1]; ?></a>
                         </li>
                     </ul>
                 </div>

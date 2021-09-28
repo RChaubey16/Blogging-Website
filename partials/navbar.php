@@ -6,7 +6,7 @@
 ?>
 <nav class="nav">
         <div class="left-div">
-            <a href="index" class='icon'>
+            <a href="index" class="icon">
                 BLOG IT!
             </a>
             <span class="nav__languagesDiv">

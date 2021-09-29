@@ -78,16 +78,31 @@
         line-height: 22px;
 
         .nav-links a{
-            margin-left: 15px;
+            padding-left: 5px;
             text-decoration: none;
             text-transform: uppercase;
             color: $black;
             transition: all 150ms ease-in-out;
+
+            &:hover{
+                color: $common;
+            }
         }
 
-        .nav-links a:hover{
-            color: $common;
+        .nav-links a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: $common;
+            transition: width .3s;
+
         }
+
+        .nav-links a:hover::after{
+            width: 100%;
+        }
+
     }
 }
 

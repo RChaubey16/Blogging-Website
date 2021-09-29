@@ -25,13 +25,6 @@
 
     <div class="search__noDataFound">
       <img src="https://freefrontend.com/assets/img/403-forbidden-html-templates/403-Forbidden-HTML.png" alt="">
-
-
     </div>
-
-    <!-- <button id="add-post-btn"><a style = "color: white; text-decoration:none;" href="home">Go To Home</a></button> -->
-
-
-    
 
 <?php require_once('partials/footer.php') ?>

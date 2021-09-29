@@ -39,7 +39,6 @@
                             <div class="blogger-container">
                                 <div class="blogger-avatar">
                                     <img src="https://image.flaticon.com/icons/png/512/1077/1077012.png" alt="">
-                                    <!-- <i class="fas fa-3x fa-user"></i> -->
                                 </div>
                                 <div class="blogger-details">
 

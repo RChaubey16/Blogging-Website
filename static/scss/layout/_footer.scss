@@ -63,8 +63,21 @@
                 }
                 a:hover{
                     color: $common;
-
                 }
+
+                a::after {
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 2px;
+                    background: $common;
+                    transition: width .3s;
+                }
+
+                a:hover::after{
+                    width: 100%;
+                }
+
             }
         }
     }

@@ -336,4 +336,20 @@ if (isset($_POST['pass_reset'])) {
         header("Location: login.php?info=resetdone");
         exit;
     }
+
 }
+
+  // Translating the blog
+if (isset($_POST['translate'])){
+    $sql = $conn->prepare("UPDATE blogsdata SET blog_title_hindi = ?, blog_content_hindi = ? WHERE id = ?");
+    $sql->bind_param("ssi", $title, $content, $id);
+    $id = $_POST['id'];
+    $title = $_POST['title'];
+    $content = $_POST['editor1'];
+    $sql->execute();
+
+    header("Location: index.php?info=updated");
+    exit();
+}
+
+

@@ -58,9 +58,6 @@
                         
             </div>
 
-        
-
-
             <form method = "POST">
 
                 <label for="uname">Name</label>
@@ -127,7 +124,7 @@
                                 <p id = "content" class = "personal__content"><?php echo substr($a['content'], 0, 202
                                 ) . "...."; ?></p>
                                 <div class = "read-more-btn profile-read-btn">
-                                    <a href="blogPage.php?id=<?php echo $a['id']?>&user_id=<?php echo$q['user_id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+                                    <a href="blogPage.php?id=<?php echo $a['id']?>">Read More <i class="fas fa-chevron-right"></i></a>
                                 </div>
                                 
                             </div>

@@ -9,11 +9,19 @@
             <a href="index" class="icon">
                 BLOG IT!
             </a>
+
+            <?php 
+                $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+                $uri_segments = explode('/', $uri_path);
+                
+                echo $uri_segments[2];
+            ?>
+
             <span class="nav__languagesDiv">
                 <a href="index" id = "language-en">English</a>
-                <a href="home.php?lang=hi" id = "language-hi">Hindi</a>
+                <a href="<?php echo $uri_segments[2]; ?>.php?id=<?php echo $uri_segments[3];?>&lang=hi" id = "language-hi">Hindi</a>
             </span>
-        </div>
+        </div>  
 
         <div class="nav__searchContainer">
             <form action="search.php" method = "GET">

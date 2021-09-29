@@ -2,6 +2,8 @@
     include "dbLogic.php";
     include "likes.php";
     session_start();
+
+    $lang = $_GET['lang'];
 ?> 
 <?php require_once('partials/header.php') ?>
 
@@ -22,7 +24,11 @@
         <div class = "blog-container">
             <?php foreach($query as $q) { ?>    
                 <div class="">
-                    <h1 id = "heading"><?php echo $q['title']; ?></h1>
+                    <?php if (isset($lang) and ($lang == "hi")) { ?>
+                        <h1 id = "heading"><?php echo $q['blog_title_hindi']; ?></h1>
+                    <?php } else { ?>
+                        <h1 id = "heading"><?php echo $q['title']; ?></h1>
+                    <?php } ?>
                 </div>
 
                 <?php 
@@ -49,7 +55,11 @@
 
                 <div class="blogPage__content">
 
-                    <p class='blog-content'><?php echo nl2br($q['content']); ?></p>
+                    <?php if (isset($lang) and ($lang == "hi")) { ?>
+                        <p class='blog-content'><?php echo nl2br(strip_tags($q['blog_content_hindi'])); ?></p>
+                    <?php } else { ?>
+                        <p class='blog-content'><?php echo nl2br($q['content']); ?></p>
+                    <?php } ?>
                 </div>
 
 
@@ -99,6 +109,7 @@
                 
                 <?php if (isset($_SESSION['loggedin']) && $_SESSION['uid'] == $q['user_id']) { ?>
                     <div class='action-btns'>
+                        <a href="translateBlog.php?id=<?php echo $q['id']?>" >Translate</a>
                         <a href="editBlog/<?php echo $q['id']?>" >Edit</a>
                         <form method = "POST">
                             <input type='text' hidden name = "id" value = "<?php echo $q['id']; ?>">

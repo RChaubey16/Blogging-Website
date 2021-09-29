@@ -18,6 +18,10 @@
 
     .blog-tile-img{
         margin: 0;
+        transition: transform .17s ease-in-out;
+        &:hover{
+            transform: scale(1.05);
+        }   
     }
 
     .blogPage__content{

@@ -5,7 +5,7 @@
 <?php require_once('partials/header.php') ?>
 <script src="https://cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
 <link rel="stylesheet" href="static/css/style.css?v=<?php echo time(); ?>">
-    <title>Blog It - Edit</title>
+    <title>Blog It - Translate</title>
 </head>
 <body>
 
@@ -20,9 +20,10 @@
 
             <form method="POST">
                 <input type="text" hidden name = "id" value="<?php echo $q['id']?>">
-                <input type="text" name="title" class="create-post-title" placeholder="Blog Title" value = "<?php echo $q['title'] ?>">
-                <textarea name="editor1"><?php echo $q['content']; ?></textarea>
-                <button name = "update" id='add-post-btn' style=>Update</button>
+                <input type="text" name="title" class="create-post-title" placeholder="Blog Title" value = "<?php echo $q['blog_title_hindi'] ?>">
+                <br>
+                <textarea name="editor1"><?php echo $q['blog_content_hindi']; ?></textarea>
+                <button name = "translate" id='add-post-btn'>Translate</button>
             </form>
 
         <?php } ?> 

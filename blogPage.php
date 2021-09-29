@@ -24,7 +24,7 @@
         <div class = "blog-container">
             <?php foreach($query as $q) { ?>    
                 <div class="">
-                    <?php if (isset($lang) and ($lang == "hindi")) { ?>
+                    <?php if (isset($lang) and ($lang == "hi")) { ?>
                         <h1 id = "heading"><?php echo $q['blog_title_hindi']; ?></h1>
                     <?php } else { ?>
                         <h1 id = "heading"><?php echo $q['title']; ?></h1>
@@ -55,7 +55,7 @@
 
                 <div class="blogPage__content">
 
-                    <?php if (isset($lang) and ($lang == "hindi")) { ?>
+                    <?php if (isset($lang) and ($lang == "hi")) { ?>
                         <p class='blog-content'><?php echo nl2br(strip_tags($q['blog_content_hindi'])); ?></p>
                     <?php } else { ?>
                         <p class='blog-content'><?php echo nl2br($q['content']); ?></p>

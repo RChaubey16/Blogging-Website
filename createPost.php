@@ -24,7 +24,6 @@
             <input type="text" name="blog__topic" class = "create-post-title" placeholder = "Blog Category" autocomplete = "off" required>
             <input type="file" name="blog__img" class = "blog-image">
             <textarea name="editor1"></textarea>
-            <!-- <textarea name="content" cols="30" rows="40" placeholder="Write your blog here...." required></textarea> -->
             <input type='text' hidden name = "userId" value = "<?php echo $_SESSION['uid']; ?>">
             <button name = "new_post" id='add-post-btn'>Add Post</button>
         </form>

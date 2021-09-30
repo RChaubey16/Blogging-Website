@@ -64,7 +64,7 @@
     <div class="home__blogCarousel">
         <h2 class = "home__blogCarouselHeading">
             <i class="fas fa-mail-bulk"></i>    
-            RECENT BLOGS
+            <?php echo $language[$lang][5]; ?>
         </h2>
         <div class="home__blogCarouselImages">
             
@@ -216,7 +216,7 @@
             <!-- ***************** Sidebar - Social Section ****************** -->
             <div class="social__container">
                 <div class="social__title">
-                    <h3 class="social__heading"> Social Plugin </h3>
+                    <h3 class="social__heading"> <?php echo $language[$lang][6]; ?> </h3>
                 </div>
                 <div class="social__content">
                     <ul class="social-counter social social-color">
@@ -279,9 +279,9 @@
             <div class="popularPosts__container">
                 <div class="popularPosts__title">
                     <h3 class="popularPosts__heading">
-                            Popular Posts
-                        </h3>
-                    </div>
+                        <?php echo $language[$lang][7]; ?>
+                    </h3>
+                </div>
                 <?php 
                     $sql = $conn->prepare("SELECT * from blogsdata ORDER BY id ASC LIMIT 3");
                     $sql->execute();
@@ -307,7 +307,7 @@
             <div class="category__container">
                 <div class="category__title">
                     <h3 class="category__heading">
-                        Categories
+                        <?php echo $language[$lang][8]; ?>
                     </h3>
                 </div>
 
@@ -347,16 +347,26 @@
     <div class="home__subscribeBox">
         <div class="subscribe__details">
             <div class="sub__heading">
-                <h2>Subscribe</h2>
+
+                <?php if ($lang == 'hi') { ?>
+                    <h2>हमें सब्सक्राइब करें</h2>
+                <?php } else { ?> 
+                    <h2>Subscribe</h2> 
+                <?php } ?>
+
             </div>
             <div class="sub__para">
-               <p>Subscribe our newsletter to stay updated every moment</p>
+                <?php if ($lang == 'hi') { ?>
+                    <p>हर पल अपडेट रहने के लिए हमारे न्यूज़लेटर को सब्सक्राइब करें</p>
+                <?php } else { ?> 
+                    <p>Subscribe our newsletter to stay updated every moment</p> 
+                <?php } ?>
             </div>
         </div>
         <div class="subscribe__form">
             <form method="POST">
-                <input type="text" name="subscriber__email" placeholder="Just a step away, enter your email...">
-                <button name = "subscriber__submit" class='submit__btn'>Submit</button>
+                <input type="text" name="subscriber__email" placeholder=<?php echo ($lang == "hi") ? 'ईमेल...' : 'Email...'; ?>>
+                <button name = "subscriber__submit" class='submit__btn'><?php echo ($lang == "hi") ? 'भेजें' : 'Submit'; ?></button>
             </form>
         </div>
     </div>
@@ -366,9 +376,13 @@
     <div class="footer">
 
         <div class="about">
-            <h3>About Us</h3>
+            <h3><?php echo ($lang == 'hi') ? $language[$lang][9] : $language[$lang][9]; ?></h3>
+            
             <?php 
-                $about = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
+
+                $about = ($lang == 'hi') ? 'लोरेम इप्सम प्रिंटिंग और टाइपसेटिंग उद्योग का केवल डमी टेक्स्ट है लोरेम इप्सम 1500 के दशक के बाद से उद्योग का मानक डमी टेक्स्ट रहा है, जब एक अज्ञात प्रिंटर ने एक प्रकार की गैली ली और इसे एक प्रकार की नमूना पुस्तक बनाने के लिए हाथापाई की। यह न केवल पांच शताब्दियों तक जीवित रहा है, बल्कि इलेक्ट्रॉनिक टाइपसेटिंग में भी छलांग लगाई है, जो अनिवार्य रूप से अपरिवर्तित है।' : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
+
+                // $about = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
             ?>
             <p><?php echo substr($about, 0, 170) . "..."; ?></p>
         </div>
@@ -379,7 +393,7 @@
                 <i class="fas fa-map-marker-alt"></i>
                 <div class="location-details">
 
-                    <p>Example Street.</p>
+                    <p><?php echo ($lang == 'hi') ? 'उदाहरण स्ट्रीट।' : 'Example Street.' ?></p>
                 </div>
             </div>
             <div class="phone">

@@ -15,11 +15,18 @@
                 $uri_segments = explode('/', $uri_path);
                 
                 echo $uri_segments[2];
+
+                $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                $a = parse_url($url);
+                $b = explode('/', $a['path']);
+                // echo var_dump($b);
+                $file = $b[2];
             ?>
 
             <span class="nav__languagesDiv">
-                <a href="index" id = "language-en">English</a>
-                <a href="<?php echo $uri_segments[2]; ?>.php?id=<?php echo $uri_segments[3];?>&lang=hi" id = "language-hi">Hindi</a>
+                
+                <a href="<?php echo $file; ?>.php" id = "language-en">English</a>
+                <a href="<?php echo $file; ?>.php?id=<?php echo $uri_segments[3];?>&lang=hi" id = "language-hi">Hindi</a>
             </span>
         </div>  
 

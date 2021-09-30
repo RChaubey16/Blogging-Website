@@ -7,51 +7,39 @@
         exit();
     }
 ?> 
-
 <?php require_once('partials/header.php') ?>
 <link rel="stylesheet" href="static/css/style.css?v=<?php echo time(); ?>">
     <title>BlogIt</title>
 </head>
 <body>
-    <!-- Navbar -->
-    <?php include('partials/navbar.php')?>
-    <?php include('partials/menuLinks.php')?>
 
-    <div class="index__bloggers">
+<!-- Navbar -->
+<?php include('partials/navbar.php')?>
+<?php include('partials/menuLinks.php')?>
 
-
-        <h2>Bloggers</h2>
-
-        <?php 
-            $sql = "SELECT * FROM userdetails ORDER By user_id DESC";
-            $res = mysqli_query($conn, $sql);
-                        
-                foreach($res as $a) {  
-                            
-                    if ($_SESSION['username'] == $a['name']){
-                        continue;
-                    } else { ?>
-
-                        
-                        <a href="profile/<?php echo $a['user_id']?>">
-
-
-                            <div class="blogger-container">
-                                <div class="blogger-avatar">
-                                    <img src="https://image.flaticon.com/icons/png/512/1077/1077012.png" alt="">
-                                </div>
-                                <div class="blogger-details">
-
-                                    <p><?php echo $a['name']?></p>
-
-                                </div>
+<div class="index__bloggers">
+    <h2>Bloggers</h2>
+    <?php 
+        $sql = "SELECT * FROM userdetails ORDER By user_id DESC";
+        $res = mysqli_query($conn, $sql);
+            foreach($res as $a) {  
+                if ($_SESSION['username'] == $a['name']){
+                    continue;
+                } else { ?>
+                    <a href="profile/<?php echo $a['user_id']?>">
+                        <div class="blogger-container">
+                            <div class="blogger-avatar">
+                                <img src="https://image.flaticon.com/icons/png/512/1077/1077012.png" alt="">
                             </div>
+                            <div class="blogger-details">
 
-                        </a>
-        <?php } } ?>
+                                <p><?php echo $a['name']?></p>
 
-    </div>
+                            </div>
+                        </div>
+                    </a>
+    <?php } } ?>
 
-
+</div>
 
 <?php require_once('partials/footer.php') ?>

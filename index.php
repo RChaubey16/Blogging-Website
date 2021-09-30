@@ -189,7 +189,7 @@
 
              <div class="index__bloggers hide-style">
 
-                    <h2 id = "index__bloggersHeading">Bloggers</h2>
+                <h2 id = "index__bloggersHeading"> <?php echo ($lang == 'hi') ? "ब्लॉगर्स" : "Bloggers" ?> </h2>
 
                 <?php 
                     $sql = "SELECT * FROM userdetails ORDER By user_id DESC";
@@ -201,7 +201,7 @@
                                 continue;
                             } else { ?>
 
-                                <a href="profile/<?php echo $a['user_id']?>">
+                                <a href="profile.php?lang=<?php echo $lang; ?>&uid=<?php echo $a['user_id']?>">
 
                                     <div class="blogger-container">
                                         <div class="blogger-avatar">

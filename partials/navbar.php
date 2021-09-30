@@ -72,12 +72,10 @@
                 <div class="nav-links">
                     <ul>
                         <li>
-                        <!-- <a href="login"><?php echo translate("Login"); ?></a> -->
                         <a href=<?php echo ( ($lang == "hi") ? "login.php?lang=hi" : "login" ) ?>><?php echo $language[$lang][0]; ?></a>
                         </li>
                         
                         <li>
-                            <!-- <a href="register"><?php echo translate("Register"); ?></a> -->
                             <a href=<?php echo ( ($lang == "hi") ? "register.php?lang=hi" : "register" ) ?>><?php echo $language[$lang][1]; ?></a>
                         </li>
                     </ul>

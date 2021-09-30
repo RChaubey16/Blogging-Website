@@ -2,6 +2,8 @@
 
     // restricting the logged in user to access login and registration pages
     session_start();
+    include "translation.php";
+    $lang = $_SESSION['lang'];
     if (isset($_SESSION['loggedin']) &&  $_SESSION['loggedin']){
       header("Location: index.php");
       exit();
@@ -50,7 +52,7 @@
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
         $_SESSION['uid'] = $row['user_id'];     // as $row is now an associative array, we can access the values via its keys. 
-        header('Location: index/login');
+        header('Location: index.php?lang='. $lang . "&info=login");
         exit();
       }
       else {

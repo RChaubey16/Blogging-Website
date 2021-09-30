@@ -1,6 +1,8 @@
 <?php 
-    include "dbLogic.php";
     session_start();
+    include "dbLogic.php";
+    include "translation.php";
+    $lang = $_SESSION['lang'];
 ?> 
 <?php require_once('partials/header.php') ?>
 
@@ -44,7 +46,7 @@
 
             </div>
             <div class="home__bannerContent-btn">
-                <button> <a href="blogPage/<?php echo $ans['id']?>">Read More</a> </button>
+                <button> <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $ans['id']?>">Read More</a> </button>
             </div>
         </div>
 
@@ -107,7 +109,7 @@
                         <p id = "content"><?php echo substr($stripped_content, 0, 72) . "...."; ?></p>
 
                         <div class = "read-more-btn">
-                            <a href="blogPage/<?php echo $q['id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+                            <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $q['id']?>">Read More <i class="fas fa-chevron-right"></i></a>
                             <a href="search.php?searchBar=<?php echo $q['category'];?>" style = 'background-color: gray;'><?php echo $q['category'];?></a>
                         </div>
 
@@ -129,7 +131,7 @@
         <div class="home__blogCards">
             <?php foreach ($result as $r) { ?>
                 <div class="home__blogCard1">
-                    <a href="blogPage/<?php echo $r ['id']?>">
+                    <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $r['id']?>">
                         <img src="<?php echo $r['blog_image'] ?>" alt="">
                     </a>
                     <div class="home__blogCardDetails">
@@ -201,7 +203,7 @@
                             <p id = "content"><?php echo substr($stripped_content, 0, 92) . "...."; ?></p>
 
                             <div class = "read-more-btn">
-                                <a href="blogPage/<?php echo $q['id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+                                <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $q['id']?>">Read More <i class="fas fa-chevron-right"></i></a>
                                 <a href="search/<?php echo $q['category'];?>" style = 'background-color: gray;'><?php echo $q['category'];?></a>
                             </div>
                             
@@ -381,8 +383,6 @@
             <?php 
 
                 $about = ($lang == 'hi') ? 'लोरेम इप्सम प्रिंटिंग और टाइपसेटिंग उद्योग का केवल डमी टेक्स्ट है लोरेम इप्सम 1500 के दशक के बाद से उद्योग का मानक डमी टेक्स्ट रहा है, जब एक अज्ञात प्रिंटर ने एक प्रकार की गैली ली और इसे एक प्रकार की नमूना पुस्तक बनाने के लिए हाथापाई की। यह न केवल पांच शताब्दियों तक जीवित रहा है, बल्कि इलेक्ट्रॉनिक टाइपसेटिंग में भी छलांग लगाई है, जो अनिवार्य रूप से अपरिवर्तित है।' : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
-
-                // $about = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
             ?>
             <p><?php echo substr($about, 0, 170) . "..."; ?></p>
         </div>

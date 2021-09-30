@@ -2,31 +2,37 @@
 <?php 
     include "dbLogic.php";
     include "translation.php";
-    $lang = !empty($_GET['lang']) ? $_GET['lang'] : "en";
+    // $lang = !empty($_GET['lang']) ? $_GET['lang'] : "en";
 ?>
 <nav class="nav">
         <div class="left-div">
-            <a href="index" class="icon">
+            <a href="index.php?lang=<?php echo $lang;?>" class="icon">
                 BLOG IT!
             </a>
 
             <?php 
                 $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
                 $uri_segments = explode('/', $uri_path);
-                
                 echo $uri_segments[2];
 
+                // Important concept for language translation
                 $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 $a = parse_url($url);
+                // To get the file (E.g blogPage.php) 
                 $b = explode('/', $a['path']);
-                // echo var_dump($b);
                 $file = $b[2];
+                // to get the queries from URL
+                $c = explode('&', $a['query']);
+                $id = $c[1];
+                echo var_dump($c[1]);
             ?>
 
             <span class="nav__languagesDiv">
                 
-                <a href="<?php echo $file; ?>.php" id = "language-en">English</a>
-                <a href="<?php echo $file; ?>.php?id=<?php echo $uri_segments[3];?>&lang=hi" id = "language-hi">Hindi</a>
+               <a href="<?php echo $file; ?>?lang=en&<?php echo ($id != NULL) ? $id : ""; ?>" id = "language-en">English</a>
+        
+                <a href="<?php echo $file; ?>?lang=hi&<?php echo ($id != NULL) ? $id : ""; ?>" id = "language-hi">Hindi</a>
+
             </span>
         </div>  
 
@@ -47,7 +53,7 @@
             
             <?php if (isset($_SESSION['username'])) { ?>
                 <div class="user nav-links">
-                    <a href = "profile/<?php echo $_SESSION['uid']?>"><?php echo $_SESSION['username']?></a>
+                    <a href = "profile.php?lang=<?php echo $lang; ?>&uid=<?php echo $_SESSION['uid']?>"><?php echo $_SESSION['username']?></a>
                 </div>
             <?php } ?>
           

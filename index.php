@@ -1,9 +1,11 @@
 <?php 
     include "dbLogic.php";
     session_start();
+    include "translation.php";
+    $lang = $_SESSION['lang'];
 
     if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
-        header("Location: home" );
+        header("Location: home.php?lang=" . $lang );
         exit();
     }
 ?> 
@@ -45,7 +47,7 @@
 
         </div>
         <div class="home__bannerContent-btn">
-            <button> <a href="blogPage/<?php echo $ans['id']?>">Read More</a> </button>
+            <button> <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $ans['id']?>">Read More</a> </button>
         </div>
     </div>
 
@@ -107,7 +109,7 @@
             <div class="home__blogCards">
                 <?php foreach ($result as $r) { ?>
                     <div class="home__blogCard1">
-                        <a href="blogPage/<?php echo $r['id']; ?>">
+                        <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $r['id']?>">
                             <img src="<?php echo $r['blog_image'] ?>" alt="">
                         </a>
                         <div class="home__blogCardDetails">
@@ -174,8 +176,8 @@
 
 
                                 <div class = "read-more-btn">
-                                    <a href="blogPage/<?php echo $q['id']?>">Read More <i class="fas fa-chevron-right"></i></a>
-                                    <a href="search/<?php echo $q['category'];?>" style = 'background-color: gray;'><?php echo $q['category'];?></a>
+                                    <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $q['id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+                                    <a href="search.php?lang=<?php echo $lang; ?>&searchBar=<?php echo $q['category'];?>" style = 'background-color: gray;'><?php echo $q['category'];?></a>
                                 </div>
                                 
                             </div>
@@ -233,57 +235,61 @@
         <!-- Footer -->
 
         
-    <div class="footer">
+        <div class="footer">
 
-        <div class="about">
-            <h3>About Us</h3>
-            <?php 
-                $about = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
-            ?>
-            <p><?php echo substr($about, 0, 170) . "..."; ?></p>
-        </div>
-
-        <div class="details">
-
-            <div class="location">
-                <i class="fas fa-map-marker-alt"></i>
-                <div class="location-details">
-
-                    <p>Example Street.</p>
-                </div>
-            </div>
-            <div class="phone">
-                <i class="fas fa-phone"></i>
-                <div class="location-details">
-
-                    <p>+1 9999 9999</p>
-                </div>
-            </div>
-            <div class="email">
-                <i class="fas fa-envelope-square"></i>
-                <div class="location-details">
-                    <p>example@example.com</p>
-                </div>
+            <div class="about">
+                <h3><?php echo ($lang == 'hi') ? $language[$lang][9] : $language[$lang][9]; ?></h3>
                 
+                <?php 
+
+                    $about = ($lang == 'hi') ? 'लोरेम इप्सम प्रिंटिंग और टाइपसेटिंग उद्योग का केवल डमी टेक्स्ट है लोरेम इप्सम 1500 के दशक के बाद से उद्योग का मानक डमी टेक्स्ट रहा है, जब एक अज्ञात प्रिंटर ने एक प्रकार की गैली ली और इसे एक प्रकार की नमूना पुस्तक बनाने के लिए हाथापाई की। यह न केवल पांच शताब्दियों तक जीवित रहा है, बल्कि इलेक्ट्रॉनिक टाइपसेटिंग में भी छलांग लगाई है, जो अनिवार्य रूप से अपरिवर्तित है।' : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
+                ?>
+                <p><?php echo substr($about, 0, 170) . "..."; ?></p>
             </div>
 
-        </div>
+            <div class="details">
 
-        <div class="links">
-            
-            <ul>
-                <li>
-                    <a href="home"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> Home</a>
-                </li>
-                <li>
-                    <a href="login"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> Login</a>
-                </li>
-                <li>
-                    <a href="register"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> Register</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+                <div class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="location-details">
+
+                        <p><?php echo ($lang == 'hi') ? 'उदाहरण स्ट्रीट।' : 'Example Street.' ?></p>
+                    </div>
+                </div>
+                <div class="phone">
+                    <i class="fas fa-phone"></i>
+                    <div class="location-details">
+
+                        <p>+1 9999 9999</p>
+                    </div>
+                </div>
+                <div class="email">
+                    <i class="fas fa-envelope-square"></i>
+                    <div class="location-details">
+                        <p>example@example.com</p>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <div class="links">
+                
+                <ul>
+                    <!-- <h3>Links</h3> -->
+                    <li>
+                        <a href="home"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> <?php echo $language[$lang][4]?> </a>
+                    </li>
+                    <li>
+                        <a href="login"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> <?php echo $language[$lang][1]?> </a>
+                    </li>
+                    <li>
+                        <a href="register"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> <?php echo $language[$lang][2]?> </a>
+                    </li>
+                </ul>
+            </div>
+        </div>  
+
     
 
 <?php require_once('partials/footer.php') ?>

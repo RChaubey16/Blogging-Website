@@ -41,7 +41,7 @@ if (isset($_REQUEST['new_post'])) {
     $userId = $_REQUEST['userId'];
     $userName = $_REQUEST['user_name'];
 
-    $sql_query = "INSERT INTO blogsdata(title, content, user_id, blog_image, category) VALUES('$title', '$content', $userId, '$destinationFile', '$category')";
+    $sql_query = "INSERT INTO blogsdata(title, content, blog_title_hindi, blog_content_hindi, user_id, blog_image, category) VALUES('$title', '$content', '', '', $userId, '$destinationFile', '$category')";
     mysqli_query($conn, $sql_query);
 
     // Sending emails

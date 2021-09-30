@@ -139,7 +139,7 @@
                                         <img src="<?php echo $r['blog_image']; ?>" alt="">
                                     </div>
                                     <div class="post_title">
-                                        <a href = "http://localhost/BlogIt/blogPage/<?php echo $r['id']; ?>"><?php echo $r['title']; ?></a>
+                                        <a href = "http://localhost/BlogIt/blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $r['id']; ?>"><?php echo $r['title']; ?></a>
                                     </div>
                                 </div>
                             </div>
@@ -364,8 +364,6 @@
             <?php 
 
                 $about = ($lang == 'hi') ? 'लोरेम इप्सम प्रिंटिंग और टाइपसेटिंग उद्योग का केवल डमी टेक्स्ट है लोरेम इप्सम 1500 के दशक के बाद से उद्योग का मानक डमी टेक्स्ट रहा है, जब एक अज्ञात प्रिंटर ने एक प्रकार की गैली ली और इसे एक प्रकार की नमूना पुस्तक बनाने के लिए हाथापाई की। यह न केवल पांच शताब्दियों तक जीवित रहा है, बल्कि इलेक्ट्रॉनिक टाइपसेटिंग में भी छलांग लगाई है, जो अनिवार्य रूप से अपरिवर्तित है।' : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
-
-                // $about = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
             ?>
             <p><?php echo substr($about, 0, 170) . "..."; ?></p>
         </div>

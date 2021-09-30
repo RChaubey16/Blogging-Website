@@ -1,6 +1,8 @@
 <?php 
     include "dbLogic.php";
     session_start();
+    include "translation.php";
+    $lang = $_SESSION['lang'];
 
     if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
         header("Location: home.php" );
@@ -124,7 +126,7 @@
                                 <p id = "content" class = "personal__content"><?php echo substr($a['content'], 0, 202
                                 ) . "...."; ?></p>
                                 <div class = "read-more-btn profile-read-btn">
-                                    <a href="blogPage.php?id=<?php echo $a['id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+                                    <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $a['id']?>">Read More <i class="fas fa-chevron-right"></i></a>
                                 </div>
                                 
                             </div>

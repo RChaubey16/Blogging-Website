@@ -34,19 +34,28 @@
 
         <div class="home__bannerContent">
             <div class="home__bannerContent-title">
-                <h1> <?php echo $ans['title']; ?> </h1>
+                <h1> <?php echo (($lang == 'hi') ? $ans['blog_title_hindi'] : $ans['title'] ); ?> </h1>
             </div>
+
             <div class="home__bannerContent-desc">
                 <?php 
-                    $content = $ans['content'];
-                    $stripped_content = strip_tags($content);
+                    if ($lang == 'hi'){
+                        $content = $ans['blog_content_hindi'];
+                        $stripped_content = strip_tags($content);
+                        $char_length = 210;
+                    } else {
+                        $content = $ans['content'];
+                        $stripped_content = strip_tags($content);
+                        $char_length = 72;
+                    }
                 ?>
 
-                <p id = "content"><?php echo substr($stripped_content, 0, 72) . "...."; ?></p>
+                <p id = "content"><?php echo substr($stripped_content, 0, $char_length) . "...."; ?></p>
 
             </div>
+
             <div class="home__bannerContent-btn">
-                <button> <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $ans['id']?>">Read More</a> </button>
+                <button> <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $ans['id']?>"><?php echo $language[$lang][10]; ?></a> </button>
             </div>
         </div>
 
@@ -94,7 +103,7 @@
                             <img src="<?php echo $q['blog_image']?>" alt="">
                         </div>
 
-                        <h3 class = 'heading'><?php echo $q['title'] ?></h3>
+                        <h3 class = 'heading'><?php echo (($lang == 'hi') ? $q['blog_title_hindi'] : $q['title'] ); ?> </h3>
 
                         <div class="blog__details">
                             <p id='homePage__author'><i class="fas fa-user"></i> <?php echo $blog_user_name; ?></p>
@@ -102,14 +111,25 @@
                         </div>
 
                         <?php 
-                            $content = $q['content'];
-                            $stripped_content = strip_tags($content);
+
+                            if ($lang == 'hi'){
+                                $content = $q['blog_content_hindi'];
+                                $stripped_content = strip_tags($content);
+                                $char_length = 210;
+                            } else {
+                                $content = $q['content'];
+                                $stripped_content = strip_tags($content);
+                                $char_length = 72;
+                            }
+
+                            // $content = $q['content'];
+                            // $stripped_content = strip_tags($content);
                         ?>
 
-                        <p id = "content"><?php echo substr($stripped_content, 0, 72) . "...."; ?></p>
+                        <p id = "content"><?php echo substr($stripped_content, 0, $char_length) . "...."; ?></p>
 
                         <div class = "read-more-btn">
-                            <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $q['id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+                            <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $q['id']?>"><?php echo $language[$lang][10]; ?> <i class="fas fa-chevron-right"></i></a>
                             <a href="search.php?searchBar=<?php echo $q['category'];?>" style = 'background-color: gray;'><?php echo $q['category'];?></a>
                         </div>
 
@@ -136,7 +156,7 @@
                     </a>
                     <div class="home__blogCardDetails">
                         <button><?php echo $r['category']; ?></button>
-                        <h3 class = 'heading'><?php echo $r['title'] ?></h3>
+                        <h3 class = 'heading'><?php echo (($lang == 'hi') ? $r['blog_title_hindi'] : $r['title'] ); ?></h3>
                         <div class="blog__details">
                             <?php 
                                 // Query to access authorname of the blog
@@ -188,7 +208,7 @@
                                 <img src="<?php echo $q['blog_image']?>" alt="">
                             </div>
 
-                            <h3 class = 'heading'><?php echo $q['title'] ?></h3>
+                            <h3 class = 'heading'><?php echo (($lang == 'hi') ? $q['blog_title_hindi'] : $q['title'] ); ?></h3>
 
                             <div class="blog__details">
                                 <p id='homePage__author'><i class="fas fa-user"></i> <?php echo $blog_user_name; ?></p>
@@ -196,14 +216,21 @@
                             </div>
                             
                             <?php 
-                                $content = $q['content'];
-                                $stripped_content = strip_tags($content);
+                               if ($lang == 'hi'){
+                                    $content = $q['blog_content_hindi'];
+                                    $stripped_content = strip_tags($content);
+                                    $char_length = 210;
+                                } else {
+                                    $content = $q['content'];
+                                    $stripped_content = strip_tags($content);
+                                    $char_length = 92;
+                                }
                             ?>
 
-                            <p id = "content"><?php echo substr($stripped_content, 0, 92) . "...."; ?></p>
+                            <p id = "content"><?php echo substr($stripped_content, 0, $char_length) . "...."; ?></p>
 
                             <div class = "read-more-btn">
-                                <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $q['id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+                                <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $q['id']?>"><?php echo $language[$lang][10]; ?> <i class="fas fa-chevron-right"></i></a>
                                 <a href="search/<?php echo $q['category'];?>" style = 'background-color: gray;'><?php echo $q['category'];?></a>
                             </div>
                             
@@ -293,12 +320,26 @@
 
                     <div class="popularPosts__content">
                         <div class="popularPosts__img">
-                            <img src="<?php echo $r['blog_image']; ?>" alt="">
+                            <img src="<?php echo $r['blog_image']; ?>" alt="popular-post-image">
                         </div>
                         <div class="popularPosts__info">
-                            <a href="http://localhost/BlogIt/blogPage/<?php echo $r ['id']?>">
-                                <?php echo substr($r['content'], 0, 60) . "..."; ?>
+
+                            <?php 
+                                if ($lang == 'hi'){
+                                    $content = $r['blog_content_hindi'];
+                                    $stripped_content = strip_tags($content);
+                                    $char_length = 190;
+                                } else {
+                                    $content = $r['content'];
+                                    $stripped_content = strip_tags($content);
+                                    $char_lengtth = 60;
+                                }
+                            ?>
+
+                            <a href="http://localhost/BlogIt/blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $r ['id']?>">
+                                <?php echo substr($stripped_content, 0, $char_length) . "..."; ?>
                             </a>
+
                         </div>
                     </div>
                 <?php } ?>

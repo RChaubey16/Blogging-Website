@@ -30,7 +30,7 @@
     <?php include('partials/navbar.php')?>
     <?php include('partials/menuLinks.php')?>
 
-    <h2 class = "profile__heading">Profile</h2>
+    <h2 class = "profile__heading"> <?php echo (($lang == 'hi') ? "प्रोफ़ाइल" : "Profile" )?> </h2>
 
     <?php 
 
@@ -62,13 +62,13 @@
 
             <form method = "POST">
 
-                <label for="uname">Name</label>
+                <label for="uname"><?php echo (($lang == 'hi') ? "नाम" : "Name" )?></label>
                     <input type="text" name = 'uname' value = "<?php echo $name ?>" disabled>
 
                     <input name = "profile__user_id" type="text" value = "<?php echo $id?>" hidden>
                 
                 <!-- Bio -->
-                <label for="profile__bio">Bio</label>
+                <label for="profile__bio"><?php echo (($lang == 'hi') ? "बाईओ" : "Bio" )?></label>
                     <?php if ($_SESSION['uid'] == $id) { ?>
                         <textarea class = "profile__bio" name="profile__bio" cols="30" rows="7" placeholder = "Tell us something about you..."><?php echo $bio; ?></textarea>
                     <?php } else { ?>
@@ -85,9 +85,9 @@
                 ?>  
 
                 <p>
-                    Blogs: <?php echo $ans; ?>
+                    <?php echo (($lang == 'hi') ? "ब्लॉग" : "Blogs")?>: <?php echo $ans; ?>
                     <?php if ($_SESSION['uid'] == $id) { ?>
-                        <button name = "profile__btn" id = "add-post-btn">Update</button>
+                        <button name = "profile__btn" id = "add-post-btn"><?php echo (($lang == 'hi') ? 'अपडेट करें' : 'Update') ?></button>
                     <?php } ?>
                 </p>
             
@@ -119,14 +119,29 @@
                     <div class = 'card'>
                     
                             <div class = "card-body">
-                                <h3 class = 'heading'><?php echo $a['title'] ?></h3>
+                                <h3 class = 'heading'><?php echo (($lang == 'hi') ? $a['blog_title_hindi'] : $a['title'] ); ?></h3>
                                 <div class="blog-tile-img">
                                     <img src="<?php echo $a['blog_image']?>" alt="">
                                 </div>
-                                <p id = "content" class = "personal__content"><?php echo substr($a['content'], 0, 202
+
+                                <?php 
+
+                                    if ($lang == 'hi'){
+                                        $content = $a['blog_content_hindi'];
+                                        $stripped_content = strip_tags($content);
+                                        $char_length = 510;
+                                    } else {
+                                        $content = $a['content'];
+                                        $stripped_content = strip_tags  ($content);
+                                        $char_length = 202;
+                                    }
+
+                                ?>
+
+                                <p id = "content" class = "personal__content"><?php echo substr($stripped_content, 0, $char_length
                                 ) . "...."; ?></p>
                                 <div class = "read-more-btn profile-read-btn">
-                                    <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $a['id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+                                    <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $a['id']?>"><?php echo $language[$lang][10]; ?>  <i class="fas fa-chevron-right"></i></a>
                                 </div>
                                 
                             </div>
@@ -134,9 +149,7 @@
                     </div>
                 <?php } ?>
             </div>
-            
 
-           
                     
     </div>
 

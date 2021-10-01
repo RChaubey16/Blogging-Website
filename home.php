@@ -121,9 +121,7 @@
                                 $stripped_content = strip_tags($content);
                                 $char_length = 72;
                             }
-
-                            // $content = $q['content'];
-                            // $stripped_content = strip_tags($content);
+                            
                         ?>
 
                         <p id = "content"><?php echo substr($stripped_content, 0, $char_length) . "...."; ?></p>

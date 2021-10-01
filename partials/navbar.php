@@ -62,7 +62,7 @@
                 <div class="nav-links">
                     <ul>
                         <li>
-                            <a href="logout"><?php echo $language[$lang][2]; ?></a>
+                            <a href="logout.php?lang=<?php echo $lang; ?>"><?php echo $language[$lang][2]; ?></a>
                         </li>
                     </ul>
                 </div>

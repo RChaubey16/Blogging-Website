@@ -2,6 +2,6 @@
     session_start();
     session_unset();
     session_destroy();
-    header("Location: login/loggedOut");
+    header("Location: login.php?lang=hi");
     exit();
 ?>

@@ -110,13 +110,13 @@
     <?php } ?>
 
     <form action="login.php" class="login-form" method = "POST">
-        <span class="login-signup-header"><i class="fas fa-sign-in-alt"></i> Login</span>
+        <span class="login-signup-header"><i class="fas fa-sign-in-alt"></i> <?php echo $language[$lang][0]; ?></span>
         
         <div class="field">
           <input
           name = 'username'
             type="text"
-            placeholder="Username"
+            placeholder=<?php echo (($lang == 'hi')? $language[$lang][13] : $language[$lang][13] ); ?>
             value = "<?php if (isset($_COOKIE['user_login'])) {
               echo $_COOKIE['user_login'];
             } ?>"
@@ -129,7 +129,7 @@
           <input 
           name = 'password'
             type="password"
-            placeholder="Password"
+            placeholder=<?php echo (($lang == 'hi')? $language[$lang][14] : $language[$lang][14] ); ?>
             value = "<?php if (isset($_COOKIE['user_password'])) {
               echo $_COOKIE['user_password'];
             } ?>"
@@ -141,7 +141,7 @@
         </div>
 
         <div class = "remember-me-box">
-          <label for="remember">Remember Me</label>
+          <label for="remember"><?php echo $language[$lang][11]; ?></label>
           <input 
           name = 'remember'
             type="checkbox"
@@ -151,11 +151,11 @@
 
 
         <div class="remember-me-box">
-          <a href="forgotPassword">Forgot Password?</a>
+          <a href="forgotPassword"><?php echo $language[$lang][12]; ?>?</a>
         </div>
         
         <div>
-            <button name = "new_user_login" id='add-post-btn'>Login</button>
+            <button name = "new_user_login" id='add-post-btn'><?php echo $language[$lang][0]; ?></button>
         </div>
       </form>
 <!-- footer -->

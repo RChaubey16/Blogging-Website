@@ -34,11 +34,11 @@
     <?php } ?>
     
     <form action="register.php" class="login-form" method = "POST" autocomplete="off">
-        <span class="login-signup-header"><i class="fas fa-user-plus"></i> Register</span>
+        <span class="login-signup-header"><i class="fas fa-user-plus"></i> <?php echo $language[$lang][1]; ?></span>
         <div class="field">
           <input
           name = "name"
-            placeholder="Name"
+            placeholder=<?php echo (($lang == 'hi') ? "नाम" : "Name" )?>
             type="text"
             required
             autocomplete = 'off'
@@ -48,7 +48,7 @@
           <input
           name = 'email'
             type="email"
-            placeholder="Email"
+            placeholder=<?php echo (($lang == 'hi') ? "ईमेल" : "Email" )?>
             required
             autocomplete = 'off'
           />
@@ -57,7 +57,7 @@
           <input
           name = 'password'
             type="password"
-            placeholder="Password"
+            placeholder=<?php echo (($lang == 'hi') ? "पासवर्ड" : "Password" )?>
             required
             autocomplete = 'off'
           />
@@ -67,14 +67,14 @@
           <input
           name = 'confirmPassword'
             type="password"
-            placeholder="Confirm password"
+            placeholder=<?php echo (($lang == 'hi') ? "पासवर्ड की पुष्टि कीजिये" : "Confirm Password" )?>
             required
             autocomplete = 'off'
           />
         </div>
 
         <div>
-            <button name = "new_user" id='add-post-btn'>Register</button>
+            <button name = "new_user" id='add-post-btn'><?php echo $language[$lang][1]; ?></button>
         </div>
       </form>
 <?php require_once('partials/footer.php') ?>

@@ -121,7 +121,7 @@
                                 $stripped_content = strip_tags($content);
                                 $char_length = 72;
                             }
-                            
+
                         ?>
 
                         <p id = "content"><?php echo substr($stripped_content, 0, $char_length) . "...."; ?></p>
@@ -330,7 +330,7 @@
                                 } else {
                                     $content = $r['content'];
                                     $stripped_content = strip_tags($content);
-                                    $char_lengtth = 60;
+                                    $char_length = 60;
                                 }
                             ?>
 

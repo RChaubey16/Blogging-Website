@@ -708,6 +708,12 @@ nav .nav-links ul li:hover {
   font-size: 30px;
   color: #0488d1;
 }
+
+.login__container{
+  /* border: 1px solid red; */
+  padding: 12vh 0;
+}
+
 .login-form {
   background-color: rgb(204, 200, 200);
   padding: 20px;
@@ -717,9 +723,10 @@ nav .nav-links ul li:hover {
   justify-content: center;
   align-items: center;
   width: 30%;
-  margin: 50px auto;
+  margin: 0 auto;
   border-radius: 6px;
 }
+
 .field {
   width: 100%;
 }
@@ -809,6 +816,11 @@ input[type="checkbox"] {
 }
 
 /*Profile Page*/
+
+.profile__mainContainer{
+  padding-top: 7vh;
+}
+
 .profile__box{
   display: flex;
   justify-content: space-between;

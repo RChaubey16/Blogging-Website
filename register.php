@@ -32,49 +32,52 @@
         <?php } ?>
 
     <?php } ?>
+
+    <div class="login__container">
     
-    <form action="register.php" class="login-form" method = "POST" autocomplete="off">
-        <span class="login-signup-header"><i class="fas fa-user-plus"></i> <?php echo $language[$lang][1]; ?></span>
-        <div class="field">
-          <input
-          name = "name"
-            placeholder=<?php echo (($lang == 'hi') ? "नाम" : "Name" )?>
-            type="text"
-            required
-            autocomplete = 'off'
-          />
-        </div>
-        <div class="field">
-          <input
-          name = 'email'
-            type="email"
-            placeholder=<?php echo (($lang == 'hi') ? "ईमेल" : "Email" )?>
-            required
-            autocomplete = 'off'
-          />
-        </div>
-        <div class="field">
-          <input
-          name = 'password'
-            type="password"
-            placeholder=<?php echo (($lang == 'hi') ? "पासवर्ड" : "Password" )?>
-            required
-            autocomplete = 'off'
-          />
-        </div>
+      <form action="register.php" class="login-form" method = "POST" autocomplete="off">
+          <span class="login-signup-header"><i class="fas fa-user-plus"></i> <?php echo $language[$lang][1]; ?></span>
+          <div class="field">
+            <input
+            name = "name"
+              placeholder=<?php echo (($lang == 'hi') ? "नाम" : "Name" )?>
+              type="text"
+              required
+              autocomplete = 'off'
+            />
+          </div>
+          <div class="field">
+            <input
+            name = 'email'
+              type="email"
+              placeholder=<?php echo (($lang == 'hi') ? "ईमेल" : "Email" )?>
+              required
+              autocomplete = 'off'
+            />
+          </div>
+          <div class="field">
+            <input
+            name = 'password'
+              type="password"
+              placeholder=<?php echo (($lang == 'hi') ? "पासवर्ड" : "Password" )?>
+              required
+              autocomplete = 'off'
+            />
+          </div>
 
-        <div class="field">
-          <input
-          name = 'confirmPassword'
-            type="password"
-            placeholder=<?php echo (($lang == 'hi') ? "पासवर्ड की पुष्टि कीजिये" : "Confirm Password" )?>
-            required
-            autocomplete = 'off'
-          />
-        </div>
+          <div class="field">
+            <input
+            name = 'confirmPassword'
+              type="password"
+              placeholder=<?php echo (($lang == 'hi') ? "पासवर्ड की पुष्टि कीजिये" : "Confirm Password" )?>
+              required
+              autocomplete = 'off'
+            />
+          </div>
 
-        <div>
-            <button name = "new_user" id='add-post-btn'><?php echo $language[$lang][1]; ?></button>
-        </div>
-      </form>
+          <div>
+              <button name = "new_user" id='add-post-btn'><?php echo $language[$lang][1]; ?></button>
+          </div>
+        </form>
+      </div>
 <?php require_once('partials/footer.php') ?>

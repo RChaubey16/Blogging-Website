@@ -109,55 +109,58 @@
 
     <?php } ?>
 
-    <form action="login.php" class="login-form" method = "POST">
-        <span class="login-signup-header"><i class="fas fa-sign-in-alt"></i> <?php echo $language[$lang][0]; ?></span>
-        
-        <div class="field">
-          <input
-          name = 'username'
-            type="text"
-            placeholder=<?php echo (($lang == 'hi')? $language[$lang][13] : $language[$lang][13] ); ?>
-            value = "<?php if (isset($_COOKIE['user_login'])) {
-              echo $_COOKIE['user_login'];
-            } ?>"
-            required
-            autocomplete = 'off'
-          />
-        </div>
+    <div class="login__container">
 
-        <div class="field login__pwdField">
-          <input 
-          name = 'password'
-            type="password"
-            placeholder=<?php echo (($lang == 'hi')? $language[$lang][14] : $language[$lang][14] ); ?>
-            value = "<?php if (isset($_COOKIE['user_password'])) {
-              echo $_COOKIE['user_password'];
-            } ?>"
-            required
-            autocomplete = 'off'
-            id = "login__pwd"
-          />
-          <i class="far fa-2x fa-eye" id = "login__eye"></i>
-        </div>
+      <form action="login.php" class="login-form" method = "POST">
+          <span class="login-signup-header"><i class="fas fa-sign-in-alt"></i> <?php echo $language[$lang][0]; ?></span>
+          
+          <div class="field">
+            <input
+            name = 'username'
+              type="text"
+              placeholder=<?php echo (($lang == 'hi')? $language[$lang][13] : $language[$lang][13] ); ?>
+              value = "<?php if (isset($_COOKIE['user_login'])) {
+                echo $_COOKIE['user_login'];
+              } ?>"
+              required
+              autocomplete = 'off'
+            />
+          </div>
 
-        <div class = "remember-me-box">
-          <label for="remember"><?php echo $language[$lang][11]; ?></label>
-          <input 
-          name = 'remember'
-            type="checkbox"
-            <?php if (isset($_COOKIE['user_login'])){ ?> checked <?php } ?>
-          />
-        </div>
+          <div class="field login__pwdField">
+            <input 
+            name = 'password'
+              type="password"
+              placeholder=<?php echo (($lang == 'hi')? $language[$lang][14] : $language[$lang][14] ); ?>
+              value = "<?php if (isset($_COOKIE['user_password'])) {
+                echo $_COOKIE['user_password'];
+              } ?>"
+              required
+              autocomplete = 'off'
+              id = "login__pwd"
+            />
+            <i class="far fa-2x fa-eye" id = "login__eye"></i>
+          </div>
+
+          <div class = "remember-me-box">
+            <label for="remember"><?php echo $language[$lang][11]; ?></label>
+            <input 
+            name = 'remember'
+              type="checkbox"
+              <?php if (isset($_COOKIE['user_login'])){ ?> checked <?php } ?>
+            />
+          </div>
 
 
-        <div class="remember-me-box">
-          <a href="forgotPassword"><?php echo $language[$lang][12]; ?>?</a>
-        </div>
-        
-        <div>
-            <button name = "new_user_login" id='add-post-btn'><?php echo $language[$lang][0]; ?></button>
-        </div>
-      </form>
+          <div class="remember-me-box">
+            <a href="forgotPassword"><?php echo $language[$lang][12]; ?>?</a>
+          </div>
+          
+          <div>
+              <button name = "new_user_login" id='add-post-btn'><?php echo $language[$lang][0]; ?></button>
+          </div>
+        </form>
+      </div>
 <!-- footer -->
 <script src="static/js/view-password.js"></script>
 <?php require_once('partials/footer.php') ?>

@@ -13,7 +13,7 @@
             <?php 
                 $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
                 $uri_segments = explode('/', $uri_path);
-                echo $uri_segments[2];
+                // echo $uri_segments[2];
 
                 // Important concept for language translation
                 $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -24,7 +24,7 @@
                 // to get the queries from URL
                 $c = explode('&', $a['query']);
                 $id = $c[1];
-                echo var_dump($c[1]);
+                // echo var_dump($c[1]);
             ?>
 
             <span class="nav__languagesDiv">

@@ -1,7 +1,5 @@
-<div class = 'nav-box' id='nav-box'>
+<div class='nav-box' id='nav-box'>
 
-   
-            
     <?php if (isset($_SESSION['loggedin'])) { ?>
 
         <div class="nav-links">
@@ -9,7 +7,7 @@
                 <li>
                     <?php if (isset($_SESSION['username'])) { ?>
                         <div class="user">
-                            <a href = "profile.php?uid=<?php echo $_SESSION['uid']?>" class = 'nav-box-user'><?php echo $_SESSION['username']?></a>
+                            <a href="profile.php?uid=<?php echo $_SESSION['uid'] ?>" class='nav-box-user'><?php echo $_SESSION['username'] ?></a>
                         </div>
                     <?php } ?>
                 </li>
@@ -20,7 +18,7 @@
                     <a href="logout.php">Logout</a>
                 </li>
             </ul>
-    </div>
+        </div>
 
     <?php } else { ?>
 
@@ -29,14 +27,12 @@
                 <li>
                     <a href="login.php">Login</a>
                 </li>
-                            
                 <li>
                     <a href="register.php">Register</a>
                 </li>
-                
             </ul>
         </div>
 
     <?php } ?>
-                
+
 </div>

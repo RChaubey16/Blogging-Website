@@ -6,6 +6,9 @@
 ?> 
 <?php require_once('partials/header.php') ?>
 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -32,7 +35,7 @@
 
         if ($ans != null) { ?>
 
-        <div class="home__bannerContent">
+        <div id = "home__mainBanner" onscroll="myFunction()" class="home__bannerContent ">
             <div class="home__bannerContent-title">
                 <h1> <?php echo (($lang == 'hi') ? $ans['blog_title_hindi'] : $ans['title'] ); ?> </h1>
             </div>
@@ -72,7 +75,7 @@
 
     <?php } ?>
 
-    <div class="home__blogCarousel">
+    <div data-aos="fade-down" class="home__blogCarousel">
         <h2 class = "home__blogCarouselHeading">
             <i class="fas fa-mail-bulk"></i>    
             <?php echo $language[$lang][5]; ?>
@@ -505,5 +508,10 @@
 	    });
         
     </script>
+     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
 
 <?php require_once('partials/footer.php') ?>

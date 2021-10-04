@@ -207,6 +207,33 @@
   background-position: fixed;
 }
 
+.home__bannerFadeOut {
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .home__bannerContent {
   position: absolute;
   top: 20vh;

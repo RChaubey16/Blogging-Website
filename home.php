@@ -6,6 +6,9 @@
 ?> 
 <?php require_once('partials/header.php') ?>
 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -32,21 +35,30 @@
 
         if ($ans != null) { ?>
 
-        <div class="home__bannerContent">
+        <div id = "home__mainBanner" onscroll="myFunction()" class="home__bannerContent ">
             <div class="home__bannerContent-title">
-                <h1> <?php echo $ans['title']; ?> </h1>
+                <h1> <?php echo (($lang == 'hi') ? $ans['blog_title_hindi'] : $ans['title'] ); ?> </h1>
             </div>
+
             <div class="home__bannerContent-desc">
                 <?php 
-                    $content = $ans['content'];
-                    $stripped_content = strip_tags($content);
+                    if ($lang == 'hi'){
+                        $content = $ans['blog_content_hindi'];
+                        $stripped_content = strip_tags($content);
+                        $char_length = 210;
+                    } else {
+                        $content = $ans['content'];
+                        $stripped_content = strip_tags($content);
+                        $char_length = 72;
+                    }
                 ?>
 
-                <p id = "content"><?php echo substr($stripped_content, 0, 72) . "...."; ?></p>
+                <p id = "content"><?php echo substr($stripped_content, 0, $char_length) . "...."; ?></p>
 
             </div>
+
             <div class="home__bannerContent-btn">
-                <button> <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $ans['id']?>">Read More</a> </button>
+                <button> <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $ans['id']?>"><?php echo $language[$lang][10]; ?></a> </button>
             </div>
         </div>
 
@@ -63,7 +75,7 @@
 
     <?php } ?>
 
-    <div class="home__blogCarousel">
+    <div data-aos="fade-down" class="home__blogCarousel">
         <h2 class = "home__blogCarouselHeading">
             <i class="fas fa-mail-bulk"></i>    
             <?php echo $language[$lang][5]; ?>
@@ -94,7 +106,7 @@
                             <img src="<?php echo $q['blog_image']?>" alt="">
                         </div>
 
-                        <h3 class = 'heading'><?php echo $q['title'] ?></h3>
+                        <h3 class = 'heading'><?php echo (($lang == 'hi') ? $q['blog_title_hindi'] : $q['title'] ); ?> </h3>
 
                         <div class="blog__details">
                             <p id='homePage__author'><i class="fas fa-user"></i> <?php echo $blog_user_name; ?></p>
@@ -102,14 +114,23 @@
                         </div>
 
                         <?php 
-                            $content = $q['content'];
-                            $stripped_content = strip_tags($content);
+
+                            if ($lang == 'hi'){
+                                $content = $q['blog_content_hindi'];
+                                $stripped_content = strip_tags($content);
+                                $char_length = 210;
+                            } else {
+                                $content = $q['content'];
+                                $stripped_content = strip_tags($content);
+                                $char_length = 72;
+                            }
+
                         ?>
 
-                        <p id = "content"><?php echo substr($stripped_content, 0, 72) . "...."; ?></p>
+                        <p id = "content"><?php echo substr($stripped_content, 0, $char_length) . "...."; ?></p>
 
                         <div class = "read-more-btn">
-                            <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $q['id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+                            <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $q['id']?>"><?php echo $language[$lang][10]; ?> <i class="fas fa-chevron-right"></i></a>
                             <a href="search.php?searchBar=<?php echo $q['category'];?>" style = 'background-color: gray;'><?php echo $q['category'];?></a>
                         </div>
 
@@ -136,7 +157,7 @@
                     </a>
                     <div class="home__blogCardDetails">
                         <button><?php echo $r['category']; ?></button>
-                        <h3 class = 'heading'><?php echo $r['title'] ?></h3>
+                        <h3 class = 'heading'><?php echo (($lang == 'hi') ? $r['blog_title_hindi'] : $r['title'] ); ?></h3>
                         <div class="blog__details">
                             <?php 
                                 // Query to access authorname of the blog
@@ -188,7 +209,7 @@
                                 <img src="<?php echo $q['blog_image']?>" alt="">
                             </div>
 
-                            <h3 class = 'heading'><?php echo $q['title'] ?></h3>
+                            <h3 class = 'heading'><?php echo (($lang == 'hi') ? $q['blog_title_hindi'] : $q['title'] ); ?></h3>
 
                             <div class="blog__details">
                                 <p id='homePage__author'><i class="fas fa-user"></i> <?php echo $blog_user_name; ?></p>
@@ -196,14 +217,21 @@
                             </div>
                             
                             <?php 
-                                $content = $q['content'];
-                                $stripped_content = strip_tags($content);
+                               if ($lang == 'hi'){
+                                    $content = $q['blog_content_hindi'];
+                                    $stripped_content = strip_tags($content);
+                                    $char_length = 210;
+                                } else {
+                                    $content = $q['content'];
+                                    $stripped_content = strip_tags($content);
+                                    $char_length = 92;
+                                }
                             ?>
 
-                            <p id = "content"><?php echo substr($stripped_content, 0, 92) . "...."; ?></p>
+                            <p id = "content"><?php echo substr($stripped_content, 0, $char_length) . "...."; ?></p>
 
                             <div class = "read-more-btn">
-                                <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $q['id']?>">Read More <i class="fas fa-chevron-right"></i></a>
+                                <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $q['id']?>"><?php echo $language[$lang][10]; ?> <i class="fas fa-chevron-right"></i></a>
                                 <a href="search/<?php echo $q['category'];?>" style = 'background-color: gray;'><?php echo $q['category'];?></a>
                             </div>
                             
@@ -293,12 +321,26 @@
 
                     <div class="popularPosts__content">
                         <div class="popularPosts__img">
-                            <img src="<?php echo $r['blog_image']; ?>" alt="">
+                            <img src="<?php echo $r['blog_image']; ?>" alt="popular-post-image">
                         </div>
                         <div class="popularPosts__info">
-                            <a href="http://localhost/BlogIt/blogPage/<?php echo $r ['id']?>">
-                                <?php echo substr($r['content'], 0, 60) . "..."; ?>
+
+                            <?php 
+                                if ($lang == 'hi'){
+                                    $content = $r['blog_content_hindi'];
+                                    $stripped_content = strip_tags($content);
+                                    $char_length = 190;
+                                } else {
+                                    $content = $r['content'];
+                                    $stripped_content = strip_tags($content);
+                                    $char_length = 60;
+                                }
+                            ?>
+
+                            <a href="http://localhost/BlogIt/blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $r ['id']?>">
+                                <?php echo substr($stripped_content, 0, $char_length) . "..."; ?>
                             </a>
+
                         </div>
                     </div>
                 <?php } ?>
@@ -344,9 +386,15 @@
         </div>
     </div>
 
+    <div id="home__accordion" class="home__subscribeAccordion">
+        <p> <?php echo (($lang == 'hi') ? "सदस्यता लेने और दैनिक अपडेट प्राप्त करने के लिए यहां क्लिक करें!" : "Click here to subscribe and receive daily updates!" )?> </p>
+        <i id = "home__accordionOpenIcon" class="fas fa-2x fa-plus-square"></i>
+        <i id = "home__accordionCloseIcon" class="fas fa-2x fa-minus-square"></i>
+    </div>
+
     <!-- Subscribe Form -->
 
-    <div class="home__subscribeBox">
+    <div id = "home__subscribeBox" class="home__subscribeBox">
         <div class="subscribe__details">
             <div class="sub__heading">
 
@@ -466,5 +514,11 @@
 	    });
         
     </script>
+    <script src="static/js/accodion.js"></script>
+     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
 
 <?php require_once('partials/footer.php') ?>

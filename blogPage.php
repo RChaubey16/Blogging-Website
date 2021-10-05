@@ -103,10 +103,7 @@
                     </div>
 
                 <?php } ?>
-
-
-                
-                
+               
                 <?php if (isset($_SESSION['loggedin']) && $_SESSION['uid'] == $q['user_id']) { ?>
                     <div class='action-btns'>
                         <a href="translateBlog.php?id=<?php echo $q['id']?>" >Translate</a>
@@ -118,10 +115,9 @@
                     </div>
                 <?php } ?>
 
-
                 <div class="blogPage__suggestions">
                     <div class="suggestion__title">
-                        <h2>You may like these posts</h2>
+                        <h2> <?php echo (($lang == "hi") ? "आपको ये पोस्ट पसंद आ सकती हैं" : "You may like these posts")?> </h2>
                     </div>
 
                     <?php 
@@ -139,7 +135,7 @@
                                         <img src="<?php echo $r['blog_image']; ?>" alt="">
                                     </div>
                                     <div class="post_title">
-                                        <a href = "http://localhost/BlogIt/blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $r['id']; ?>"><?php echo $r['title']; ?></a>
+                                        <a href = "http://localhost/BlogIt/blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $r['id']; ?>"><?php echo (($lang == 'hi') ? $r['blog_title_hindi']: $r['title'] ); ?></a>
                                     </div>
                                 </div>
                             </div>
@@ -147,21 +143,20 @@
                     </div>
                 </div>
 
-
                 <div class="blog__comments-container">
 
                     <?php if (isset($_SESSION['loggedin'])){ ?>
-                        <h2>Post a comment</h2>
+                        <h2> <?php echo (($lang == 'hi') ? 'अपनी टिप्पणी डालें' : 'Post a comment' )?> </h2>
                     <?php } else { ?>
-                        <h2>Comments</h2>
+                        <h2><?php echo (($lang == 'hi') ? 'टिप्पणियाँ' : 'Comments' )?></h2>
                     <?php } ?>
 
                     <?php if (isset($_SESSION['loggedin'])) { ?>
                         <form action="comments.php" method="POST">
-                            <input type="text" name = 'comment-box' placeholder = "Write a comment.." autocomplete = "off">
+                            <input type="text" name = 'comment-box' placeholder = <?php echo (($lang == "hi") ? "टिप्पणी..." : "Comment..." ); ?> autocomplete = "off">
                             <input type="text" name = 'user-id' value = "<?php echo $_SESSION['uid']?>" hidden>
                             <input type="text" name = 'blog-id' value = "<?php echo $q['id']?>" hidden>
-                            <button name = 'comment-btn'>Comment</button>
+                            <button name = 'comment-btn'><?php echo (($lang == "hi") ? "टिप्पणी" : "Comment" ); ?></button>
                         </form>
                     <?php } ?>
 
@@ -175,12 +170,12 @@
 
                     <div class="blog__comment-box">
                         <?php if ($ans == 0) { ?>
-                            <h2>No comments to show!</h2>
+                            <h2><?php echo (($lang == 'hi') ? 'दिखाने के लिए कोई टिप्पणी नहीं' : 'No comments to show' )?></h2>
                         <?php } ?>
 
                         <?php foreach($result as $r) { ?>
                             <div class="blog__comment">
-                                
+                         
                                 <div class="comment__username">
                                     <h3><?php echo $r['name']?></h3>
                                 </div>
@@ -190,35 +185,23 @@
                                 </div>
 
                                 <div class="blog__likes">
-
-                                
                                     <a href = "comments.php?type=comment&id=<?php echo $r['id']; ?>">
-
                                         <?php 
-
                                             $sql = $conn->prepare("SELECT likes FROM comments WHERE id = ?");
                                             $sql->bind_param("i", $cid);
                                             $cid = $r['id'];
                                             $sql->execute();
                                             $result = $sql->get_result();
                                             $ans = $result->fetch_assoc();
-                                        
-                                            
                                         ?>
-                                            
                                         <i class="far fa-star"></i>
                                         <span name = "blog__likes-count"><?php echo ($ans['likes']); ?></span>
-
                                     </a>
-                                    
-
                                 </div>
-
                             </div>
                         <?php } ?>
                     </div>
                 </div> 
-
             <?php } ?>
         </div>
 
@@ -302,12 +285,26 @@
 
                     <div class="popularPosts__content">
                         <div class="popularPosts__img">
-                            <img src="<?php echo $r['blog_image']; ?>" alt="">
+                            <img src="<?php echo $r['blog_image']; ?>" alt="popular-post-image">
                         </div>
                         <div class="popularPosts__info">
-                            <a href="http://localhost/BlogIt/blogPage/<?php echo $r ['id']?>">
-                                <?php echo substr($r['content'], 0, 60) . "..."; ?>
+
+                            <?php 
+                                if ($lang == 'hi'){
+                                    $content = $r['blog_content_hindi'];
+                                    $stripped_content = strip_tags($content);
+                                    $char_length = 190;
+                                } else {
+                                    $content = $r['content'];
+                                    $stripped_content = strip_tags($content);
+                                    $char_length = 60;
+                                }
+                            ?>
+
+                            <a href="http://localhost/BlogIt/blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $r ['id']?>">
+                                <?php echo substr($stripped_content, 0, $char_length) . "..."; ?>
                             </a>
+
                         </div>
                     </div>
                 <?php } ?>

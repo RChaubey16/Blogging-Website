@@ -2,6 +2,8 @@
 
 session_start();
 require 'config.php';
+include "partials/translation.php";
+$lang = $_SESSION['lang'];
 
 // establishing a connection to the database 
 $conn = mysqli_connect($database['host'], $database['username'], $database['password'], $database['database']);
@@ -154,7 +156,7 @@ if (isset($_REQUEST['delete'])) {
     // $sql = "DELETE FROM blogsdata WHERE id = $id";
     // $query = mysqli_query($conn, $sql);
 
-    header("Location: index.php?info=deleted");
+    header("Location: index.phpinfo=deleted");
     exit();
 }
 

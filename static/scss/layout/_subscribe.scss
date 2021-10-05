@@ -1,8 +1,35 @@
+.home__subscribeAccordion{
+    background-color: $gray;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.4s;
+
+    p{
+        font-size: 1.4rem;
+    }
+
+    #home__accordionCloseIcon{
+        display: none;
+    }
+
+    &:hover{
+        background-color: rgb(165, 162, 162);
+    }
+}
+
 .home__subscribeBox{
-    padding: 5vh 0;
-    background-color: $subscribe-background;
+    // display: none;
+    max-height: 0px;
+    // padding: 5vh 0;
+    overflow: hidden;
+    background-color: $white;
+    transition: max-height 0.2s ease-out;
 
     .subscribe__details{
+        z-index: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -32,6 +59,7 @@
                 font-weight: bold;
                 border: 0;
                 outline: 0;
+                background-color: lightgray;
             }
         }
     }

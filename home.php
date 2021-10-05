@@ -386,9 +386,15 @@
         </div>
     </div>
 
+    <div id="home__accordion" class="home__subscribeAccordion">
+        <p>Click here to subscribe and receive daily updates!</p>
+        <i id = "home__accordionOpenIcon" class="fas fa-2x fa-plus-square"></i>
+        <i id = "home__accordionCloseIcon" class="fas fa-2x fa-window-close"></i>
+    </div>
+
     <!-- Subscribe Form -->
 
-    <div class="home__subscribeBox">
+    <div id = "home__subscribeBox" class="home__subscribeBox">
         <div class="subscribe__details">
             <div class="sub__heading">
 
@@ -508,6 +514,7 @@
 	    });
         
     </script>
+    <script src="static/js/accodion.js"></script>
      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();

@@ -103,10 +103,7 @@
                     </div>
 
                 <?php } ?>
-
-
-                
-                
+               
                 <?php if (isset($_SESSION['loggedin']) && $_SESSION['uid'] == $q['user_id']) { ?>
                     <div class='action-btns'>
                         <a href="translateBlog.php?id=<?php echo $q['id']?>" >Translate</a>
@@ -117,7 +114,6 @@
                         </form>
                     </div>
                 <?php } ?>
-
 
                 <div class="blogPage__suggestions">
                     <div class="suggestion__title">
@@ -146,7 +142,6 @@
                         <?php } ?>
                     </div>
                 </div>
-
 
                 <div class="blog__comments-container">
 
@@ -180,7 +175,7 @@
 
                         <?php foreach($result as $r) { ?>
                             <div class="blog__comment">
-                                
+                         
                                 <div class="comment__username">
                                     <h3><?php echo $r['name']?></h3>
                                 </div>
@@ -190,35 +185,23 @@
                                 </div>
 
                                 <div class="blog__likes">
-
-                                
                                     <a href = "comments.php?type=comment&id=<?php echo $r['id']; ?>">
-
                                         <?php 
-
                                             $sql = $conn->prepare("SELECT likes FROM comments WHERE id = ?");
                                             $sql->bind_param("i", $cid);
                                             $cid = $r['id'];
                                             $sql->execute();
                                             $result = $sql->get_result();
                                             $ans = $result->fetch_assoc();
-                                        
-                                            
                                         ?>
-                                            
                                         <i class="far fa-star"></i>
                                         <span name = "blog__likes-count"><?php echo ($ans['likes']); ?></span>
-
                                     </a>
-                                    
-
                                 </div>
-
                             </div>
                         <?php } ?>
                     </div>
                 </div> 
-
             <?php } ?>
         </div>
 

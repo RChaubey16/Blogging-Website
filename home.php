@@ -387,9 +387,10 @@
     </div>
 
     <div id="home__accordion" class="home__subscribeAccordion">
-        <p>Click here to subscribe and receive daily updates!</p>
+        <p> <?php echo (($lang == 'hi') ? "सदस्यता लेने और दैनिक अपडेट प्राप्त करने के लिए यहां क्लिक करें!" : "Click here to subscribe and receive daily updates!" )?> </p>
         <i id = "home__accordionOpenIcon" class="fas fa-2x fa-plus-square"></i>
-        <i id = "home__accordionCloseIcon" class="fas fa-2x fa-window-close"></i>
+        <!-- <i id = "home__accordionCloseIcon" class="fas fa-2x fa-window-close"></i> -->
+        <i id = "home__accordionCloseIcon" class="fas fa-2x fa-minus-square"></i>
     </div>
 
     <!-- Subscribe Form -->

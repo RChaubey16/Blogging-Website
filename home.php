@@ -21,7 +21,7 @@
     <?php include('partials/navbar.php')?>
     <?php include('partials/menuLinks.php')?>
 
-    <div class="home__imgContainer">
+    <div id = "home__mainBanner" class="home__imgContainer">
         <div class="home__imageDark"></div>
         <img src="https://1.bp.blogspot.com/-0FL-YgfsMOU/YL76dPlRYBI/AAAAAAAAK28/Ta4Y4TE2keYiGX_T2jHlT2rWGZL1A3noQCNcBGAsYHQ/s16000/mountain2.jpg" alt="">
     </div>
@@ -35,7 +35,7 @@
 
         if ($ans != null) { ?>
 
-        <div id = "home__mainBanner" onscroll="myFunction()" class="home__bannerContent ">
+        <div id = "home__mainBanner" class="home__bannerContent home__fadeOnScroll">
             <div class="home__bannerContent-title">
                 <h1> <?php echo (($lang == 'hi') ? $ans['blog_title_hindi'] : $ans['title'] ); ?> </h1>
             </div>
@@ -515,6 +515,7 @@
         
     </script>
     <script src="static/js/accodion.js"></script>
+    <script src="static/js/onScroll.js"></script>
      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();

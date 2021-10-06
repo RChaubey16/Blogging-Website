@@ -28,7 +28,7 @@ body {
   flex-direction: column;
   display: none;
   /* display: flex; */
-  transition: top 1s ease;
+  transition:  1s ease-in;
 }
 
 .nav-box .nav-links ul {
@@ -1061,7 +1061,7 @@ input[type="checkbox"] {
     position: absolute;
     z-index: 1000;
     width: 100%;
-    transition: top 1s ease;
+    transition:  1s ease-in;
   }
 
   .user {

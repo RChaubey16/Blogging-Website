@@ -438,6 +438,7 @@ nav .nav-links ul li:hover {
   background: white;
   box-sizing: border-box;
   border-radius: 4px;
+  padding-top: 3rem;
 }
 
 .create-post > form {
@@ -451,7 +452,7 @@ nav .nav-links ul li:hover {
 .create-post-title {
   width: 50%;
   height: 50px;
-  margin-top: 40px;
+  margin: 40px 0;
   padding: 10px;
   border: 0;
   font-weight: 700;

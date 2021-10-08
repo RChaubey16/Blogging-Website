@@ -1054,14 +1054,13 @@ input[type="checkbox"] {
   .menu-icon {
     display: block;
     cursor: pointer;
-    transition: all 1s ease-in-out;
   }
 
   .nav-box {
     position: absolute;
     z-index: 1000;
     width: 100%;
-    transition:  1s ease-in;
+    transition: all 1s ease-in;
   }
 
   .user {

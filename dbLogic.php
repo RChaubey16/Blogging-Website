@@ -14,8 +14,17 @@ if (!$conn) {
 }
 
 // fetching all the blogs from database
-$sql = "SELECT * FROM blogsdata ORDER BY id DESC";
-$query = mysqli_query($conn, $sql);
+
+$lang = $_GET['lang'];
+
+if ($lang == 'hi'){
+    $sql = "SELECT * FROM blogsdata WHERE lang_code = '$lang' ORDER BY id DESC";
+    $query = mysqli_query($conn, $sql);
+} else {
+
+    $sql = "SELECT * FROM blogsdata WHERE lang_code = '$lang' ORDER BY id DESC";
+    $query = mysqli_query($conn, $sql);
+}
 
 // inserting the new blog into database
 if (isset($_REQUEST['new_post'])) {
@@ -345,7 +354,7 @@ if (isset($_POST['pass_reset'])) {
 if (isset($_POST['translate'])){
 
 
-    $id = 3;
+    $id = $_GET['id'];
     $sql = $conn->prepare("SELECT * FROM blogsdata WHERE id = ?");
     $sql->bind_param('i', $id);
     $sql->execute();

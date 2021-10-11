@@ -209,7 +209,8 @@
                                 <img src="<?php echo $q['blog_image']?>" alt="">
                             </div>
 
-                            <h3 class = 'heading'><?php echo (($lang == 'hi') ? $q['blog_title_hindi'] : $q['title'] ); ?></h3>
+                            <!-- <h3 class = 'heading'><?php echo (($lang == 'hi') ? $q['blog_title_hindi'] : $q['title'] ); ?></h3> -->
+                            <h3 class = 'heading'><?php echo (($lang == 'hi') ? $q['title'] : $q['title'] ); ?></h3>
 
                             <div class="blog__details">
                                 <p id='homePage__author'><i class="fas fa-user"></i> <?php echo $blog_user_name; ?></p>
@@ -218,7 +219,8 @@
                             
                             <?php 
                                if ($lang == 'hi'){
-                                    $content = $q['blog_content_hindi'];
+                                    // $content = $q['blog_content_hindi'];
+                                    $content = $q['content'];
                                     $stripped_content = strip_tags($content);
                                     $char_length = 210;
                                 } else {

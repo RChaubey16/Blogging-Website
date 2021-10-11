@@ -22,6 +22,7 @@
     <div class="blogPage__container">
 
         <div class = "blog-container">
+
             <?php foreach($query as $q) { ?>    
                 <div class="">
                     <?php if (isset($lang) and ($lang == "hi")) { ?>

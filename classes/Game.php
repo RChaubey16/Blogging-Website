@@ -8,7 +8,7 @@
         }
 
         public function displayMsg(){
-            echo "Name: " . $this->name;
+            echo "Name: " . $this->name . "<br>";
         }
     }
 

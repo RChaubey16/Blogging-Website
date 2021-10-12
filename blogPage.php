@@ -22,6 +22,7 @@
     <div class="blogPage__container">
 
         <div class = "blog-container">
+
             <?php foreach($query as $q) { ?>    
                 <div class="">
                     <?php if (isset($lang) and ($lang == "hi")) { ?>
@@ -106,7 +107,7 @@
                
                 <?php if (isset($_SESSION['loggedin']) && $_SESSION['uid'] == $q['user_id']) { ?>
                     <div class='action-btns'>
-                        <a href="translateBlog.php?id=<?php echo $q['id']?>" >Translate</a>
+                        <a href="translateBlog.php?lang=<?php echo "hi"; ?>&id=<?php echo $q['id']?>" >Translate</a>
                         <a href="editBlog/<?php echo $q['id']?>" >Edit</a>
                         <form method = "POST">
                             <input type='text' hidden name = "id" value = "<?php echo $q['id']; ?>">

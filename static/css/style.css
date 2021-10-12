@@ -207,6 +207,33 @@
   background-position: fixed;
 }
 
+.home__bannerFadeOut {
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .home__bannerContent {
   position: absolute;
   top: 20vh;
@@ -863,12 +890,44 @@
   }
 }
 
+.home__subscribeAccordion {
+  background-color: gray;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.home__subscribeAccordion p {
+  font-size: 1.4rem;
+}
+
+.home__subscribeAccordion #home__accordionCloseIcon {
+  display: none;
+}
+
+.home__subscribeAccordion:hover {
+  background-color: #a5a2a2;
+}
+
 .home__subscribeBox {
-  padding: 5vh 0;
-  background-color: #CAE8E2;
+  max-height: 0px;
+  overflow: hidden;
+  background-color: #ffffff;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
 }
 
 .home__subscribeBox .subscribe__details {
+  z-index: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -905,6 +964,7 @@
   font-weight: bold;
   border: 0;
   outline: 0;
+  background-color: lightgray;
 }
 
 @media only screen and (max-width: 768px) {

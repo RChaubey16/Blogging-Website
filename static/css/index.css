@@ -28,7 +28,7 @@ body {
   flex-direction: column;
   display: none;
   /* display: flex; */
-  transition: top 1s ease;
+  transition:  1s ease-in;
 }
 
 .nav-box .nav-links ul {
@@ -438,6 +438,7 @@ nav .nav-links ul li:hover {
   background: white;
   box-sizing: border-box;
   border-radius: 4px;
+  padding-top: 3rem;
 }
 
 .create-post > form {
@@ -451,7 +452,7 @@ nav .nav-links ul li:hover {
 .create-post-title {
   width: 50%;
   height: 50px;
-  margin-top: 40px;
+  margin: 40px 0;
   padding: 10px;
   border: 0;
   font-weight: 700;
@@ -1053,14 +1054,13 @@ input[type="checkbox"] {
   .menu-icon {
     display: block;
     cursor: pointer;
-    transition: all 1s ease-in-out;
   }
 
   .nav-box {
     position: absolute;
     z-index: 1000;
     width: 100%;
-    transition: top 1s ease;
+    transition: all 1s ease-in;
   }
 
   .user {

@@ -6,6 +6,9 @@
 ?> 
 <?php require_once('partials/header.php') ?>
 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -18,7 +21,7 @@
     <?php include('partials/navbar.php')?>
     <?php include('partials/menuLinks.php')?>
 
-    <div class="home__imgContainer">
+    <div id = "home__mainBanner" class="home__imgContainer">
         <div class="home__imageDark"></div>
         <img src="https://1.bp.blogspot.com/-0FL-YgfsMOU/YL76dPlRYBI/AAAAAAAAK28/Ta4Y4TE2keYiGX_T2jHlT2rWGZL1A3noQCNcBGAsYHQ/s16000/mountain2.jpg" alt="">
     </div>
@@ -32,7 +35,7 @@
 
         if ($ans != null) { ?>
 
-        <div class="home__bannerContent">
+        <div id = "home__mainBanner" class="home__bannerContent home__fadeOnScroll">
             <div class="home__bannerContent-title">
                 <h1> <?php echo (($lang == 'hi') ? $ans['blog_title_hindi'] : $ans['title'] ); ?> </h1>
             </div>
@@ -72,7 +75,7 @@
 
     <?php } ?>
 
-    <div class="home__blogCarousel">
+    <div data-aos="fade-down" class="home__blogCarousel">
         <h2 class = "home__blogCarouselHeading">
             <i class="fas fa-mail-bulk"></i>    
             <?php echo $language[$lang][5]; ?>
@@ -206,7 +209,8 @@
                                 <img src="<?php echo $q['blog_image']?>" alt="">
                             </div>
 
-                            <h3 class = 'heading'><?php echo (($lang == 'hi') ? $q['blog_title_hindi'] : $q['title'] ); ?></h3>
+                            <!-- <h3 class = 'heading'><?php echo (($lang == 'hi') ? $q['blog_title_hindi'] : $q['title'] ); ?></h3> -->
+                            <h3 class = 'heading'><?php echo (($lang == 'hi') ? $q['title'] : $q['title'] ); ?></h3>
 
                             <div class="blog__details">
                                 <p id='homePage__author'><i class="fas fa-user"></i> <?php echo $blog_user_name; ?></p>
@@ -215,7 +219,8 @@
                             
                             <?php 
                                if ($lang == 'hi'){
-                                    $content = $q['blog_content_hindi'];
+                                    // $content = $q['blog_content_hindi'];
+                                    $content = $q['content'];
                                     $stripped_content = strip_tags($content);
                                     $char_length = 210;
                                 } else {
@@ -383,9 +388,15 @@
         </div>
     </div>
 
+    <div id="home__accordion" class="home__subscribeAccordion">
+        <p> <?php echo (($lang == 'hi') ? "सदस्यता लेने और दैनिक अपडेट प्राप्त करने के लिए यहां क्लिक करें!" : "Click here to subscribe and receive daily updates!" )?> </p>
+        <i id = "home__accordionOpenIcon" class="fas fa-2x fa-plus-square"></i>
+        <i id = "home__accordionCloseIcon" class="fas fa-2x fa-minus-square"></i>
+    </div>
+
     <!-- Subscribe Form -->
 
-    <div class="home__subscribeBox">
+    <div id = "home__subscribeBox" class="home__subscribeBox">
         <div class="subscribe__details">
             <div class="sub__heading">
 
@@ -505,5 +516,12 @@
 	    });
         
     </script>
+    <script src="static/js/accodion.js"></script>
+    <script src="static/js/onScroll.js"></script>
+     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
 
 <?php require_once('partials/footer.php') ?>

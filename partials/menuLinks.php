@@ -1,7 +1,5 @@
 <div class='nav-box' id='nav-box'>
-
     <?php if (isset($_SESSION['loggedin'])) { ?>
-
         <div class="nav-links">
             <ul>
                 <li>
@@ -19,9 +17,7 @@
                 </li>
             </ul>
         </div>
-
     <?php } else { ?>
-
         <div class="nav-links">
             <ul>
                 <li>
@@ -32,7 +28,5 @@
                 </li>
             </ul>
         </div>
-
     <?php } ?>
-
 </div>

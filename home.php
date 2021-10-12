@@ -21,7 +21,7 @@
     <?php include('partials/navbar.php')?>
     <?php include('partials/menuLinks.php')?>
 
-    <div class="home__imgContainer">
+    <div id = "home__mainBanner" class="home__imgContainer">
         <div class="home__imageDark"></div>
         <img src="https://1.bp.blogspot.com/-0FL-YgfsMOU/YL76dPlRYBI/AAAAAAAAK28/Ta4Y4TE2keYiGX_T2jHlT2rWGZL1A3noQCNcBGAsYHQ/s16000/mountain2.jpg" alt="">
     </div>
@@ -35,7 +35,7 @@
 
         if ($ans != null) { ?>
 
-        <div id = "home__mainBanner" onscroll="myFunction()" class="home__bannerContent ">
+        <div id = "home__mainBanner" class="home__bannerContent home__fadeOnScroll">
             <div class="home__bannerContent-title">
                 <h1> <?php echo (($lang == 'hi') ? $ans['blog_title_hindi'] : $ans['title'] ); ?> </h1>
             </div>
@@ -83,7 +83,7 @@
         <div class="home__blogCarouselImages">
             
             <?php
-                $sql = $conn->prepare("SELECT * FROM blogsdata ORDER BY id DESC LIMIT 5");
+                $sql = $conn->prepare("SELECT * FROM blogsdata WHERE lang_code = '$lang' ORDER BY id DESC LIMIT 5");    
                 $sql->execute();
                 $result = $sql->get_result();
             ?>
@@ -106,7 +106,8 @@
                             <img src="<?php echo $q['blog_image']?>" alt="">
                         </div>
 
-                        <h3 class = 'heading'><?php echo (($lang == 'hi') ? $q['blog_title_hindi'] : $q['title'] ); ?> </h3>
+                        <!-- <h3 class = 'heading'><?php echo (($lang == 'hi') ? $q['blog_title_hindi'] : $q['title'] ); ?> </h3> -->
+                        <h3 class = 'heading'><?php echo (($lang == 'hi') ? $q['title'] : $q['title'] ); ?> </h3>
 
                         <div class="blog__details">
                             <p id='homePage__author'><i class="fas fa-user"></i> <?php echo $blog_user_name; ?></p>
@@ -117,6 +118,7 @@
 
                             if ($lang == 'hi'){
                                 $content = $q['blog_content_hindi'];
+                                $content = $q['content'];
                                 $stripped_content = strip_tags($content);
                                 $char_length = 210;
                             } else {
@@ -209,7 +211,8 @@
                                 <img src="<?php echo $q['blog_image']?>" alt="">
                             </div>
 
-                            <h3 class = 'heading'><?php echo (($lang == 'hi') ? $q['blog_title_hindi'] : $q['title'] ); ?></h3>
+                            <!-- <h3 class = 'heading'><?php echo (($lang == 'hi') ? $q['blog_title_hindi'] : $q['title'] ); ?></h3> -->
+                            <h3 class = 'heading'><?php echo (($lang == 'hi') ? $q['title'] : $q['title'] ); ?></h3>
 
                             <div class="blog__details">
                                 <p id='homePage__author'><i class="fas fa-user"></i> <?php echo $blog_user_name; ?></p>
@@ -218,7 +221,8 @@
                             
                             <?php 
                                if ($lang == 'hi'){
-                                    $content = $q['blog_content_hindi'];
+                                    // $content = $q['blog_content_hindi'];
+                                    $content = $q['content'];
                                     $stripped_content = strip_tags($content);
                                     $char_length = 210;
                                 } else {
@@ -515,6 +519,7 @@
         
     </script>
     <script src="static/js/accodion.js"></script>
+    <script src="static/js/onScroll.js"></script>
      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();

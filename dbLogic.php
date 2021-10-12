@@ -14,8 +14,17 @@ if (!$conn) {
 }
 
 // fetching all the blogs from database
-$sql = "SELECT * FROM blogsdata ORDER BY id DESC";
-$query = mysqli_query($conn, $sql);
+
+$lang = $_GET['lang'];
+
+if ($lang == 'hi'){
+    $sql = "SELECT * FROM blogsdata WHERE lang_code = '$lang' ORDER BY id DESC";
+    $query = mysqli_query($conn, $sql);
+} else {
+
+    $sql = "SELECT * FROM blogsdata WHERE lang_code = '$lang' ORDER BY id DESC";
+    $query = mysqli_query($conn, $sql);
+}
 
 // inserting the new blog into database
 if (isset($_REQUEST['new_post'])) {
@@ -343,12 +352,34 @@ if (isset($_POST['pass_reset'])) {
 
   // Translating the blog
 if (isset($_POST['translate'])){
-    $sql = $conn->prepare("UPDATE blogsdata SET blog_title_hindi = ?, blog_content_hindi = ? WHERE id = ?");
-    $sql->bind_param("ssi", $title, $content, $id);
-    $id = $_POST['id'];
+
+
+    $id = $_GET['id'];
+    $sql = $conn->prepare("SELECT * FROM blogsdata WHERE id = ?");
+    $sql->bind_param('i', $id);
+    $sql->execute();
+    $res = $sql->get_result();
+    $ans = $res->fetch_assoc();
+
+    $lang_code = $_POST['lang_code'];
+    $blog_id = $ans['blog_id'];
     $title = $_POST['title'];
     $content = $_POST['editor1'];
-    $sql->execute();
+    $user_id = $ans['user_id'];
+    $blog_image = $ans['blog_image'];
+    $category = $ans['category'];
+
+    $sql_query = "INSERT INTO blogsdata(blog_id, lang_code, title, content, blog_title_hindi, blog_content_hindi, user_id, blog_image, category) VALUES($id, '$lang_code','$title', '$content', '', '', $user_id, '$blog_image', '$category')";
+    $res = mysqli_query($conn, $sql_query);
+
+
+    // Phase 1
+    // $sql = $conn->prepare("UPDATE blogsdata SET blog_title_hindi = ?, blog_content_hindi = ? WHERE id = ?");
+    // $sql->bind_param("ssi", $title, $content, $id);
+    // $id = $_POST['id'];
+    // $title = $_POST['title'];
+    // $content = $_POST['editor1'];
+    // $sql->execute();
 
     header("Location: index.php?info=updated");
     exit();

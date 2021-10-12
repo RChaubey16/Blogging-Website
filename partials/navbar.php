@@ -22,7 +22,6 @@ include "translation.php";
         // to get the queries from URL
         $c = explode('&', $a['query']);
         $id = $c[1];
-        // echo var_dump($c[1]);
         ?>
 
         <span class="nav__languagesDiv">

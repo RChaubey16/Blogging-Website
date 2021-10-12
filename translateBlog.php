@@ -23,6 +23,7 @@
                 <input type="text" name="title" class="create-post-title" placeholder="Blog Title" value = "<?php echo $q['blog_title_hindi'] ?>">
                 <br>
                 <textarea name="editor1"><?php echo $q['blog_content_hindi']; ?></textarea>
+                <input type="text" hidden name = "lang_code" value="<?php echo "hi"; ?>">
                 <button name = "translate" id='add-post-btn'>Translate</button>
             </form>
 

@@ -33,54 +33,49 @@
 
         if ($ans != null) { ?>
 
-    <div class="home__bannerContent">
-        <div class="home__bannerContent-title">
-            <h1> <?php echo (($lang == 'hi') ? $ans['blog_title_hindi'] : $ans['title'] ); ?> </h1>
-        </div>
-        <div class="home__bannerContent-desc">
-            <?php 
-                 if ($lang == 'hi'){
-                    $content = $ans['blog_content_hindi'];
-                    $stripped_content = strip_tags($content);
-                    $char_length = 220;
-                } else {
-                    $content = $ans['content'];
-                    $stripped_content = strip_tags($content);
-                    $char_length = 72;
-                }
-            ?>
-
-            <p id = "content"><?php echo substr($stripped_content, 0, $char_length) . "...."; ?></p>
-
-        </div>
-        <div class="home__bannerContent-btn">
-            <button> <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $ans['id']?>"> <?php echo $language[$lang][10]; ?> </a> </button>
-        </div>
-    </div>
-
-    <?php } ?>
-
-
-    <div class = "index__container">
-
-        <div class="index__btns">
-
-            <?php if ($_SESSION['loggedin'] == true) { ?>
-                <div id="create-blog-button">
-                    <a href="createPost"> + <?php echo (($lang == 'hi') ? "एक नया ब्लॉग बनाएं" : "Create a new Blog" ) ?> </a>
+            <div class="home__bannerContent">
+                <div class="home__bannerContent-title">
+                    <h1> <?php echo (($lang == 'hi') ? $ans['blog_title_hindi'] : $ans['title'] ); ?> </h1>
                 </div>
+                <div class="home__bannerContent-desc">
+                    <?php 
+                        if ($lang == 'hi'){
+                            $content = $ans['blog_content_hindi'];
+                            $stripped_content = strip_tags($content);
+                            $char_length = 220;
+                        } else {
+                            $content = $ans['content'];
+                            $stripped_content = strip_tags($content);
+                            $char_length = 72;
+                        }
+                    ?>
 
-                <div id="create-blog-button">
-                    <a href="banner.php"><i class="fas fa-sliders-h"></i> <?php echo (($lang == 'hi') ? "स्लाइडर" : "Slider" ) ?></a>
+                    <p id = "content"><?php echo substr($stripped_content, 0, $char_length) . "...."; ?></p>
+
                 </div>
-            <?php } ?>
+                <div class="home__bannerContent-btn">
+                    <button> <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $ans['id']?>"> <?php echo $language[$lang][10]; ?> </a> </button>
+                </div>
+            </div>
 
+        <?php } ?>
 
-        </div>
-        
+        <div class = "index__container">
+
+            <div class="index__btns">
+
+                <?php if ($_SESSION['loggedin'] == true) { ?>
+                    <div id="create-blog-button">
+                        <a href="createPost"> + <?php echo (($lang == 'hi') ? "एक नया ब्लॉग बनाएं" : "Create a new Blog" ) ?> </a>
+                    </div>
+                    <div id="create-blog-button">
+                        <a href="banner.php"><i class="fas fa-sliders-h"></i> <?php echo (($lang == 'hi') ? "स्लाइडर" : "Slider" ) ?></a>
+                    </div>
+
+                <?php } ?>
+
+            </div>
         <hr>
-
-        
         <?php if (isset($_REQUEST['info'])){ ?>
 
             <?php if($_REQUEST['info'] == 'added') { ?>
@@ -240,14 +235,10 @@
 
         </div>
 
-        
-
-
     </div>
 
         <!-- Footer -->
 
-        
         <div class="footer">
 
             <div class="about">
@@ -302,7 +293,5 @@
                 </ul>
             </div>
         </div>  
-
-    
 
 <?php require_once('partials/footer.php') ?>

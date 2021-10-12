@@ -43,8 +43,7 @@ include "translation.php";
 
     <div class="right-nav">
 
-
-        <div class="menu-icon" id="menu-box">
+      <div class="menu-icon" id="menu-box">
             <i id="bars_img" class="fas fa-2x fa-bars"></i>
             <i id="close_img" style="display: none; color: red;" class="fas fa-2x fa-times-circle"></i>
         </div>
@@ -64,7 +63,6 @@ include "translation.php";
                     </li>
                 </ul>
             </div>
-
         <?php } else { ?>
 
             <div class="nav-links">
@@ -80,8 +78,5 @@ include "translation.php";
             </div>
 
         <?php } ?>
-
-
-
     </div>
 </nav>

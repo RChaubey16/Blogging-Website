@@ -26,6 +26,9 @@
 
 /* NavBar Component */
 .nav {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -185,13 +188,14 @@
 
 .home__imgContainer {
   width: 100%;
-  height: 50vh;
+  height: 60vh;
+  padding-top: 8vh;
 }
 
 .home__imgContainer .home__imageDark {
   position: absolute;
   width: 100%;
-  height: 50vh;
+  height: 52vh;
   background: rgba(0, 0, 0, 0.3);
 }
 
@@ -201,6 +205,33 @@
   -o-object-fit: cover;
      object-fit: cover;
   background-position: fixed;
+}
+
+.home__bannerFadeOut {
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .home__bannerContent {
@@ -808,6 +839,10 @@
   }
 }
 
+.search__mainContainer {
+  padding-top: 8vh;
+}
+
 .search__heading {
   margin: 40px 0;
   text-align: center;
@@ -855,12 +890,44 @@
   }
 }
 
+.home__subscribeAccordion {
+  background-color: gray;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.home__subscribeAccordion p {
+  font-size: 1.4rem;
+}
+
+.home__subscribeAccordion #home__accordionCloseIcon {
+  display: none;
+}
+
+.home__subscribeAccordion:hover {
+  background-color: #a5a2a2;
+}
+
 .home__subscribeBox {
-  padding: 5vh 0;
-  background-color: #CAE8E2;
+  max-height: 0px;
+  overflow: hidden;
+  background-color: #ffffff;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
 }
 
 .home__subscribeBox .subscribe__details {
+  z-index: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -897,6 +964,7 @@
   font-weight: bold;
   border: 0;
   outline: 0;
+  background-color: lightgray;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1122,7 +1190,7 @@
           align-items: flex-start;
   width: 80%;
   height: auto;
-  margin-top: 5vh;
+  padding-top: 12vh;
   margin-left: 10vw;
 }
 

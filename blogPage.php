@@ -1,46 +1,46 @@
-<?php
-include "dbLogic.php";
-include "likes.php";
-session_start();
+<?php 
+    include "dbLogic.php";
+    include "likes.php";
+    session_start();
 
-$lang = $_GET['lang'];
-?>
+    $lang = $_GET['lang'];
+?> 
 <?php require_once('partials/header.php') ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
 <script src="static/js/like.js"></script>
 
 <link rel="stylesheet" href="static/css/style.css?v=<?php echo time(); ?>">
-<title>BlogIt - Blog</title>
+    <title>BlogIt - Blog</title>
 </head>
-
 <body>
 
     <!-- Navbar -->
-    <?php include('partials/navbar.php') ?>
-    <?php include('partials/menuLinks.php') ?>
-
+    <?php include('partials/navbar.php')?>
+    <?php include('partials/menuLinks.php')?>
+    
     <div class="blogPage__container">
 
-        <div class="blog-container">
-            <?php foreach ($query as $q) { ?>
+        <div class = "blog-container">
+
+            <?php foreach($query as $q) { ?>    
                 <div class="">
                     <?php if (isset($lang) and ($lang == "hi")) { ?>
-                        <h1 id="heading"><?php echo $q['blog_title_hindi']; ?></h1>
+                        <h1 id = "heading"><?php echo $q['blog_title_hindi']; ?></h1>
                     <?php } else { ?>
-                        <h1 id="heading"><?php echo $q['title']; ?></h1>
+                        <h1 id = "heading"><?php echo $q['title']; ?></h1>
                     <?php } ?>
                 </div>
 
-                <?php
-                // Query to access authorname of the blog
-                $sql = $conn->prepare("SELECT userdetails.name FROM userdetails JOIN blogsdata WHERE (userdetails.user_id = blogsdata.user_id AND id = ?)");
-                $sql->bind_param('i', $id);
-                $id = $q['id'];
-                $sql->execute();
-                $result = $sql->get_result();
-                $ans = $result->fetch_assoc();
-                $blog_user_name = $ans['name'];
+                <?php 
+                    // Query to access authorname of the blog
+                    $sql = $conn->prepare("SELECT userdetails.name FROM userdetails JOIN blogsdata WHERE (userdetails.user_id = blogsdata.user_id AND id = ?)");
+                    $sql->bind_param('i', $id);
+                    $id = $q['id'];
+                    $sql->execute();
+                    $result = $sql->get_result();
+                    $ans = $result->fetch_assoc();
+                    $blog_user_name = $ans['name'];
                 ?>
 
                 <div class="blogPage__details">
@@ -64,7 +64,7 @@ $lang = $_GET['lang'];
                 </div>
 
 
-                <button class="blog__category"><?php echo $q['category']; ?></button>
+                <button class = "blog__category"><?php echo $q['category']; ?></button>
 
 
                 <!-- *************************** -->
@@ -73,19 +73,19 @@ $lang = $_GET['lang'];
 
                     <div class="blog__likes">
 
-                        <?php
+                        <?php 
 
-                        $sql = $conn->prepare("SELECT id from blog_likes where blog = ?");
-                        $sql->bind_param("i", $id);
-                        $id = $q['id'];
-                        $sql->execute();
-                        $result = $sql->get_result();
-                        $ans = mysqli_num_rows($result);
+                            $sql = $conn->prepare("SELECT id from blog_likes where blog = ?");
+                            $sql->bind_param("i", $id);
+                            $id = $q['id'];
+                            $sql->execute();
+                            $result = $sql->get_result();
+                            $ans = mysqli_num_rows($result);
                         ?>
-
-                        <a href="like.php?type=article&id=<?php echo $q['id']; ?>&user_id=<?php echo $q['user_id']; ?>">
+                    
+                        <a href = "like.php?type=article&id=<?php echo $q['id']; ?>&user_id=<?php echo $q['user_id']; ?>">
                             <i class="far fa-star"></i>
-                            <span name="blog__likes-count"><?php echo ($ans); ?></span>
+                            <span name = "blog__likes-count"><?php echo ($ans); ?></span>
 
                             <?php
                             $user = $_SESSION['uid'];
@@ -95,40 +95,36 @@ $lang = $_GET['lang'];
                             $ans = mysqli_num_rows($result);
 
                             if ($ans === 1) { ?>
-
-                                <p class="like-msg">You have liked this post</p>
-
+                                    
+                                <p class = "like-msg">You have liked this post</p>
+                                        
                             <?php } ?>
                         </a>
-
+                        
                     </div>
 
                 <?php } ?>
-
-
-
-
+               
                 <?php if (isset($_SESSION['loggedin']) && $_SESSION['uid'] == $q['user_id']) { ?>
                     <div class='action-btns'>
-                        <a href="translateBlog.php?id=<?php echo $q['id'] ?>">Translate</a>
-                        <a href="editBlog/<?php echo $q['id'] ?>">Edit</a>
-                        <form method="POST">
-                            <input type='text' hidden name="id" value="<?php echo $q['id']; ?>">
-                            <button name="delete" id='delete-post-btn'>Delete</button>
+                        <a href="translateBlog.php?lang=<?php echo "hi"; ?>&id=<?php echo $q['id']?>" >Translate</a>
+                        <a href="editBlog/<?php echo $q['id']?>" >Edit</a>
+                        <form method = "POST">
+                            <input type='text' hidden name = "id" value = "<?php echo $q['id']; ?>">
+                            <button name = "delete" id='delete-post-btn'>Delete</button>
                         </form>
                     </div>
                 <?php } ?>
 
-
                 <div class="blogPage__suggestions">
                     <div class="suggestion__title">
-                        <h2>You may like these posts</h2>
+                        <h2> <?php echo (($lang == "hi") ? "आपको ये पोस्ट पसंद आ सकती हैं" : "You may like these posts")?> </h2>
                     </div>
 
-                    <?php
-                    $sql = $conn->prepare("SELECT * FROM blogsdata ORDER BY id DESC LIMIT 3");
-                    $sql->execute();
-                    $result = $sql->get_result();
+                    <?php 
+                        $sql = $conn->prepare("SELECT * FROM blogsdata ORDER BY id DESC LIMIT 3");
+                        $sql->execute();
+                        $result = $sql->get_result();
                     ?>
 
                     <div class="posts_box">
@@ -140,7 +136,7 @@ $lang = $_GET['lang'];
                                         <img src="<?php echo $r['blog_image']; ?>" alt="">
                                     </div>
                                     <div class="post_title">
-                                        <a href="http://localhost/BlogIt/blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $r['id']; ?>"><?php echo $r['title']; ?></a>
+                                        <a href = "http://localhost/BlogIt/blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $r['id']; ?>"><?php echo (($lang == 'hi') ? $r['blog_title_hindi']: $r['title'] ); ?></a>
                                     </div>
                                 </div>
                             </div>
@@ -148,78 +144,65 @@ $lang = $_GET['lang'];
                     </div>
                 </div>
 
-
                 <div class="blog__comments-container">
 
-                    <?php if (isset($_SESSION['loggedin'])) { ?>
-                        <h2>Post a comment</h2>
+                    <?php if (isset($_SESSION['loggedin'])){ ?>
+                        <h2> <?php echo (($lang == 'hi') ? 'अपनी टिप्पणी डालें' : 'Post a comment' )?> </h2>
                     <?php } else { ?>
-                        <h2>Comments</h2>
+                        <h2><?php echo (($lang == 'hi') ? 'टिप्पणियाँ' : 'Comments' )?></h2>
                     <?php } ?>
 
                     <?php if (isset($_SESSION['loggedin'])) { ?>
                         <form action="comments.php" method="POST">
-                            <input type="text" name='comment-box' placeholder="Write a comment.." autocomplete="off">
-                            <input type="text" name='user-id' value="<?php echo $_SESSION['uid'] ?>" hidden>
-                            <input type="text" name='blog-id' value="<?php echo $q['id'] ?>" hidden>
-                            <button name='comment-btn'>Comment</button>
+                            <input type="text" name = 'comment-box' placeholder = <?php echo (($lang == "hi") ? "टिप्पणी..." : "Comment..." ); ?> autocomplete = "off">
+                            <input type="text" name = 'user-id' value = "<?php echo $_SESSION['uid']?>" hidden>
+                            <input type="text" name = 'blog-id' value = "<?php echo $q['id']?>" hidden>
+                            <button name = 'comment-btn'><?php echo (($lang == "hi") ? "टिप्पणी" : "Comment" ); ?></button>
                         </form>
                     <?php } ?>
 
                     <?php
-                    include "comments.php";
-                    $blog_id = $q['id'];
-                    $sql_query = "SELECT userdetails.name, comment, id FROM userdetails JOIN comments ON userdetails.user_id = uid WHERE bid = $blog_id";
-                    $result = mysqli_query($conn, $sql_query);
-                    $ans = mysqli_num_rows($result);
+                        include "comments.php";
+                        $blog_id = $q['id'];
+                        $sql_query = "SELECT userdetails.name, comment, id FROM userdetails JOIN comments ON userdetails.user_id = uid WHERE bid = $blog_id";
+                        $result = mysqli_query($conn, $sql_query);
+                        $ans = mysqli_num_rows($result);
                     ?>
 
                     <div class="blog__comment-box">
                         <?php if ($ans == 0) { ?>
-                            <h2>No comments to show!</h2>
+                            <h2><?php echo (($lang == 'hi') ? 'दिखाने के लिए कोई टिप्पणी नहीं' : 'No comments to show' )?></h2>
                         <?php } ?>
 
-                        <?php foreach ($result as $r) { ?>
+                        <?php foreach($result as $r) { ?>
                             <div class="blog__comment">
-
+                         
                                 <div class="comment__username">
-                                    <h3><?php echo $r['name'] ?></h3>
+                                    <h3><?php echo $r['name']?></h3>
                                 </div>
                                 <br>
                                 <div class="comment__content">
-                                    <p><?php echo $r['comment'] ?></p>
+                                    <p><?php echo $r['comment']?></p>
                                 </div>
 
                                 <div class="blog__likes">
-
-
-                                    <a href="comments.php?type=comment&id=<?php echo $r['id']; ?>">
-
-                                        <?php
-
-                                        $sql = $conn->prepare("SELECT likes FROM comments WHERE id = ?");
-                                        $sql->bind_param("i", $cid);
-                                        $cid = $r['id'];
-                                        $sql->execute();
-                                        $result = $sql->get_result();
-                                        $ans = $result->fetch_assoc();
-
-
+                                    <a href = "comments.php?type=comment&id=<?php echo $r['id']; ?>">
+                                        <?php 
+                                            $sql = $conn->prepare("SELECT likes FROM comments WHERE id = ?");
+                                            $sql->bind_param("i", $cid);
+                                            $cid = $r['id'];
+                                            $sql->execute();
+                                            $result = $sql->get_result();
+                                            $ans = $result->fetch_assoc();
                                         ?>
-
                                         <i class="far fa-star"></i>
-                                        <span name="blog__likes-count"><?php echo ($ans['likes']); ?></span>
-
+                                        <span name = "blog__likes-count"><?php echo ($ans['likes']); ?></span>
                                     </a>
-
-
                                 </div>
-
                             </div>
                         <?php } ?>
                     </div>
-                </div>
-
+                </div> 
             <?php } ?>
         </div>
 
@@ -276,7 +259,7 @@ $lang = $_GET['lang'];
                             <a href="https://github.com/" target="_blank" title="github">
                                 <i class="fab fa-2x fa-github"></i>
                             </a>
-                        </li>
+                        </li>       
                         <li class="slack">
                             <a href="https://slack.com/intl/en-in/" target="_blank" title="slack">
                                 <i class="fab fa-2x fa-slack"></i>
@@ -294,21 +277,35 @@ $lang = $_GET['lang'];
                         <?php echo $language[$lang][7]; ?>
                     </h3>
                 </div>
-                <?php
-                $sql = $conn->prepare("SELECT * from blogsdata ORDER BY id ASC LIMIT 3");
-                $sql->execute();
-                $result = $sql->get_result();
-
-                foreach ($result as $r) {  ?>
+                <?php 
+                    $sql = $conn->prepare("SELECT * from blogsdata ORDER BY id ASC LIMIT 3");
+                    $sql->execute();
+                    $result = $sql->get_result();
+                
+                    foreach($result as $r) {  ?>
 
                     <div class="popularPosts__content">
                         <div class="popularPosts__img">
-                            <img src="<?php echo $r['blog_image']; ?>" alt="">
+                            <img src="<?php echo $r['blog_image']; ?>" alt="popular-post-image">
                         </div>
                         <div class="popularPosts__info">
-                            <a href="http://localhost/BlogIt/blogPage/<?php echo $r['id'] ?>">
-                                <?php echo substr($r['content'], 0, 60) . "..."; ?>
+
+                            <?php 
+                                if ($lang == 'hi'){
+                                    $content = $r['blog_content_hindi'];
+                                    $stripped_content = strip_tags($content);
+                                    $char_length = 190;
+                                } else {
+                                    $content = $r['content'];
+                                    $stripped_content = strip_tags($content);
+                                    $char_length = 60;
+                                }
+                            ?>
+
+                            <a href="http://localhost/BlogIt/blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $r ['id']?>">
+                                <?php echo substr($stripped_content, 0, $char_length) . "..."; ?>
                             </a>
+
                         </div>
                     </div>
                 <?php } ?>
@@ -323,12 +320,12 @@ $lang = $_GET['lang'];
                     </h3>
                 </div>
 
-                <?php
-                $sql = $conn->prepare("SELECT category FROM blogsdata LIMIT 4");
-                $sql->execute();
-                $result = $sql->get_result();
+                <?php 
+                    $sql = $conn->prepare("SELECT category FROM blogsdata LIMIT 4");
+                    $sql->execute();
+                    $result = $sql->get_result();
 
-                foreach ($result as $a) { ?>
+                    foreach ($result as $a) { ?>
 
                     <a href="search/<?php echo $a['category']; ?>">
                         <div class="category__content">
@@ -336,13 +333,13 @@ $lang = $_GET['lang'];
                                 > <?php echo $a['category']; ?>
                             </div>
                             <div class="category__count">
-                                <?php
-                                $sql = $conn->prepare("SELECT id FROM blogsdata where category = ?");
-                                $sql->bind_param("s", $category);
-                                $category = $a['category'];
-                                $sql->execute();
-                                $result = $sql->get_result();
-                                $count = mysqli_num_rows($result);
+                                <?php 
+                                    $sql = $conn->prepare("SELECT id FROM blogsdata where category = ?");
+                                    $sql->bind_param("s", $category);
+                                    $category = $a['category'];
+                                    $sql->execute();
+                                    $result = $sql->get_result();
+                                    $count = mysqli_num_rows($result);
                                 ?>
                                 (<?php echo $count; ?>)
                             </div>
@@ -356,15 +353,15 @@ $lang = $_GET['lang'];
 
     <!-- Footer -->
 
-
+    
     <div class="footer">
 
         <div class="about">
             <h3><?php echo ($lang == 'hi') ? $language[$lang][9] : $language[$lang][9]; ?></h3>
+            
+            <?php 
 
-            <?php
-
-            $about = ($lang == 'hi') ? 'लोरेम इप्सम प्रिंटिंग और टाइपसेटिंग उद्योग का केवल डमी टेक्स्ट है लोरेम इप्सम 1500 के दशक के बाद से उद्योग का मानक डमी टेक्स्ट रहा है, जब एक अज्ञात प्रिंटर ने एक प्रकार की गैली ली और इसे एक प्रकार की नमूना पुस्तक बनाने के लिए हाथापाई की। यह न केवल पांच शताब्दियों तक जीवित रहा है, बल्कि इलेक्ट्रॉनिक टाइपसेटिंग में भी छलांग लगाई है, जो अनिवार्य रूप से अपरिवर्तित है।' : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
+                $about = ($lang == 'hi') ? 'लोरेम इप्सम प्रिंटिंग और टाइपसेटिंग उद्योग का केवल डमी टेक्स्ट है लोरेम इप्सम 1500 के दशक के बाद से उद्योग का मानक डमी टेक्स्ट रहा है, जब एक अज्ञात प्रिंटर ने एक प्रकार की गैली ली और इसे एक प्रकार की नमूना पुस्तक बनाने के लिए हाथापाई की। यह न केवल पांच शताब्दियों तक जीवित रहा है, बल्कि इलेक्ट्रॉनिक टाइपसेटिंग में भी छलांग लगाई है, जो अनिवार्य रूप से अपरिवर्तित है।' : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
             ?>
             <p><?php echo substr($about, 0, 170) . "..."; ?></p>
         </div>
@@ -390,28 +387,29 @@ $lang = $_GET['lang'];
                 <div class="location-details">
                     <p>example@example.com</p>
                 </div>
-
+                
             </div>
 
         </div>
 
         <div class="links">
-
+            
             <ul>
+                <!-- <h3>Links</h3> -->
                 <li>
-                    <a href="home"><i style="color: #0488d1;" class="fas fa-caret-right"></i> <?php echo $language[$lang][4] ?> </a>
+                    <a href="home"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> <?php echo $language[$lang][4]?> </a>
                 </li>
                 <li>
-                    <a href="login"><i style="color: #0488d1;" class="fas fa-caret-right"></i> <?php echo $language[$lang][1] ?> </a>
+                    <a href="login"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> <?php echo $language[$lang][1]?> </a>
                 </li>
                 <li>
-                    <a href="register"><i style="color: #0488d1;" class="fas fa-caret-right"></i> <?php echo $language[$lang][2] ?> </a>
+                    <a href="register"><i style = "color: #0488d1;" class="fas fa-caret-right"></i> <?php echo $language[$lang][2]?> </a>
                 </li>
             </ul>
         </div>
     </div>
+    
+<script src="static/js/like.js"></script>
 
-    <script src="static/js/like.js"></script>
-
-
-    <?php require_once('partials/footer.php') ?>
+   
+<?php require_once('partials/footer.php') ?>

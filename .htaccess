@@ -13,6 +13,7 @@ RewriteCond %{REQUEST_FILENAME}\.php -f
 
 # Redirects to index page with some information about the operation performed
 RewriteRule ^index/([0-9a-zA-Z_-]+) index.php?info=$1 [NC,L]
+RewriteRule ^index/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+) index.php?lang=$1&info=$2 [NC,L]
 
 # Redirects to home page with some information about the operation performed
 RewriteRule ^home/([0-9a-zA-Z_-]+) home.php?info=$1 [NC,L]

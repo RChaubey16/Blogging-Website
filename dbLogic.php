@@ -74,9 +74,6 @@ if (isset($_REQUEST['new_post'])) {
         require 'PHPMailerAutoload.php';
 
         $mail = new PHPMailer;
-
-        //$mail->SMTPDebug = 4;          //to get detailed output of server                      // Enable verbose debug output
-
         $mail->isSMTP();                                      // Set mailer to use SMTP
         $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -90,7 +87,6 @@ if (isset($_REQUEST['new_post'])) {
 
         $mail->addReplyTo($email['myEmail']);
 
-        // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
         $mail->isHTML(true);                                  // Set email format to HTML
 
         $mail->Subject = 'New Blog is published!';
@@ -134,11 +130,6 @@ if (isset($_REQUEST['update'])) {
     $title = $_REQUEST['title'];
     $content = $_REQUEST['editor1'];
     $sql->execute();
-
-    // Normal SQL query
-    // $sql = "UPDATE blogsdata SET title = '$title', content = '$content'
-    //  WHERE id = $id";
-    // mysqli_query($conn, $sql);
 
     header("Location: index.php?info=updated");
     exit();
@@ -213,10 +204,6 @@ if (isset($_POST['profile__btn'])) {
     $profile_id = $_POST['profile__user_id'];
     $sql->execute();
 
-    // Normal SQL Queries
-    // $sql = "UPDATE userdetails SET bio = '$bio' WHERE user_id = $profile_id";
-    // mysqli_query($conn, $sql);
-
     header("Location: profile.php?uid=$profile_id");
     exit;
 }
@@ -260,9 +247,6 @@ if (isset($_POST['new_pass'])) {
     require 'PHPMailerAutoload.php';
 
     $mail = new PHPMailer;
-
-    //$mail->SMTPDebug = 4;          //to get detailed output of server                      // Enable verbose debug output
-
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -270,13 +254,9 @@ if (isset($_POST['new_pass'])) {
     $mail->Password = $email['myPass'];                           // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;                                    // TCP port to connect to
-
     $mail->setFrom($email['myEmail'], 'BlogIt');
     $mail->addAddress($pass_email);     // Add a recipient
-
     $mail->addReplyTo($email['myEmail']);
-
-    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
     $mail->isHTML(true);                                  // Set email format to HTML
 
     $mail->Subject = 'Password Reset - BlogIt';
@@ -371,15 +351,6 @@ if (isset($_POST['translate'])){
 
     $sql_query = "INSERT INTO blogsdata(blog_id, lang_code, title, content, blog_title_hindi, blog_content_hindi, user_id, blog_image, category) VALUES($id, '$lang_code','$title', '$content', '', '', $user_id, '$blog_image', '$category')";
     $res = mysqli_query($conn, $sql_query);
-
-
-    // Phase 1
-    // $sql = $conn->prepare("UPDATE blogsdata SET blog_title_hindi = ?, blog_content_hindi = ? WHERE id = ?");
-    // $sql->bind_param("ssi", $title, $content, $id);
-    // $id = $_POST['id'];
-    // $title = $_POST['title'];
-    // $content = $_POST['editor1'];
-    // $sql->execute();
 
     header("Location: index.php?info=updated");
     exit();

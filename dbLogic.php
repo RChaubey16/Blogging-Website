@@ -385,4 +385,3 @@ if (isset($_POST['translate'])){
     exit();
 }
 
-

@@ -155,7 +155,7 @@
             <?php foreach ($result as $r) { ?>
                 <div class="home__blogCard1">
                     <a href="blogPage.php?lang=<?php echo $lang; ?>&id=<?php echo $r['id']?>">
-                        <img src="<?php echo $r['blog_image'] ?>" alt="">
+                        <img src="<?php echo $r['blog_image'] ?>" alt="blog-image">
                     </a>
                     <div class="home__blogCardDetails">
                         <button><?php echo $r['category']; ?></button>

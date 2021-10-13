@@ -25,11 +25,11 @@ include "translation.php";
         ?>
 
         <span class="nav__languagesDiv">
-
+           
             <a href="<?php echo $file; ?>?lang=en&<?php echo ($id != NULL) ? $id : ""; ?>" id="language-en">English</a>
 
             <a href="<?php echo $file; ?>?lang=hi&<?php echo ($id != NULL) ? $id : ""; ?>" id="language-hi">Hindi</a>
-
+           
         </span>
     </div>
 

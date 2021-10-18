@@ -28,7 +28,10 @@ include "translation.php";
            
             <a href="<?php echo $file; ?>?lang=en&<?php echo ($id != NULL) ? $id : ""; ?>" id="language-en">English</a>
 
+            <!-- <button id = "english-btn" onclick = "onEnglish()">English</button> -->
+
             <a href="<?php echo $file; ?>?lang=hi&<?php echo ($id != NULL) ? $id : ""; ?>" id="language-hi">Hindi</a>
+            <!-- <button id = "hindi-btn" onclick = "onHindi()">Hindi</button> -->
            
         </span>
     </div>

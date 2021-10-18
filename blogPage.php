@@ -3,6 +3,8 @@
     include "likes.php";
     session_start();
 
+    $language = $_SESSION['lang'];
+
     $lang = $_GET['lang'];
 ?> 
 <?php require_once('partials/header.php') ?>
@@ -53,6 +55,7 @@
                         <img src="<?php echo $q['blog_image'] ?>" alt="">
                     </div>
                 <?php } ?>
+
 
                 <div class="blogPage__content">
 
@@ -410,6 +413,7 @@
     </div>
     
 <script src="static/js/like.js"></script>
+<script src="static/js/cookies_lang.js"></script>
 
    
 <?php require_once('partials/footer.php') ?>

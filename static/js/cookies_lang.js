@@ -6,6 +6,7 @@ function onEnglish () {
                     .reduce((accumulator, [key, value]) => 
                         ({...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
     document.getElementById('english-btn').value = cookies.lang;
+    window.location.reload();
     console.log(cookies.lang);
 }
 
@@ -17,5 +18,6 @@ function onHindi () {
                     .reduce((accumulator, [key, value]) => 
                         ({...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
     document.getElementById('hindi-btn').value = cookies.lang;
+    window.location.reload();
     console.log(cookies.lang);
 }

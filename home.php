@@ -3,6 +3,8 @@
     include "dbLogic.php";
     include "translation.php";
     $lang = $_SESSION['lang'];
+
+    $lang_non_url = $_COOKIE['lang'];
 ?> 
 <?php require_once('partials/header.php') ?>
 
@@ -37,12 +39,12 @@
 
         <div id = "home__mainBanner" class="home__bannerContent home__fadeOnScroll">
             <div class="home__bannerContent-title">
-                <h1> <?php echo (($lang == 'hi') ? $ans['blog_title_hindi'] : $ans['title'] ); ?> </h1>
+                <h1> <?php echo ((/*$lang*/ $lang_non_url == 'hi') ? $ans['blog_title_hindi'] : $ans['title'] ); ?> </h1>
             </div>
 
             <div class="home__bannerContent-desc">
                 <?php 
-                    if ($lang == 'hi'){
+                    if (/*$lang*/ $lang_non_url == 'hi'){
                         $content = $ans['blog_content_hindi'];
                         $stripped_content = strip_tags($content);
                         $char_length = 210;

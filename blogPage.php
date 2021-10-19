@@ -6,6 +6,7 @@
     $language = $_SESSION['lang'];
 
     $lang = $_GET['lang'];
+    $lang_non_url = $_COOKIE['lang'];
 ?> 
 <?php require_once('partials/header.php') ?>
 
@@ -27,7 +28,7 @@
 
             <?php foreach($query as $q) { ?>    
                 <div class="">
-                    <?php if (isset($lang) and ($lang == "hi")) { ?>
+                    <?php if (isset($lang_non_url) and ($lang_non_url == "hi")) { ?>
                         <h1 id = "heading"><?php echo $q['blog_title_hindi']; ?></h1>
                     <?php } else { ?>
                         <h1 id = "heading"><?php echo $q['title']; ?></h1>

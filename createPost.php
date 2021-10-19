@@ -60,7 +60,6 @@
         <div class="links">
             
             <ul>
-                <!-- <h3>Links</h3> -->
                 <li>
                     <a href="home.php">> Home</a>
                 </li>

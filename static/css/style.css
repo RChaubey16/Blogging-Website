@@ -66,6 +66,14 @@
   color: #0488d1;
 }
 
+.nav .nav__languagesDiv .nav__langbtn {
+  padding: 0.3rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+}
+
 .nav .nav__languagesDiv .language_highlight {
   background-color: #0488d1;
   color: #ffffff;

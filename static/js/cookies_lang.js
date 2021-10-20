@@ -7,6 +7,7 @@ function onEnglish () {
                         ({...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
     document.getElementById('english-btn').value = cookies.lang;
     window.location.reload();
+    document.getElementById('english-btn').style.color = "blue";
     console.log(cookies.lang);
 }
 

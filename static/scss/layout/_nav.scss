@@ -33,6 +33,15 @@
             }
         }
 
+        .nav__langbtn{
+            padding: 0.3rem;
+            // width: 0.7rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border: 0;
+            background: transparent;
+        }
+
         .language_highlight{
             background-color: $common;
             color: $white;

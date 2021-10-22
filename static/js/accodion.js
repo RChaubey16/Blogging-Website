@@ -5,7 +5,6 @@ var closeIcon = document.getElementById("home__accordionCloseIcon");
 
 
 ele.addEventListener('click', function() {
-    // this.classList.toggle("actve");
     var panel = this.nextElementSibling;
     if (panel.style.maxHeight) {
       panel.style.maxHeight = null;

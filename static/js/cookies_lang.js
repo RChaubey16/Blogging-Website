@@ -22,3 +22,10 @@ function onHindi () {
     window.location.reload();
     console.log(cookies.lang);
 }
+
+function onArabic () {
+    var html = document.getElementsByTagName('html')[0];
+    html.setAttribute('dir', 'rtl');
+
+    // window.location.reload();
+}

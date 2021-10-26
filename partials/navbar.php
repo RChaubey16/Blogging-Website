@@ -28,6 +28,7 @@ include "translation.php";
 
             <button class = "nav__langbtn" id = "english-btn" onclick = "onEnglish()">English</button>
             <button class = "nav__langbtn" id = "hindi-btn" onclick = "onHindi()">Hindi</button>
+            <button class = "nav__langbtn" id = "arabic-btn" onclick = "onArabic()">Arabic</button>
            
             <!-- <a href="<?php echo $file; ?>?lang=en&<?php echo ($id != NULL) ? $id : ""; ?>" id="language-en">English</a> -->
             <!-- <a href="<?php echo $file; ?>?lang=hi&<?php echo ($id != NULL) ? $id : ""; ?>" id="language-hi">Hindi</a> -->

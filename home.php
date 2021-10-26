@@ -2,6 +2,7 @@
     session_start();
     include "dbLogic.php";
     include "translation.php";
+    include "classes/Database.php";
     $lang = $_SESSION['lang'];
 
     $lang_non_url = $_COOKIE['lang'];
@@ -193,7 +194,11 @@
     
     <div class = "index__main">
         <div class="blog-list-box home__blogs"> 
-            <?php foreach($query as $q) { ?>
+            <?php 
+                $object = new Database();
+                $raj = $object->fetchAllBlogs();
+            ?>
+            <?php foreach($raj as $q) { ?>
                 <div class = 'card'>
                 
                         <div class = "card-body">

@@ -1,6 +1,11 @@
 <?php 
 
 include "dbLogic.php";
+include "classes/Database.php";
+
+$object = new Database();
+
+
 
 // $selectedTime = date("H:i:s");
 // $endTime = strtotime("-15 minutes", strtotime($selectedTime));

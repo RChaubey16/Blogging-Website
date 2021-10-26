@@ -11,7 +11,6 @@
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -31,10 +30,14 @@
 
     <?php 
 
-        $sql = $conn->prepare("SELECT * FROM blogsdata ORDER BY id ASC LIMIT 1");
-        $sql->execute();
-        $result = $sql->get_result();
-        $ans = $result->fetch_assoc();
+        // $sql = $conn->prepare("SELECT * FROM blogsdata ORDER BY id ASC LIMIT 1");
+        // $sql->execute();
+        // $result = $sql->get_result();
+        // $ans = $result->fetch_assoc();
+
+        // OOPs
+        $homeObject = new Database();
+        $ans = $homeObject->fetchHomeBannerBlog();
 
         if ($ans != null) { ?>
 
@@ -86,9 +89,13 @@
         <div class="home__blogCarouselImages">
             
             <?php
-                $sql = $conn->prepare("SELECT * FROM blogsdata WHERE lang_code = '$lang' ORDER BY id DESC LIMIT 5");    
-                $sql->execute();
-                $result = $sql->get_result();
+                // $sql = $conn->prepare("SELECT * FROM blogsdata WHERE lang_code = '$lang' ORDER BY id DESC LIMIT 5");    
+                // $sql->execute();
+                // $result = $sql->get_result();
+
+                // OOPs
+                $result= $homeObject->fetchHomeCarouselBlogs($lang);
+
             ?>
             <?php foreach($result as $q) { ?>
                 <div class = 'card search-card'>
@@ -150,9 +157,13 @@
 
     <div class="home__blogCardsBox">
         <?php  
-            $sql = $conn->prepare("SELECT * FROM blogsdata ORDER BY id LIMIT 2");
-            $sql->execute();
-            $result = $sql->get_result();
+            // $sql = $conn->prepare("SELECT * FROM blogsdata ORDER BY id LIMIT 2");
+            // $sql->execute();
+            // $result = $sql->get_result();
+
+            // OOPs
+            $result = $homeObject->fetchTwoBlogs();
+            
         ?>
         <div class="home__blogCards">
             <?php foreach ($result as $r) { ?>

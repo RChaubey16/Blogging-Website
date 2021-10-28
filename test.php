@@ -36,11 +36,6 @@ $sql->execute();
 $res = $sql->get_result();
 $ans = $res->fetch_assoc();
 
-// $id = 3;
-// $sql = "SELECT * FROM blogsdata WHERE id = $id";
-// $res = mysqli_query($conn, $sql);
-// $ans = mysqli_fetch_assoc($res);
-
 $blog_id = $ans['blog_id'];
 $user_id = $ans['user_id'];
 $blog_image = $ans['blog_image'];

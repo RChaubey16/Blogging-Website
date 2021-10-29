@@ -25,7 +25,17 @@ function onHindi () {
 
 function onArabic () {
     var html = document.getElementsByTagName('html')[0];
-    html.setAttribute('dir', 'rtl');
+    // html.setAttribute('dir', 'rtl');
+    
+    document.cookie = "lang=ar";
+    var cookies = document.cookie
+    .split(';')
+    .map(cookie => cookie.split('='))
+    .reduce((accumulator, [key, value]) => 
+    ({...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+    document.getElementById('arabic-btn').value = cookies.lang;
+    window.location.reload();
+    console.log(cookies.lang);
 
     // window.location.reload();
 }

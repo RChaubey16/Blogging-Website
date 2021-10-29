@@ -70,11 +70,30 @@ include "translation.php";
             <div class="nav-links">
                 <ul>
                     <li>
-                        <a href=<?php echo (($lang == "hi") ? "login.php?lang=hi" : "login") ?>><?php echo $language[$lang][0]; ?></a>
+                        <a href=<?php echo (($lang == "hi") ? "login.php?lang=hi" : "login") ?>>
+                        <!-- <?php echo $language[$lang][0]; ?> -->
+                        <?php if ($lang_non_url == 'en' or $lang_non_url == 'hi') 
+                            { 
+                                echo $language[$lang_non_url][0];
+                            } else if ($lang_non_url == 'ar') {
+                                echo $language[$lang_non_url][1];
+                            }   
+                        ?>
+                        <!-- <?php echo $language[$lang_non_url][1]; ?> -->
+                        </a>
                     </li>
 
                     <li>
-                        <a href=<?php echo (($lang == "hi") ? "register.php?lang=hi" : "register") ?>><?php echo $language[$lang][1]; ?></a>
+                        <a href=<?php echo (($lang == "hi") ? "register.php?lang=hi" : "register") ?>>
+                        <!-- <?php echo $language[$lang][1]; ?>   -->
+                        <?php if ($lang_non_url == 'en' or $lang_non_url == 'hi') 
+                            { 
+                                echo $language[$lang_non_url][1];
+                            } else if ($lang_non_url == 'ar') {
+                                echo $language[$lang_non_url][0];
+                            }   
+                        ?>
+                        </a>
                     </li>
                 </ul>
             </div>

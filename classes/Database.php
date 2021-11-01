@@ -29,7 +29,8 @@
         }
 
         public function fetchHomeCarouselBlogs($lang){
-            $sql = $this->conn->prepare("SELECT * FROM blogsdata WHERE lang_code = '$lang' ORDER BY id DESC LIMIT 5");
+            $sql = $this->conn->prepare("SELECT * FROM blogsdata WHERE lang_code = ? ORDER BY id DESC LIMIT 5");
+            $sql->bind_param("s", $lang);
             $sql->execute();
             $result = $sql->get_result();
             return $result;

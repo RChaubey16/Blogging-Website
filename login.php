@@ -4,6 +4,7 @@
     session_start();
     include "translation.php";
     $lang = $_SESSION['lang'];
+    $lang_non_url = $_COOKIE['lang'];
     if (isset($_SESSION['loggedin']) &&  $_SESSION['loggedin']){
       header("Location: index.php");
       exit();

@@ -25,7 +25,6 @@ function onHindi () {
 
 function onArabic () {
     var html = document.getElementsByTagName('html')[0];
-    // html.setAttribute('dir', 'rtl');
     
     document.cookie = "lang=ar";
     var cookies = document.cookie
@@ -35,6 +34,7 @@ function onArabic () {
     ({...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
     document.getElementById('arabic-btn').value = cookies.lang;
     window.location.reload();
+    html.setAttribute('dir', 'rtl');
     console.log(cookies.lang);
 
     // window.location.reload();

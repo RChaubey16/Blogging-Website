@@ -80,7 +80,14 @@
     <div data-aos="fade-down" class="home__blogCarousel">
         <h2 class = "home__blogCarouselHeading">
             <i class="fas fa-mail-bulk"></i>    
-            <?php echo $language[$lang][5]; ?>
+            <!-- <?php echo $language[$lang][5]; ?> -->
+            <?php if ($lang_non_url == 'en' or $lang_non_url == 'hi') 
+                { 
+                    echo $language[$lang_non_url][5];
+                } else if ($lang_non_url == 'ar') {
+                    echo $language[$lang_non_url][2];
+                }   
+            ?>
         </h2>
         <div class="home__blogCarouselImages">
             

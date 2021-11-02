@@ -34,7 +34,7 @@ function onArabic () {
     ({...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
     document.getElementById('arabic-btn').value = cookies.lang;
     window.location.reload();
-    html.setAttribute('dir', 'rtl');
+    // html.setAttribute('dir', 'rtl');
     console.log(cookies.lang);
 
     // window.location.reload();

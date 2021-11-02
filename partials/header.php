@@ -1,6 +1,12 @@
+
 <!DOCTYPE html>
-<html lang="en" dir = 'ltr'>
-<!-- <html dir="rtl" lang="ar"> -->
+
+<?php $lang_non_url = $_COOKIE['lang']; ?>
+<?php if ($lang_non_url == 'ar') { ?>
+    <html dir="rtl" lang="ar">
+<?php } else { ?>
+    <html lang="en" dir = 'ltr'>
+<?php } ?>
 
 <head>
     <meta charset="UTF-8">

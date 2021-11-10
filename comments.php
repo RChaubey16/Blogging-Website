@@ -14,10 +14,6 @@
 
         $sql->execute();
 
-        // Normal Sql query
-        // $q = "INSERT INTO comments(comment, uid, bid) VALUES('$content', $userId, $blogId)";
-        // mysqli_query($conn, $q);
-
         header("Location: blogPage.php?id=$blogId&user_id=$userId?ADD");
         exit;
     }

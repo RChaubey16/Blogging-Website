@@ -17,8 +17,6 @@
 
             if (isset($_GET['searchBar'])) {
 
-                //Example of the query : "SELECT * FROM liam WHERE Description LIKE '%".$term."%'"
-
                 $category = $_GET["searchBar"];
                 $search = '%'.$category.'%';
                 $sql = "SELECT * FROM blogsdata JOIN userdetails ON (blogsdata.user_id = userdetails.user_id) WHERE category LIKE '".$search."' OR soundex(category) = soundex('$search') OR content LIKE'".$search."' OR title LIKE '".$search."' OR name LIKE '".$search."'";

@@ -153,9 +153,7 @@ if (isset($_REQUEST['delete'])) {
     $sqlDelete = $conn->prepare("DELETE FROM blogsdata WHERE id = ?");
     $sqlDelete->bind_param("i", $id);
     $sqlDelete->execute();
-    // $sql = "DELETE FROM blogsdata WHERE id = $id";
-    // $query = mysqli_query($conn, $sql);
-
+    
     header("Location: index.phpinfo=deleted");
     exit();
 }

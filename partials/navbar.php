@@ -52,7 +52,7 @@ include "translation.php";
 
         <?php if (isset($_SESSION['username'])) { ?>
             <div class="user nav-links">
-                <a href="profile.php?lang=<?php echo $lang; ?>&uid=<?php echo $_SESSION['uid'] ?>"><?php echo $_SESSION['username'] ?></a>
+                <a href="profile/lang/<?php echo $lang; ?>/uid/<?php echo $_SESSION['uid'] ?>"><?php echo $_SESSION['username'] ?></a>
             </div>
         <?php } ?>
 
